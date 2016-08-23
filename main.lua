@@ -75,7 +75,7 @@ function love.load()
     mouse = vector(0,0)
 
     bunnies = {}
-    for i = 1,10 do
+    for i = 1,20 do
         table.insert(bunnies,{pos = vector(love.math.random(0,2000),love.math.random(0,1000))})
     end
 
