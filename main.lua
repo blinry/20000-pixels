@@ -19,6 +19,16 @@ function HSL(h, s, l, a)
     end return (r+m)*255,(g+m)*255,(b+m)*255,a
 end
 
+function table.slice(tbl, first, last, step)
+    local sliced = {}
+
+    for i = first or 1, last or #tbl, step or 1 do
+        sliced[#sliced+1] = tbl[i]
+    end
+
+    return sliced
+end
+
 function lerp(a, b, t)
     return a + t*(b-a)
 end
@@ -65,7 +75,7 @@ function love.load()
     mouse = vector(0,0)
 
     bunnies = {}
-    for i = 1,1 do
+    for i = 1,10 do
         table.insert(bunnies,{pos = vector(love.math.random(0,2000),love.math.random(0,1000))})
     end
 
@@ -87,20 +97,23 @@ function love.draw()
     camera:attach()
 
     for i,bunny in pairs(bunnies) do
-        love.graphics.draw(images.bunny, bunny.pos.x, bunny.pos.y)
+        love.graphics.draw(images.bunny, bunny.pos.x, bunny.pos.y, 0, 1, 1, images.bunny:getWidth()/2, images.bunny:getHeight()/2)
     end
 
     love.graphics.setColor(HSL(color,255,100))
     love.graphics.print('Hello World!', 400, 300)
-    love.graphics.setColor(255,255,255)
+    love.graphics.setColor(HSL(color,255,100,100))
+    --love.graphics.setColor(255,255,255)
 
-    r = math.atan2(dir.y, dir.x)
-    love.graphics.draw(images.car, pos.x, pos.y, r, 0.3, 0.3, 300, 200)
+    --r = math.atan2(dir.y, dir.x)
+    --love.graphics.draw(images.car, pos.x, pos.y, r, 0.3, 0.3, 300, 200)
 
     love.graphics.draw(ps, 0, 0)
 
     for i,p in ipairs(trail) do
         if trail[i+1] then
+            love.graphics.setLineWidth(i)
+            love.graphics.setColor(HSL(i*3,255,i))
             love.graphics.line(p.x, p.y, trail[i+1].x, trail[i+1].y)
         end
     end
@@ -133,6 +146,7 @@ function love.update(dt)
     speed = 0.98*speed
 
     table.insert(trail, pos:clone())
+    trail = table.slice(trail, #trail-100, #trail)
 
     ps:setPosition(pos.x, pos.y)
     d = 500
@@ -147,7 +161,12 @@ function love.update(dt)
     for i,bunny in pairs(bunnies) do
         bunny.pos.x = bunny.pos.x + love.math.random(-10,10)
         bunny.pos.y = bunny.pos.y + love.math.random(-10,10)
+
+        if pos:dist(bunny.pos) < 100 then
+            table.remove(bunnies, i)
+        end
     end
+
 
     x, y = camera:cameraCoords(mouse.x, mouse.y)
     love.mouse.setPosition(x,y)
