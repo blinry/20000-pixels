@@ -85,10 +85,14 @@ function love.load()
 
     ship = {}
     ship.body = love.physics.newBody(world, 0, 0, "dynamic")
-    ship.shape = love.physics.newRectangleShape(0, 50, 100, 200)
+    ship.shape = love.physics.newRectangleShape(0, 75, 100, 150)
+    ship.shape2 = love.physics.newCircleShape(0, 0, 100)
     ship.fixture = love.physics.newFixture(ship.body, ship.shape)
+    ship.fixture2 = love.physics.newFixture(ship.body, ship.shape2)
     ship.body:setInertia(100000)
     ship.body:setMass(10)
+    ship.fixture:setFriction(0)
+    ship.fixture2:setFriction(0)
 
     sail = 0
     rudder = 0
@@ -103,8 +107,17 @@ function love.load()
         island.body = love.physics.newBody(world, x, y)
         island.shape = love.physics.newCircleShape(250)
         island.fixture = love.physics.newFixture(island.body, island.shape)
+        island.fixture:setFriction(0)
     end
 
+    people = {}
+    for i = 1,20 do
+        j = love.math.random(#islands)
+        x = islands[j].x + math.random(-100, 100)
+        y = islands[j].y + math.random(0, 100)
+        r, g, b = HSL(math.random(255), 255, 100)
+        table.insert(people, {x = x, y = y})
+    end
 
     --love.audio.play(music.fushing)
 
@@ -204,6 +217,14 @@ function love.update(dt)
         end
     end
 
+    for i,person in ipairs(people) do
+        if vector(person.x, person.y):dist(vector(x, y)) < 300 then
+            person.boarded = true
+            person.x = love.math.random(-20, 20)
+            person.y = love.math.random(-20, 20)
+        end
+    end
+
     mouse = vector(camera:worldCoords(love.mouse.getPosition()))
     d = vector(x, y) - mouse
     sail = math.atan2(d.y, d.x) - ship.body:getAngle() + math.pi/2
@@ -278,6 +299,15 @@ function love.draw()
     --    end
     --end
 
+    for i,person in ipairs(people) do
+        if person.boarded then
+            x, y = ship.body:getWorldPoints(person.x, person.y)
+            love.graphics.draw(images.person, x, y, 0, 1, 1, images.person:getWidth()/2, images.person:getWidth()/2)
+        else
+            love.graphics.draw(images.person, person.x, person.y, 0, 1, 1, images.person:getWidth()/2, images.person:getWidth()/2)
+        end
+    end
+
     camera:detach()
 
     love.graphics.setColor(255, 255, 255)
@@ -287,8 +317,15 @@ function love.draw()
         v = vector(island.x, island.y) - vector(ship.body:getPosition())
         p = vector(250, 250) + v:normalized()*250
         d = v:len()
-        love.graphics.setColor(255, 0, 0)
-        love.graphics.circle("fill", p.x, p.y, 30-1/100*d, 32)
+        s = 30-1/100*d
+        love.graphics.draw(images.island, p.x, p.y, 0, s*0.005, s*0.005, images.island:getWidth()/2, images.island:getHeight()/2)
+    end
+    for i,person in ipairs(people) do
+        v = vector(person.x, person.y) - vector(ship.body:getPosition())
+        p = vector(250, 250) + v:normalized()*250
+        d = v:len()
+        s = 30-1/100*d
+        love.graphics.draw(images.person, p.x, p.y, 0, s*0.04, s*0.04, images.person:getWidth()/2, images.person:getHeight()/2)
     end
 end
 
