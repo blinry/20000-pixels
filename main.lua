@@ -91,17 +91,19 @@ function love.load()
 
     sail = 0
     rudder = 0
+    flip = 1
 
     islands = {}
     for i = 1,10 do
-        table.insert(islands, {x = love.math.random(-2000, 2000), y = love.math.random(-2000, 2000)})
+        x = love.math.random(-2000, 2000)
+        y = love.math.random(-2000, 2000)
+        table.insert(islands, {x = x, y = y})
+        island = {}
+        island.body = love.physics.newBody(world, x, y)
+        island.shape = love.physics.newCircleShape(250)
+        island.fixture = love.physics.newFixture(island.body, island.shape)
     end
 
-    --objects.floor = {}
-    --objects.floor.body = love.physics.newBody(world, 0, 2000)
-    --objects.floor.shape = love.physics.newRectangleShape(10000, 10)
-    --objects.floor.fixture = love.physics.newFixture(objects.floor.body, objects.floor.shape)
-    --objects.floor.fixture:setFriction(1)
 
     --love.audio.play(music.fushing)
 
@@ -128,26 +130,27 @@ function love.update(dt)
 
     speed = vector(ship.body:getLinearVelocity())
 
-    if love.keyboard.isDown("right") then
+    if love.keyboard.isDown("right")or love.keyboard.isDown("d")then
         if rudder > -math.pi/6 then
             rudder = rudder-dt*2
         end
     end
-    if love.keyboard.isDown("left") then
+    if love.keyboard.isDown("left") or love.keyboard.isDown("a") then
         if rudder < math.pi/6 then
             rudder = rudder+dt*2
         end
     end
-    if love.keyboard.isDown("d") then
-        if sail > -math.pi/2 then
-            sail = sail-dt*2
-        end
-    end
-    if love.keyboard.isDown("a") then
-        if sail < math.pi/2 then
-            sail = sail+dt*2
-        end
-    end
+
+    --if love.keyboard.isDown("d") then
+    --    if sail > -math.pi/2 then
+    --        sail = sail-dt*2
+    --    end
+    --end
+    --if love.keyboard.isDown("a") then
+    --    if sail < math.pi/2 then
+    --        sail = sail+dt*2
+    --    end
+    --end
 
     while sail > math.pi do
         sail = sail - 2*math.pi
@@ -157,7 +160,7 @@ function love.update(dt)
     end
 
     wind = vector(0, -10)
-    relativewind = wind-- - speed
+    relativewind = wind - speed/20
 
     forward = vector(math.cos(ship.body:getAngle()-math.pi/2), math.sin(ship.body:getAngle()-math.pi/2))
 
@@ -176,8 +179,10 @@ function love.update(dt)
 
     if ang > 0 then
         forcedir = sailvector:rotated(math.pi/2):normalized()
+        flip = -1
     else
         forcedir = sailvector:rotated(-math.pi/2):normalized()
+        flip = 1
     end
 
     forceamount = math.abs(sailvector:projectOn(relativewind:rotated(math.pi/2)):len())*relativewind:len()
@@ -198,9 +203,13 @@ function love.update(dt)
     x, y = ship.body:getWorldPoints(0, 0)
     for i,island in ipairs(islands) do
         if vector(island.x, island.y):dist(vector(x, y)) < 300 then
-            table.remove(islands, i)
+            --table.remove(islands, i)
         end
     end
+
+    mouse = vector(camera:worldCoords(love.mouse.getPosition()))
+    d = vector(x, y) - mouse
+    sail = math.atan2(d.y, d.x) - ship.body:getAngle() + math.pi/2
 
     --table.insert(trail, pos:clone())
     --trail = table.slice(trail, #trail-100, #trail)
@@ -242,14 +251,15 @@ function love.draw()
 
     love.graphics.setColor(255, 255, 255)
     --love.graphics.line(x, y, x+sailvector.x, y+sailvector.y)
-    love.graphics.draw(images.sail, x, y, abssail-math.pi/2, 1, 1, 0, 0)
+    love.graphics.draw(images.sail, x, y, abssail-math.pi/2, flip*(0.5+force:len()/1000), 1, 0, 0)
 
     for i,island in ipairs(islands) do
-        love.graphics.rectangle("fill", island.x, island.y, 200, 200)
+        --love.graphics.rectangle("fill", island.x, island.y, 200, 200)
+        love.graphics.draw(images.island, island.x, island.y, 0, 1, 1, images.island:getWidth()/2, images.island:getHeight()/2)
     end
 
-    --love.graphics.setColor(0, 255, 0)
-    --love.graphics.line(x, y, x+forwardforce.x, y+forwardforce.y)
+    love.graphics.setColor(0, 255, 0)
+    love.graphics.line(x, y, x+forwardforce.x, y+forwardforce.y)
 
     --love.graphics.setColor(0, 0, 255)
     --love.graphics.line(x, y, x+force.x, y+force.y)
