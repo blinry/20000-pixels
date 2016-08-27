@@ -216,12 +216,14 @@ function love.draw()
         end
     end
 
-    love.graphics.setColor(50, 50, 50)
-    love.graphics.polygon("fill", ship.body:getWorldPoints(ship.shape:getPoints()))
-
     x, y = ship.body:getPosition()
+
     love.graphics.setColor(255, 255, 255)
-    love.graphics.line(x, y, x+sailvector.x, y+sailvector.y)
+    love.graphics.draw(images.ship, x, y, ship.body:getAngle(), 1, 1, images.ship:getWidth()/2, images.ship:getHeight()/2.5)
+
+    love.graphics.setColor(255, 255, 255)
+    --love.graphics.line(x, y, x+sailvector.x, y+sailvector.y)
+    love.graphics.draw(images.sail, x, y, abssail-math.pi/2, 1, 1, 0, 0)
 
     love.graphics.setColor(0, 255, 0)
     love.graphics.line(x, y, x+forwardforce.x, y+forwardforce.y)
