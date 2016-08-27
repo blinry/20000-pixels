@@ -97,6 +97,7 @@ function love.load()
     sail = 0
     rudder = 0
     flip = 1
+	anchor = 0
 
     islands = {}
     for i = 1,10 do
@@ -154,6 +155,21 @@ function love.update(dt)
             rudder = rudder+dt*2
         end
     end
+	
+	if love.keyboard.isDown("down") or love.keyboard.isDown("s") then
+		--if ship.body:getLinearVelocity() < 1 then
+			timer = love.timer.getTime()
+			anchor = 1
+		--end
+	end
+	
+	if love.keyboard.isDown("up") or love.keyboard.isDown("w") then
+		--if love.timer.getTime() >  timer + 3 then
+			anchor = 0
+		--end
+	end
+	
+	
 
     --if love.keyboard.isDown("d") then
     --    if sail > -math.pi/2 then
@@ -200,7 +216,10 @@ function love.update(dt)
     forwardforce = forwardforce + forward*700
 
     x, y = ship.body:getWorldPoints(0, 0)
-    ship.body:applyForce(forwardforce.x, forwardforce.y, x, y)
+	
+	if anchor == 0 then
+		ship.body:applyForce(forwardforce.x, forwardforce.y, x, y)
+	end
 
     -- damping
     x, y = ship.body:getLinearVelocity()
@@ -273,12 +292,19 @@ function love.draw()
 
     love.graphics.setColor(255, 255, 255)
     love.graphics.draw(images.ship, x, y, ship.body:getAngle(), 1, 1, images.ship:getWidth()/2, images.ship:getHeight()/2.5)
-
+	
     love.graphics.setColor(255, 255, 255)
     --love.graphics.line(x, y, x+sailvector.x, y+sailvector.y)
     love.graphics.draw(images.sail, x, y, abssail-math.pi/2, flip*(0.5+force:len()/1000), 1, 0, 0)
 
-    for i,island in ipairs(islands) do
+	if anchor == 1 then
+		love.graphics.setColor(255, 255, 255)
+		 x, y = ship.body:getWorldPoints(0, 180)
+		love.graphics.draw(images.anchor, x, y, ship.body:getAngle(), 1, 1, 0, 0)
+	end
+
+	
+	for i,island in ipairs(islands) do
         --love.graphics.rectangle("fill", island.x, island.y, 200, 200)
         love.graphics.draw(images.island, island.x, island.y, 0, 1, 1, images.island:getWidth()/2, images.island:getHeight()/2)
     end
