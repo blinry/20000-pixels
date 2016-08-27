@@ -90,6 +90,12 @@ function love.load()
     ship.body:setInertia(100000)
 
     sail = 0
+    rudder = 0
+
+    islands = {}
+    for i = 1,10 do
+        table.insert(islands, {x = love.math.random(-2000, 2000), y = love.math.random(-2000, 2000)})
+    end
 
     --objects.floor = {}
     --objects.floor.body = love.physics.newBody(world, 0, 2000)
@@ -113,9 +119,6 @@ function love.load()
     ----ps:setSizeVariation(1)
     --ps:setLinearAcceleration(-40, -40, 40, 40) -- Random movement in all directions.
     --ps:setColors(255, 255, 255, 255, 255, 255, 255, 0) -- Fade to transparency.
-
-    --love.window.setMode(800,600)
-    love.window.setFullscreen(true)
 end
 
 function love.update(dt)
@@ -125,11 +128,15 @@ function love.update(dt)
 
     speed = vector(ship.body:getLinearVelocity())
 
-    if love.keyboard.isDown("left") then
-        ship.body:applyTorque(-1000*speed:len())
-    end
     if love.keyboard.isDown("right") then
-        ship.body:applyTorque(1000*speed:len())
+        if rudder > -math.pi/6 then
+            rudder = rudder-dt*2
+        end
+    end
+    if love.keyboard.isDown("left") then
+        if rudder < math.pi/6 then
+            rudder = rudder+dt*2
+        end
     end
     if love.keyboard.isDown("d") then
         if sail > -math.pi/2 then
@@ -186,6 +193,15 @@ function love.update(dt)
     v = ship.body:getAngularVelocity()
     ship.body:applyTorque(-100000*v)
 
+    ship.body:applyTorque(-rudder*1000*speed:len())
+
+    x, y = ship.body:getWorldPoints(0, 0)
+    for i,island in ipairs(islands) do
+        if vector(island.x, island.y):dist(vector(x, y)) < 300 then
+            table.remove(islands, i)
+        end
+    end
+
     --table.insert(trail, pos:clone())
     --trail = table.slice(trail, #trail-100, #trail)
 
@@ -216,6 +232,9 @@ function love.draw()
         end
     end
 
+    x, y = ship.body:getWorldPoints(0, 150)
+    love.graphics.draw(images.rudder, x, y, rudder+ship.body:getAngle(), 0.3, 0.3, images.rudder:getWidth()/2, 0)
+
     x, y = ship.body:getPosition()
 
     love.graphics.setColor(255, 255, 255)
@@ -225,11 +244,15 @@ function love.draw()
     --love.graphics.line(x, y, x+sailvector.x, y+sailvector.y)
     love.graphics.draw(images.sail, x, y, abssail-math.pi/2, 1, 1, 0, 0)
 
-    love.graphics.setColor(0, 255, 0)
-    love.graphics.line(x, y, x+forwardforce.x, y+forwardforce.y)
+    for i,island in ipairs(islands) do
+        love.graphics.rectangle("fill", island.x, island.y, 200, 200)
+    end
 
-    love.graphics.setColor(0, 0, 255)
-    love.graphics.line(x, y, x+force.x, y+force.y)
+    --love.graphics.setColor(0, 255, 0)
+    --love.graphics.line(x, y, x+forwardforce.x, y+forwardforce.y)
+
+    --love.graphics.setColor(0, 0, 255)
+    --love.graphics.line(x, y, x+force.x, y+force.y)
 
     --love.graphics.draw(ps, 0, 0)
 
@@ -242,5 +265,15 @@ function love.draw()
     --end
 
     camera:detach()
+
+    love.graphics.circle("fill", 200, 200, 200, 64)
+
+    for i,island in ipairs(islands) do
+        v = vector(island.x, island.y) - vector(ship.body:getPosition())
+        p = vector(200, 200) + v:normalized()*200
+        d = v:len()
+        love.graphics.setColor(255, 0, 0)
+        love.graphics.circle("fill", p.x, p.y, 30-1/100*d, 32)
+    end
 end
 
