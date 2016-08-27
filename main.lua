@@ -93,20 +93,29 @@ function love.load()
     ship.body:setMass(10)
     ship.fixture:setFriction(0)
     ship.fixture2:setFriction(0)
+    ship.body:setPosition(500, 0)
 
     sail = 0
     rudder = 0
     flip = 1
 	anchor = 0
 
+    wind = vector(0, -50)
+
+    beach = {}
+    beach.body = love.physics.newBody(world, 0, 0)
+    beach.shape = love.physics.newRectangleShape(1,20000000)
+    beach.fixture = love.physics.newFixture(beach.body, beach.shape)
+    beach.fixture:setFriction(0)
+
     islands = {}
-    for i = 1,10 do
-        x = love.math.random(-2000, 2000)
+    for i = 1,20 do
+        x = love.math.random(1000, 5000)
         y = love.math.random(-2000, 2000)
         table.insert(islands, {x = x, y = y})
         island = {}
         island.body = love.physics.newBody(world, x, y)
-        island.shape = love.physics.newCircleShape(250)
+        island.shape = love.physics.newCircleShape(150)
         island.fixture = love.physics.newFixture(island.body, island.shape)
         island.fixture:setFriction(0)
     end
@@ -127,20 +136,20 @@ function love.load()
 
     love.graphics.setFont(fonts.lobster[50])
 
-    trail = {}
+    love.graphics.setBackgroundColor(0, 0, 200)
 
-    --ps = love.graphics.newParticleSystem(images.bunny, 20)
-    --ps:setParticleLifetime(1, 3) -- Particles live at least 2s and at most 5s.
-    --ps:setEmissionRate(10)
-    --ps:setSizes(0,1)
-    ----ps:setSizeVariation(1)
+    ps = love.graphics.newParticleSystem(images.wake, 100)
+    ps:setParticleLifetime(3, 5) -- Particles live at least 2s and at most 5s.
+    ps:setEmissionRate(10)
+    ps:setSizes(3,6)
+    --ps:setSizeVariation(1)
     --ps:setLinearAcceleration(-40, -40, 40, 40) -- Random movement in all directions.
-    --ps:setColors(255, 255, 255, 255, 255, 255, 255, 0) -- Fade to transparency.
+    ps:setColors(255, 255, 255, 255, 255, 255, 255, 0) -- Fade to transparency.
 end
 
 function love.update(dt)
     Timer.update(dt)
-    --ps:update(dt)
+    ps:update(dt)
     world:update(dt)
 
     speed = vector(ship.body:getLinearVelocity())
@@ -182,7 +191,6 @@ function love.update(dt)
     --    end
     --end
 
-    wind = vector(0, -50)
     relativewind = wind - speed/20
 
     forward = vector(math.cos(ship.body:getAngle()-math.pi/2), math.sin(ship.body:getAngle()-math.pi/2))
@@ -237,10 +245,16 @@ function love.update(dt)
     end
 
     for i,person in ipairs(people) do
-        if vector(person.x, person.y):dist(vector(x, y)) < 300 then
+        if vector(person.x, person.y):dist(vector(x, y)) < 300 and anchor == 1 and person.x > 0 then
             person.boarded = true
             person.x = love.math.random(-20, 20)
             person.y = love.math.random(-20, 20)
+        end
+
+        if person.boarded and anchor == 1 and x < 200 then
+            person.boarded = false
+            person.x = love.math.random(-400, -50)
+            person.y = y + love.math.random(-100, 100)
         end
     end
 
@@ -255,10 +269,13 @@ function love.update(dt)
         sail = sail + math.pi
     end
 
+    wind = wind:rotated((love.math.random()-0.5)*0.01)
+    wind = wind:normalized()*(40+40*math.sin(love.timer.getTime()/5))
+
     --table.insert(trail, pos:clone())
     --trail = table.slice(trail, #trail-100, #trail)
 
-    --ps:setPosition(pos.x, pos.y)
+    ps:setPosition(ship.body:getWorldPoints(0, 150))
 
     --cx, cy = camera:position()
     --cp = vector(cx, cy)
@@ -279,11 +296,20 @@ function love.draw()
     camera:attach()
 
     love.graphics.setColor(255,255,255)
-    for x = -10,10 do
-        for y = -10,10 do
+    x, y = camera:worldCoords(0, 0)
+    xx = math.floor(x/images.ocean:getWidth())
+    yy = math.floor(y/images.ocean:getWidth())
+    for x = xx-1,xx+3 do
+        for y = yy-1,yy+3 do
             love.graphics.draw(images.ocean, images.ocean:getWidth()*x, images.ocean:getHeight()*y)
         end
     end
+
+    love.graphics.setColor(255, 255, 0)
+    love.graphics.rectangle("fill", -5000, -10000000, 5000, 20000000)
+
+    love.graphics.setColor(255, 255, 255)
+    love.graphics.draw(ps, 0, 0)
 
     x, y = ship.body:getWorldPoints(0, 150)
     love.graphics.draw(images.rudder, x, y, rudder+ship.body:getAngle(), 0.3, 0.3, images.rudder:getWidth()/2, 0)
@@ -292,10 +318,6 @@ function love.draw()
 
     love.graphics.setColor(255, 255, 255)
     love.graphics.draw(images.ship, x, y, ship.body:getAngle(), 1, 1, images.ship:getWidth()/2, images.ship:getHeight()/2.5)
-	
-    love.graphics.setColor(255, 255, 255)
-    --love.graphics.line(x, y, x+sailvector.x, y+sailvector.y)
-    love.graphics.draw(images.sail, x, y, abssail-math.pi/2, flip*(0.5+force:len()/1000), 1, 0, 0)
 
 	if anchor == 1 then
 		love.graphics.setColor(255, 255, 255)
@@ -309,13 +331,12 @@ function love.draw()
         love.graphics.draw(images.island, island.x, island.y, 0, 1, 1, images.island:getWidth()/2, images.island:getHeight()/2)
     end
 
-    love.graphics.setColor(0, 255, 0)
-    love.graphics.line(x, y, x+forwardforce.x, y+forwardforce.y)
+    --love.graphics.setColor(0, 255, 0)
+    --love.graphics.line(x, y, x+forwardforce.x, y+forwardforce.y)
 
     --love.graphics.setColor(0, 0, 255)
     --love.graphics.line(x, y, x+force.x, y+force.y)
 
-    --love.graphics.draw(ps, 0, 0)
 
     --for i,p in ipairs(trail) do
     --    if trail[i+1] then
@@ -333,6 +354,14 @@ function love.draw()
             love.graphics.draw(images.person, person.x, person.y, 0, 1, 1, images.person:getWidth()/2, images.person:getWidth()/2)
         end
     end
+	
+    x, y = ship.body:getPosition()
+    love.graphics.setColor(255, 255, 255)
+    --love.graphics.line(x, y, x+sailvector.x, y+sailvector.y)
+    love.graphics.draw(images.sail, x, y, abssail-math.pi/2, flip*(0.5+force:len()/4000), 1, 0, 0)
+
+    love.graphics.setColor(0, 0, 255)
+    love.graphics.line(x, y, x+wind.x, y+wind.y)
 
     camera:detach()
 
@@ -343,15 +372,28 @@ function love.draw()
         v = vector(island.x, island.y) - vector(ship.body:getPosition())
         p = vector(250, 250) + v:normalized()*250
         d = v:len()
-        s = 30-1/100*d
+        if d > 5000 then
+            s = 10
+        else
+            s = 30-1/250*d
+        end
         love.graphics.draw(images.island, p.x, p.y, 0, s*0.005, s*0.005, images.island:getWidth()/2, images.island:getHeight()/2)
     end
     for i,person in ipairs(people) do
-        v = vector(person.x, person.y) - vector(ship.body:getPosition())
-        p = vector(250, 250) + v:normalized()*250
-        d = v:len()
-        s = 30-1/100*d
-        love.graphics.draw(images.person, p.x, p.y, 0, s*0.04, s*0.04, images.person:getWidth()/2, images.person:getHeight()/2)
+        if not person.boarded then
+            v = vector(person.x, person.y) - vector(ship.body:getPosition())
+            p = vector(250, 250) + v:normalized()*250
+            d = v:len()
+            if d > 5000 then
+                s = 10
+            else
+                s = 30-1/250*d
+            end
+            love.graphics.draw(images.person, p.x, p.y, 0, s*0.04, s*0.04, images.person:getWidth()/2, images.person:getHeight()/2)
+        end
     end
+
+    --love.graphics.print(xx, 0, 0)
+    --love.graphics.print(yy, 0, 100)
 end
 
