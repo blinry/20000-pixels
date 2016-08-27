@@ -88,6 +88,7 @@ function love.load()
     ship.shape = love.physics.newRectangleShape(0, 50, 100, 200)
     ship.fixture = love.physics.newFixture(ship.body, ship.shape)
     ship.body:setInertia(100000)
+    ship.body:setMass(10)
 
     sail = 0
     rudder = 0
@@ -152,14 +153,7 @@ function love.update(dt)
     --    end
     --end
 
-    while sail > math.pi do
-        sail = sail - 2*math.pi
-    end
-    while sail < -math.pi do
-        sail = sail + 2*math.pi
-    end
-
-    wind = vector(0, -10)
+    wind = vector(0, -50)
     relativewind = wind - speed/20
 
     forward = vector(math.cos(ship.body:getAngle()-math.pi/2), math.sin(ship.body:getAngle()-math.pi/2))
@@ -186,15 +180,18 @@ function love.update(dt)
     end
 
     forceamount = math.abs(sailvector:projectOn(relativewind:rotated(math.pi/2)):len())*relativewind:len()
+
     force = forceamount*forcedir
     forwardforce = force:projectOn(forward)
+
+    forwardforce = forwardforce + forward*700
 
     x, y = ship.body:getWorldPoints(0, 0)
     ship.body:applyForce(forwardforce.x, forwardforce.y, x, y)
 
     -- damping
     x, y = ship.body:getLinearVelocity()
-    ship.body:applyForce(-x, -y)
+    ship.body:applyForce(-10*x, -10*y)
     v = ship.body:getAngularVelocity()
     ship.body:applyTorque(-100000*v)
 
@@ -210,6 +207,13 @@ function love.update(dt)
     mouse = vector(camera:worldCoords(love.mouse.getPosition()))
     d = vector(x, y) - mouse
     sail = math.atan2(d.y, d.x) - ship.body:getAngle() + math.pi/2
+
+    while sail > math.pi/2 do
+        sail = sail - math.pi
+    end
+    while sail < -math.pi/2 do
+        sail = sail + math.pi
+    end
 
     --table.insert(trail, pos:clone())
     --trail = table.slice(trail, #trail-100, #trail)
@@ -276,11 +280,12 @@ function love.draw()
 
     camera:detach()
 
-    love.graphics.circle("fill", 200, 200, 200, 64)
+    love.graphics.setColor(255, 255, 255)
+    love.graphics.draw(images.compass, 0, 0)
 
     for i,island in ipairs(islands) do
         v = vector(island.x, island.y) - vector(ship.body:getPosition())
-        p = vector(200, 200) + v:normalized()*200
+        p = vector(250, 250) + v:normalized()*250
         d = v:len()
         love.graphics.setColor(255, 0, 0)
         love.graphics.circle("fill", p.x, p.y, 30-1/100*d, 32)
