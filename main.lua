@@ -90,6 +90,7 @@ function love.load()
     ship.body:setInertia(100000)
 
     sail = 0
+    rudder = 0
 
     --objects.floor = {}
     --objects.floor.body = love.physics.newBody(world, 0, 2000)
@@ -113,9 +114,6 @@ function love.load()
     ----ps:setSizeVariation(1)
     --ps:setLinearAcceleration(-40, -40, 40, 40) -- Random movement in all directions.
     --ps:setColors(255, 255, 255, 255, 255, 255, 255, 0) -- Fade to transparency.
-
-    --love.window.setMode(800,600)
-    love.window.setFullscreen(true)
 end
 
 function love.update(dt)
@@ -125,11 +123,15 @@ function love.update(dt)
 
     speed = vector(ship.body:getLinearVelocity())
 
-    if love.keyboard.isDown("left") then
-        ship.body:applyTorque(-1000*speed:len())
-    end
     if love.keyboard.isDown("right") then
-        ship.body:applyTorque(1000*speed:len())
+        if rudder > -math.pi/6 then
+            rudder = rudder-dt*2
+        end
+    end
+    if love.keyboard.isDown("left") then
+        if rudder < math.pi/6 then
+            rudder = rudder+dt*2
+        end
     end
     if love.keyboard.isDown("d") then
         if sail > -math.pi/2 then
@@ -186,6 +188,8 @@ function love.update(dt)
     v = ship.body:getAngularVelocity()
     ship.body:applyTorque(-100000*v)
 
+    ship.body:applyTorque(-rudder*1000*speed:len())
+
     --table.insert(trail, pos:clone())
     --trail = table.slice(trail, #trail-100, #trail)
 
@@ -215,6 +219,9 @@ function love.draw()
             love.graphics.draw(images.ocean, images.ocean:getWidth()*x, images.ocean:getHeight()*y)
         end
     end
+
+    x, y = ship.body:getWorldPoints(0, 250)
+    love.graphics.draw(images.rudder, x, y, rudder+ship.body:getAngle(), 0.5, 0.5, images.rudder:getWidth()/2, 0)
 
     x, y = ship.body:getPosition()
 
