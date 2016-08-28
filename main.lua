@@ -329,7 +329,6 @@ function love.keypressed(key)
     elseif key == "f11" then
         fs, fstype = love.window.getFullscreen()
         if fs then
-            love.window.setFullscreen(false)
             love.window.setMode(1280, 1024)
         else
             love.window.setFullscreen(true)
@@ -349,10 +348,18 @@ function love.draw()
             love.graphics.draw(images.ocean, images.ocean:getWidth()*x, images.ocean:getHeight()*y)
         end
     end
-
-    love.graphics.setColor(255, 255, 0)
-    love.graphics.rectangle("fill", -5000, -10000000, 5000, 20000000)
-
+	
+	love.graphics.setColor(255, 248, 0)
+    love.graphics.rectangle("fill", -5500, -10000000, 5000, 20000000)
+	
+	love.graphics.setColor(255,255,255)
+	x, y = camera:worldCoords(0, 0)
+	x = -images.beach:getWidth() + 200
+    yy = math.floor(y/images.beach:getHeight())
+	for y = yy-1,yy+6 do
+		love.graphics.draw(images.beach, x, images.beach:getHeight()*y)
+    end
+	
     love.graphics.setColor(255, 255, 255)
     love.graphics.draw(ps, 0, 0)
 
