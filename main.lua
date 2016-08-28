@@ -94,7 +94,7 @@ function love.load()
     fonts = {}
     for i,filename in pairs(love.filesystem.getDirectoryItems("fonts")) do
         fonts[filename:sub(1,-5)] = {}
-        for size = 50,200,50 do
+        for size = 30,30,1 do
             fonts[filename:sub(1,-5)][size] = love.graphics.newFont("fonts/"..filename, size)
         end
     end
@@ -152,8 +152,9 @@ function love.load()
 
     camera = Camera(300, 300)
     camera.smoother = Camera.smooth.damped(3)
+    camera:zoom(0.5)
 
-    love.graphics.setFont(fonts.lobster[50])
+    love.graphics.setFont(fonts.lobster[30])
 
     love.graphics.setBackgroundColor(0, 0, 200)
 
@@ -403,7 +404,7 @@ function love.draw()
     camera:detach()
 
     love.graphics.setColor(255, 255, 255)
-    love.graphics.draw(images.compass, 0, 0)
+    love.graphics.draw(images.compass, 0, 0, 0, 0.6, 0.6)
 
     --for i,island in ipairs(islands) do
     --    v = vector(island.x, island.y) - vector(ship.body:getPosition())
@@ -419,12 +420,12 @@ function love.draw()
     for i,person in ipairs(people) do
         if not person.boarded then
             v = vector(person.x, person.y) - vector(ship.body:getPosition())
-            p = vector(250, 250) + v:normalized()*250
+            p = vector(150, 150) + v:normalized()*150
             d = v:len()
             if d > 5000 then
-                s = 10
+                s = 7
             else
-                s = 30-1/250*d
+                s = 20-1/500*d
             end
             love.graphics.setColor(person.r, person.g, person.b)
             love.graphics.draw(images.person, p.x, p.y, 0, s*0.04, s*0.04, images.person:getWidth()/2, images.person:getHeight()/2)
