@@ -4,6 +4,7 @@ Timer = require "hump.timer"
 Camera = require "hump.camera"
 
 savePerPhase = 1
+fontsize = 30
 
 -- Converts HSL to RGB. (input and output range: 0 - 255)
 function HSL(h, s, l, a)
@@ -74,6 +75,38 @@ function makePeople(layer)
     end
 end
 
+function say(text, now)
+    if now then
+        lines = {}
+    end
+    table.insert(lines, text)
+    if now then
+        line = text
+    end
+end
+
+function nextPhase()
+    if phase == 0 then
+        makePeople(1)
+        say("Welcome to a quick sailing lesson!")
+        say("You can turn your sail with your mouse.")
+        say("And you can steer your rudder with left/right or A/D.")
+        say("Finally, you can lift your anchor with up or W. Off you go!")
+        say("On the islands to the right, some people are waiting to be rescued!")
+        say("Drop your anchor next to an island, and they will board your ship.")
+        say("Then bring them back here and drop your anchor.")
+    elseif phase == 1 then
+        makePeople(2)
+        say("Save 5 MORE people to continue!")
+    elseif phase == 2 then
+        makePeople(3)
+        say("Save EVEN 5 MORE people to continue!")
+    elseif phase == 3 then
+    end
+
+    phase = phase + 1
+end
+
 function love.load()
     images = {}
     for i,filename in pairs(love.filesystem.getDirectoryItems("images")) do
@@ -94,9 +127,7 @@ function love.load()
     fonts = {}
     for i,filename in pairs(love.filesystem.getDirectoryItems("fonts")) do
         fonts[filename:sub(1,-5)] = {}
-        for size = 30,30,1 do
-            fonts[filename:sub(1,-5)][size] = love.graphics.newFont("fonts/"..filename, size)
-        end
+        fonts[filename:sub(1,-5)][fontsize] = love.graphics.newFont("fonts/"..filename, fontsize)
     end
 
     love.physics.setMeter(100)
@@ -117,11 +148,13 @@ function love.load()
     sail = 0
     rudder = 0
     flip = 1
-	anchor = 0
+	anchor = 1
+    line = "Loading..."
+    lines = {}
 
     wind = vector(0, -80)
 
-    phase = 1
+    phase = 0
 
     beach = {}
     beach.body = love.physics.newBody(world, 0, 0)
@@ -145,7 +178,6 @@ function love.load()
     end
 
     people = {}
-    makePeople(1)
     saved = 0
 
     --love.audio.play(music.fushing)
@@ -154,7 +186,7 @@ function love.load()
     camera.smoother = Camera.smooth.damped(3)
     camera:zoom(0.5)
 
-    love.graphics.setFont(fonts.lobster[30])
+    love.graphics.setFont(fonts.lobster[fontsize])
 
     love.graphics.setBackgroundColor(0, 0, 200)
 
@@ -211,7 +243,7 @@ function love.update(dt)
     --    end
     --end
 
-    relativewind = wind - speed/20
+    relativewind = wind - speed/5
 
     forward = vector(math.cos(ship.body:getAngle()-math.pi/2), math.sin(ship.body:getAngle()-math.pi/2))
 
@@ -279,12 +311,14 @@ function love.update(dt)
         end
     end
     if phase == 1 and saved >= savePerPhase then
-        phase = 2
-        makePeople(2)
+        nextPhase()
     end
     if phase == 2 and saved >= savePerPhase*2 then
-        phase = 3
-        makePeople(3)
+        nextPhase()
+    end
+    if phase == 3 and saved >= savePerPhase*3 then
+        nextPhase()
+        say("Travel east! Here be dragons!")
     end
 
     mouse = vector(camera:worldCoords(love.mouse.getPosition()))
@@ -300,9 +334,9 @@ function love.update(dt)
 
     rudder = rudder*0.9
 
-    if phase > 1 then
-        wind = wind:rotated((love.math.random()-0.5)*0.01)
-        wind = wind:normalized()*(80+20*math.sin(love.timer.getTime()/5))
+    if true or phase > 1 then
+        wind = wind:rotated((love.math.random()-0.5)*0.1)
+        wind = wind:normalized()*(100+20*math.sin(love.timer.getTime()/5))
     end
 
     --table.insert(trail, pos:clone())
@@ -330,10 +364,20 @@ function love.keypressed(key)
         fs, fstype = love.window.getFullscreen()
         if fs then
             love.window.setFullscreen(false)
-            love.window.setMode(1280, 1024)
+            love.window.setMode(1280, 720)
         else
             love.window.setFullscreen(true)
         end
+    end
+end
+
+function love.mousepressed(x, y, button, touch)
+    if phase == 0 then
+        nextPhase()
+    end
+    if #lines > 0 then
+        line = lines[1]
+        table.remove(lines, 1)
     end
 end
 
@@ -412,7 +456,9 @@ function love.draw()
     camera:detach()
 
     love.graphics.setColor(255, 255, 255)
-    love.graphics.draw(images.compass, 0, 0, 0, 0.6, 0.6)
+    ch = 250
+    cf = 250/500
+    love.graphics.draw(images.compass, 20, 20, 0, cf, cf)
 
     --for i,island in ipairs(islands) do
     --    v = vector(island.x, island.y) - vector(ship.body:getPosition())
@@ -426,20 +472,39 @@ function love.draw()
     --    love.graphics.draw(images.island, p.x, p.y, 0, s*0.005, s*0.005, images.island:getWidth()/2, images.island:getHeight()/2)
     --end
     for i,person in ipairs(people) do
-        if not person.boarded then
+        if not person.boarded and person.x > 0 then
             v = vector(person.x, person.y) - vector(ship.body:getPosition())
-            p = vector(150, 150) + v:normalized()*150
+            p = vector(ch/2+20, ch/2+20) + v:normalized()*ch/2
             d = v:len()
             if d > 5000 then
                 s = 7
             else
-                s = 20-1/500*d
+                s = 20-(20-7)/5000*d
             end
             love.graphics.setColor(person.r, person.g, person.b)
             love.graphics.draw(images.person, p.x, p.y, 0, s*0.04, s*0.04, images.person:getWidth()/2, images.person:getHeight()/2)
         end
     end
 
-    love.graphics.setColor(0, 0, 0)
-    love.graphics.print("People saved: "..saved, 0, 600)
+    --love.graphics.setColor(0, 0, 0)
+    --love.graphics.print("People saved: "..saved, 0, 600)
+
+    if phase > 0 then
+        if #lines > 0 then
+            text = line.." (Click to continue)"
+        else
+            text = line
+        end
+        w, h, flags = love.window.getMode()
+        border = 20
+        love.graphics.setColor(0, 0, 0, 100)
+        love.graphics.rectangle("fill", 0, h-2*border-fontsize, w, 2*border+fontsize)
+        love.graphics.setColor(255, 255, 255)
+        --love.graphics.print(line, border, h-border-fontsize)
+        love.graphics.printf(text, border, h-border-fontsize, w-2*border, "center")
+    end
+
+    if phase == 0 then
+        love.graphics.draw(images.title, 0, 0)
+    end
 end
