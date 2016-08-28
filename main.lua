@@ -4,7 +4,7 @@ Timer = require "hump.timer"
 Camera = require "hump.camera"
 
 savePerPhase = 1
-fontsize = 30
+fontsize = 35
 
 -- Converts HSL to RGB. (input and output range: 0 - 255)
 function HSL(h, s, l, a)
@@ -186,7 +186,7 @@ function love.load()
     camera.smoother = Camera.smooth.damped(3)
     camera:zoom(0.5)
 
-    love.graphics.setFont(fonts.lobster[fontsize])
+    love.graphics.setFont(fonts.unkempt[fontsize])
 
     love.graphics.setBackgroundColor(0, 0, 200)
 
@@ -499,7 +499,7 @@ function love.draw()
 
     if phase > 0 then
         if #lines > 0 then
-            text = line.." (Click to continue)"
+            text = line.."   >>"
         else
             text = line
         end
