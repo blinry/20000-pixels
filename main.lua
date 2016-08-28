@@ -3,7 +3,7 @@ vector = require "hump.vector"
 Timer = require "hump.timer"
 Camera = require "hump.camera"
 
-savePerPhase = 1
+savePerPhase = 5
 fontsize = 35
 
 -- Converts HSL to RGB. (input and output range: 0 - 255)
@@ -99,13 +99,17 @@ end
 function nextPhase()
     if phase == 0 then
         makePeople(1)
-        say("Hello! Here's a 30-second sailing course! (Click to continue)")
+        say("Hello! Ready for a 30-second sailing course? (Click to continue)")
         say("Right now, you're anchored, so you can try out the controls safely.")
         say("You can turn the sail with your mouse.")
         say("See that little puff next to your sail? That's the wind direction.")
-        say("Right now, we have steady south wind.")
-        say("Okay, you can steer with A/D or left/right.")
-        say("Finally, you can drop or hoist the anchor with space.")
+        say("Currently, we have steady south wind.")
+        say("As a general rule, keep the sail at the side away from the wind.")
+        say("You cannot sail directly towards the wind, but you can zig-zag.")
+        say("I'm sure you'll figure out the rest yourself!")
+        say("You can steer with A/D or left/right.")
+        say("The faster you are the faster you turn.")
+        say("And finally, you can drop or hoist the anchor with space.")
         say("On the islands to the east, people are waiting to be rescued!")
         say("Do you see their positions in your compass?")
         say("Anchor next to an island to take them on board.")
@@ -113,10 +117,10 @@ function nextPhase()
     elseif phase == 1 then
         makePeople(2)
         say("Well done! Thank you for rescuing those poor souls! (Click to continue)", true)
-        say("But we have some bad news, I'm afraid.")
+        say("But I have some bad news, I'm afraid.")
         say("More people went missing on an island group further to the east!")
         say("What's worse, the wind seems to have picked up.")
-        say("So be aware of turbulencies and chaning wind directions!")
+        say("So be aware of turbulences and chaning wind directions!")
         say("Also, there are sea monsters out there!")
         say("They are not really dangerous, but they don't like to be rammed!")
         say("Please save all "..savePerPhase.." persons!")
@@ -133,10 +137,13 @@ function nextPhase()
         say("Old tales say that He is to be offered "..savePerPhase.." humans every 100 years.")
         say("This century has now passed, and He is hungry.")
         say("But please, if you're actually the hero you seem to be...")
-        say("Bring those "..savePerPhase.." people here safely!")
+        say("Bring those "..savePerPhase.." people back here safely!")
         say("Do not, I repeat, DO NOT feed them to The Kraken or anything.")
         say("Right?! Good luck out there!")
     elseif phase == 3 then
+        say("Well done! You saved them all! ")
+        say("Also, maybe, you now have some intuition for the physics of sailing.")
+        say("Or do you? Let us know! Thanks for playing! :)")
     end
 
     phase = phase + 1
@@ -239,6 +246,7 @@ function love.load()
 
     people = {}
     saved = 0
+    offered = 0
 
     monsters = {}
     for i = 1,10 do
@@ -320,7 +328,7 @@ function love.update(dt)
     --    end
     --end
 
-    relativewind = wind - speed/5
+    relativewind = wind - speed/10
 
     forward = vector(math.cos(ship.body:getAngle()-math.pi/2), math.sin(ship.body:getAngle()-math.pi/2))
 
@@ -389,6 +397,19 @@ function love.update(dt)
 
         if person.status == "boarded" and vector(x, y):dist(vector(kraken.body:getPosition())) < 600 then
             table.remove(people, i)
+            if offered == 0 then
+                say("Oh no, what are you doing?", true)
+            end
+            if offered+1 < savePerPhase then
+                say("Please stop! :'-(", true)
+            end
+            if offered+1 >= savePerPhase then
+                say("You... you monster. I hope you are happy.", true)
+                say("I guess at least you made The Kraken happy...")
+                say("Also, maybe, you now have some intuition for the physics of sailing.")
+                say("Or do you? Let us know! Thanks for playing! :)")
+            end
+            offered = offered + 1
         end
     end
     if phase == 1 and saved >= savePerPhase then
@@ -422,7 +443,7 @@ function love.update(dt)
     rudder = rudder*0.9
 
     if phase > 1 then
-        wind = wind:rotated((love.math.random()-0.5)*0.01)
+        wind = wind:rotated((love.math.random()-0.5)*0.03)
         wind = wind:normalized()*(100+20*math.sin(love.timer.getTime()/5))
     end
 
@@ -487,6 +508,8 @@ function love.mousepressed(x, y, button, touch)
     if #lines > 0 then
         line = lines[1]
         table.remove(lines, 1)
+    else
+        line = null
     end
     if button == 2 then
         x, y = camera:worldCoords(x, y)
@@ -623,13 +646,9 @@ function love.draw()
     --love.graphics.setColor(0, 0, 0)
     --love.graphics.print("People saved: "..saved, 0, 600)
 
-    if phase > 0 then
-        if #lines > 0 then
-            text = line.."   >>"
-        else
-            text = line
-        end
-        w, h, flags = love.window.getMode()
+    w, h, flags = love.window.getMode()
+    if phase > 0 and line then
+        text = line.."   >>"
         border = 20
         love.graphics.setColor(0, 0, 0, 100)
         love.graphics.rectangle("fill", 0, h-2*border-fontsize, w, 2*border+fontsize)
@@ -639,6 +658,6 @@ function love.draw()
     end
 
     if phase == 0 then
-        love.graphics.draw(images.title, 0, 0)
+        love.graphics.draw(images.title, w/2-images.title:getWidth()/2, h/2-images.title:getHeight()/2)
     end
 end
