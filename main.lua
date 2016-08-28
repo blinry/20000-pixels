@@ -215,8 +215,19 @@ function love.load()
         monster.fixture = love.physics.newFixture(monster.body, monster.shape)
         monster.fixture:setFriction(0)
         monster.body:setMass(10)
+        monster.type = "seamonster"
         table.insert(monsters, monster)
     end
+    kraken = {}
+    kraken.x = love.math.random(13000, 17000)
+    kraken.y = love.math.random(-6000, 6000)
+    kraken.body = love.physics.newBody(world, kraken.x, kraken.y, "dynamic")
+    kraken.shape = love.physics.newCircleShape(300)
+    kraken.fixture = love.physics.newFixture(kraken.body, kraken.shape)
+    kraken.fixture:setFriction(0)
+    kraken.body:setMass(10)
+    kraken.type = "kraken"
+    table.insert(monsters, kraken)
 
     --love.audio.play(music.fushing)
 
@@ -323,7 +334,7 @@ function love.update(dt)
     end
 
     for i,person in ipairs(people) do
-        if vector(person.x, person.y):dist(vector(x, y)) < 300 and anchor == 1 and person.x > 0 then
+        if vector(person.x, person.y):dist(vector(x, y)) < 400 and anchor == 1 and person.x > 0 then
             person.boarded = true
             person.x = love.math.random(-20, 20)
             person.y = love.math.random(-20, 20)
@@ -334,6 +345,10 @@ function love.update(dt)
             person.x = love.math.random(-400, -50)
             person.y = y + love.math.random(-100, 100)
             saved = saved + 1
+        end
+
+        if person.boarded and vector(x, y):dist(vector(kraken.body:getPosition())) < 600 then
+            table.remove(people, i)
         end
     end
     if phase == 1 and saved >= savePerPhase then
@@ -360,7 +375,7 @@ function love.update(dt)
 
     rudder = rudder*0.9
 
-    if true or phase > 1 then
+    if phase > 1 then
         wind = wind:rotated((love.math.random()-0.5)*0.01)
         wind = wind:normalized()*(100+20*math.sin(love.timer.getTime()/5))
     end
@@ -510,7 +525,11 @@ function love.draw()
     for i,monster in ipairs(monsters) do
         x, y = monster.body:getPosition()
         love.graphics.setColor(255, 255, 255)
-        love.graphics.draw(images.seamonster, x, y, 0, 1, 1, images.seamonster:getWidth()/2, images.seamonster:getWidth()/2)
+        if monster.type == "kraken" then
+            love.graphics.draw(images.kraken, x, y, 0, 1, 1, images.kraken:getWidth()/2, images.kraken:getWidth()/2)
+        else
+            love.graphics.draw(images.seamonster, x, y, 0, 1, 1, images.seamonster:getWidth()/2, images.seamonster:getWidth()/2)
+        end
         --love.graphics.rectangle("fill", x, y, 1000, 1000)
     end
 
