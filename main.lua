@@ -217,18 +217,6 @@ function love.update(dt)
         end
     end
 	
-	if love.keyboard.isDown("down") or love.keyboard.isDown("s") then
-		--if ship.body:getLinearVelocity() < 1 then
-			timer = love.timer.getTime()
-			anchor = 1
-		--end
-	end
-	
-	if love.keyboard.isDown("up") or love.keyboard.isDown("w") then
-		--if love.timer.getTime() >  timer + 3 then
-			anchor = 0
-		--end
-	end
 	
 	
 
@@ -344,11 +332,13 @@ function love.update(dt)
 
     ps:setPosition(ship.body:getWorldPoints(0, 150))
 
-    --cx, cy = camera:position()
-    --cp = vector(cx, cy)
-    --ccp = lerp(cp, pos, 2*dt)
+    cx, cy = camera:position()
+    cp = vector(cx, cy)
     x, y = ship.body:getPosition()
-    camera:lookAt(x, y)
+    dx, dy = ship.body:getLinearVelocity()
+    pos = vector(x+dx, y+dy)
+    ccp = lerp(cp, pos, 2*dt)
+    camera:lookAt(ccp.x, ccp.y)
 end
 
 function love.keypressed(key)
@@ -356,9 +346,9 @@ function love.keypressed(key)
         love.window.setFullscreen(false)
         love.timer.sleep(0.1)
         love.event.quit()
-    elseif key == "+" then
-        camera:zoom(0.5)
     elseif key == "-" then
+        camera:zoom(0.5)
+    elseif key == "+" then
         camera:zoom(2)
     elseif key == "f11" then
         fs, fstype = love.window.getFullscreen()
@@ -368,6 +358,10 @@ function love.keypressed(key)
         else
             love.window.setFullscreen(true)
         end
+    elseif key == "down" or key == "s" then
+        anchor = 1 - anchor
+    elseif key == "up" or key == "w" then
+        anchor = 1 - anchor
     end
 end
 
@@ -379,6 +373,8 @@ function love.mousepressed(x, y, button, touch)
         line = lines[1]
         table.remove(lines, 1)
     end
+    x, y = camera:worldCoords(x, y)
+    ship.body:setPosition(x, y)
 end
 
 function love.draw()
