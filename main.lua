@@ -587,6 +587,12 @@ function love.draw()
         else
             dy = -math.abs(20*math.sin(love.timer.getTime()*6))
             love.graphics.draw(images.person, person.x, person.y+dy, 0, 1, 1, images.person:getWidth()/2, images.person:getWidth()/2)
+			
+			if person.x < 0 then
+				love.graphics.draw(images.heart, person.x, person.y+dy-60, 0, 1, 1, images.heart:getWidth()/2, images.heart:getWidth()/2)
+			else
+				love.graphics.printf("HELP!", person.x - 40, person.y+dy-80,100, "left")
+			end
         end
     end
 	
