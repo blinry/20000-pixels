@@ -326,6 +326,14 @@ function love.keypressed(key)
         camera:zoom(0.5)
     elseif key == "-" then
         camera:zoom(2)
+    elseif key == "f11" then
+        fs, fstype = love.window.getFullscreen()
+        if fs then
+            love.window.setFullscreen(false)
+            love.window.setMode(1280, 1024)
+        else
+            love.window.setFullscreen(true)
+        end
     end
 end
 
@@ -336,8 +344,8 @@ function love.draw()
     x, y = camera:worldCoords(0, 0)
     xx = math.floor(x/images.ocean:getWidth())
     yy = math.floor(y/images.ocean:getWidth())
-    for x = xx-1,xx+3 do
-        for y = yy-1,yy+3 do
+    for x = xx-1,xx+6 do
+        for y = yy-1,yy+6 do
             love.graphics.draw(images.ocean, images.ocean:getWidth()*x, images.ocean:getHeight()*y)
         end
     end
