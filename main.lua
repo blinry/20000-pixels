@@ -161,6 +161,16 @@ function love.load()
     beach.shape = love.physics.newRectangleShape(1,20000000)
     beach.fixture = love.physics.newFixture(beach.body, beach.shape)
     beach.fixture:setFriction(0)
+    beach = {}
+    beach.body = love.physics.newBody(world, 0, -6000)
+    beach.shape = love.physics.newRectangleShape(20000000,1)
+    beach.fixture = love.physics.newFixture(beach.body, beach.shape)
+    beach.fixture:setFriction(0)
+    beach = {}
+    beach.body = love.physics.newBody(world, 0, 6000)
+    beach.shape = love.physics.newRectangleShape(20000000,1)
+    beach.fixture = love.physics.newFixture(beach.body, beach.shape)
+    beach.fixture:setFriction(0)
 
     islands = {}
     for l = 1,3 do
@@ -177,8 +187,35 @@ function love.load()
         end
     end
 
+    for x = 0,17000,400 do
+        island = {}
+        island.x = x
+        island.y = -6200
+        island.layer = 0
+        table.insert(islands, island)
+
+        island = {}
+        island.x = x
+        island.y = 6200
+        island.layer = 0
+        table.insert(islands, island)
+    end
+
     people = {}
     saved = 0
+
+    monsters = {}
+    for i = 1,10 do
+        monster = {}
+        monster.x = love.math.random(13000, 17000)
+        monster.y = love.math.random(-6000, 6000)
+        monster.body = love.physics.newBody(world, monster.x, monster.y, "dynamic")
+        monster.shape = love.physics.newCircleShape(100)
+        monster.fixture = love.physics.newFixture(monster.body, monster.shape)
+        monster.fixture:setFriction(0)
+        monster.body:setMass(10)
+        table.insert(monsters, monster)
+    end
 
     --love.audio.play(music.fushing)
 
@@ -239,7 +276,7 @@ function love.update(dt)
     abswind = math.atan2(wind.y, wind.x)
     ang = abswind - abssail
 
-    sailvector = vector(math.cos(sail+ship.body:getAngle()+math.pi/2)*50, math.sin(sail+ship.body:getAngle()+math.pi/2)*50)
+    sailvector = vector(math.cos(sail+ship.body:getAngle()+math.pi/2)*100, math.sin(sail+ship.body:getAngle()+math.pi/2)*100)
 
     while ang > math.pi do
         ang = ang - 2*math.pi
@@ -323,12 +360,20 @@ function love.update(dt)
     rudder = rudder*0.9
 
     if true or phase > 1 then
-        wind = wind:rotated((love.math.random()-0.5)*0.1)
+        wind = wind:rotated((love.math.random()-0.5)*0.01)
         wind = wind:normalized()*(100+20*math.sin(love.timer.getTime()/5))
     end
 
     --table.insert(trail, pos:clone())
     --trail = table.slice(trail, #trail-100, #trail)
+
+    for i,monster in ipairs(monsters) do
+        -- damping
+        x, y = monster.body:getLinearVelocity()
+        monster.body:applyForce(-2*x, -2*y)
+
+        monster.body:applyForce(love.math.random(-10000, 10000), love.math.random(-10000, 10000))
+    end
 
     ps:setPosition(ship.body:getWorldPoints(0, 150))
 
@@ -456,6 +501,13 @@ function love.draw()
 
     --love.graphics.setColor(0, 0, 255)
     love.graphics.draw(images.wind, x-wind.x+sailvector.x*2, y-wind.y+sailvector.y*2, abswind+math.pi/2, wind:len()/40, wind:len()/40, images.wind:getWidth()/2, images.wind:getHeight()/2)
+
+    for i,monster in ipairs(monsters) do
+        x, y = monster.body:getPosition()
+        love.graphics.setColor(0, 255, 0)
+        love.graphics.circle("fill", x, y, 100, 64)
+        --love.graphics.rectangle("fill", x, y, 1000, 1000)
+    end
 
     camera:detach()
 
