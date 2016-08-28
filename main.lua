@@ -504,8 +504,8 @@ function love.draw()
 
     for i,monster in ipairs(monsters) do
         x, y = monster.body:getPosition()
-        love.graphics.setColor(0, 255, 0)
-        love.graphics.circle("fill", x, y, 100, 64)
+        love.graphics.setColor(255, 255, 255)
+        love.graphics.draw(images.seamonster, x, y, 0, 1, 1, images.seamonster:getWidth()/2, images.seamonster:getWidth()/2)
         --love.graphics.rectangle("fill", x, y, 1000, 1000)
     end
 
