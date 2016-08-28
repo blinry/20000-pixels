@@ -473,6 +473,10 @@ function love.keypressed(key)
         end
     elseif key == "space" then
         anchor = 1 - anchor
+        if anchor == 1 then
+            love.audio.play(sounds.splash)
+        end
+
     end
 end
 
