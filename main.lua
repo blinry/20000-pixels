@@ -336,7 +336,7 @@ function love.update(dt)
     cp = vector(cx, cy)
     x, y = ship.body:getPosition()
     dx, dy = ship.body:getLinearVelocity()
-    pos = vector(x+dx, y+dy)
+    pos = vector(x+2*dx, y+2*dy)
     ccp = lerp(cp, pos, 2*dt)
     camera:lookAt(ccp.x, ccp.y)
 end
