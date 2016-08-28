@@ -151,6 +151,7 @@ function love.load()
 	anchor = 1
     line = "Loading..."
     lines = {}
+    zoom = 1
 
     wind = vector(0, -80)
 
@@ -210,7 +211,7 @@ function love.load()
         monster.x = love.math.random(13000, 17000)
         monster.y = love.math.random(-6000, 6000)
         monster.body = love.physics.newBody(world, monster.x, monster.y, "dynamic")
-        monster.shape = love.physics.newCircleShape(100)
+        monster.shape = love.physics.newCircleShape(150)
         monster.fixture = love.physics.newFixture(monster.body, monster.shape)
         monster.fixture:setFriction(0)
         monster.body:setMass(10)
@@ -384,6 +385,10 @@ function love.update(dt)
     pos = vector(x+2*dx, y+2*dy)
     ccp = lerp(cp, pos, 2*dt)
     camera:lookAt(ccp.x, ccp.y)
+
+    targetzoom = zoom*(0.8-speed:len()/1000)
+    z = lerp(camera.scale, targetzoom, dt)
+    camera:zoomTo(z)
 end
 
 function love.keypressed(key)
@@ -392,9 +397,9 @@ function love.keypressed(key)
         love.timer.sleep(0.1)
         love.event.quit()
     elseif key == "-" then
-        camera:zoom(0.5)
+        zoom = zoom/2
     elseif key == "+" then
-        camera:zoom(2)
+        zoom = zoom*2
     elseif key == "f11" then
         fs, fstype = love.window.getFullscreen()
         if fs then
