@@ -38,6 +38,16 @@ function lerp(a, b, t)
     return a + t*(b-a)
 end
 
+function range(value, min, max)
+    if value < min then
+        return 0
+    elseif value > max then
+        return 1
+    else
+        return (value-min)/(max-min)
+    end
+end
+
 function worldCoords(camera, x1, y1, x2, y2, x3, y3, x4, y4)
     a1, b1 = camera:worldCoords(x1, y1)
     a2, b2 = camera:worldCoords(x2, y2)
@@ -61,7 +71,7 @@ function cameraCoords(camera, x1, y1, x2, y2, x3, y3, x4, y4)
 end
 
 function makePeople(layer)
-    for i = 1,8 do
+    for i = 1,savePerPhase do
         repeat
             j = love.math.random(#islands)
         until islands[j].layer == layer
@@ -70,7 +80,7 @@ function makePeople(layer)
         person.x = islands[j].x + math.random(-100, 100)
         person.y = islands[j].y + math.random(0, 100)
         person.r, person.g, person.b = HSL(math.random(255), 255, 100)
-        person.boarded = false
+        person.status = "lost"
         table.insert(people, person)
     end
 end
@@ -79,28 +89,53 @@ function say(text, now)
     if now then
         lines = {}
     end
-    table.insert(lines, text)
     if now then
         line = text
+    else
+        table.insert(lines, text)
     end
 end
 
 function nextPhase()
     if phase == 0 then
         makePeople(1)
-        say("Welcome to a quick sailing lesson!")
-        say("You can turn your sail with your mouse.")
-        say("And you can steer your rudder with left/right or A/D.")
-        say("Finally, you can lift your anchor with up or W. Off you go!")
-        say("On the islands to the right, some people are waiting to be rescued!")
-        say("Drop your anchor next to an island, and they will board your ship.")
-        say("Then bring them back here and drop your anchor.")
+        say("Hello! Here's a 30-second sailing course! (Click to continue)")
+        say("Right now, you're anchored, so you can try out the controls safely.")
+        say("You can turn the sail with your mouse.")
+        say("See that little puff next to your sail? That's the wind direction.")
+        say("Right now, we have steady south wind.")
+        say("Okay, you can steer with A/D or left/right.")
+        say("Finally, you can drop or hoist the anchor with space.")
+        say("On the islands to the east, people are waiting to be rescued!")
+        say("Do you see their positions in your compass?")
+        say("Anchor next to an island to take them on board.")
+        say("Then bring all "..savePerPhase.." of them back here. Good luck!")
     elseif phase == 1 then
         makePeople(2)
-        say("Save 5 MORE people to continue!")
+        say("Well done! Thank you for rescuing those poor souls! (Click to continue)", true)
+        say("But we have some bad news, I'm afraid.")
+        say("More people went missing on an island group further to the east!")
+        say("What's worse, the wind seems to have picked up.")
+        say("So be aware of turbulencies and chaning wind directions!")
+        say("Also, there are sea monsters out there!")
+        say("They are not really dangerous, but they don't like to be rammed!")
+        say("Please save all "..savePerPhase.." persons!")
     elseif phase == 2 then
         makePeople(3)
-        say("Save EVEN 5 MORE people to continue!")
+        say("Awesome! I'm glad you got all of them back home safely!", true)
+        say("Well, um...")
+        say("There still are people out there.")
+        say("Since quite a while, actually.")
+        say("But noone has ever dared to rescue them.")
+        say("Because of...")
+        say("The Kraken!")
+        say("*shudder*")
+        say("Old tales say that He is to be offered "..savePerPhase.." humans every 100 years.")
+        say("This century has now passed, and He is hungry.")
+        say("But please, if you're actually the hero you seem to be...")
+        say("Bring those "..savePerPhase.." people here safely!")
+        say("Do not, I repeat, DO NOT feed them to The Kraken or anything.")
+        say("Right?! Good luck out there!")
     elseif phase == 3 then
     end
 
@@ -229,7 +264,12 @@ function love.load()
     kraken.type = "kraken"
     table.insert(monsters, kraken)
 
-    --love.audio.play(music.fushing)
+    soundtrack = love.audio.play(music.digya)
+    soundtrack:setVolume(0.5)
+    waves = love.audio.play(sounds.waves)
+    waves:setLooping(true)
+    wood = love.audio.play(sounds.wood)
+    wood:setLooping(true)
 
     camera = Camera(300, 300)
     camera.smoother = Camera.smooth.damped(3)
@@ -242,7 +282,7 @@ function love.load()
     ps = love.graphics.newParticleSystem(images.wake, 100)
     ps:setParticleLifetime(3, 5) -- Particles live at least 2s and at most 5s.
     ps:setEmissionRate(10)
-    ps:setSizes(3,6)
+    ps:setSizes(3,20)
     --ps:setSizeVariation(1)
     --ps:setLinearAcceleration(-40, -40, 40, 40) -- Random movement in all directions.
     ps:setColors(255, 255, 255, 255, 255, 255, 255, 0) -- Fade to transparency.
@@ -310,7 +350,7 @@ function love.update(dt)
     force = forceamount*forcedir
     forwardforce = force:projectOn(forward)
 
-    forwardforce = forwardforce + forward*700
+    forwardforce = forwardforce + forward*1500
 
     x, y = ship.body:getWorldPoints(0, 0)
 	
@@ -335,19 +375,19 @@ function love.update(dt)
 
     for i,person in ipairs(people) do
         if vector(person.x, person.y):dist(vector(x, y)) < 400 and anchor == 1 and person.x > 0 then
-            person.boarded = true
+            person.status = "boarded"
             person.x = love.math.random(-20, 20)
             person.y = love.math.random(-20, 20)
         end
 
-        if person.boarded and anchor == 1 and x < 200 then
-            person.boarded = false
+        if person.status == "boarded" and anchor == 1 and x < 200 then
+            person.status = "saved"
             person.x = love.math.random(-400, -50)
             person.y = y + love.math.random(-100, 100)
             saved = saved + 1
         end
 
-        if person.boarded and vector(x, y):dist(vector(kraken.body:getPosition())) < 600 then
+        if person.status == "boarded" and vector(x, y):dist(vector(kraken.body:getPosition())) < 600 then
             table.remove(people, i)
         end
     end
@@ -359,7 +399,6 @@ function love.update(dt)
     end
     if phase == 3 and saved >= savePerPhase*3 then
         nextPhase()
-        say("Travel east! Here be dragons!")
     end
 
     mouse = vector(camera:worldCoords(love.mouse.getPosition()))
@@ -371,6 +410,13 @@ function love.update(dt)
     end
     while sail < -math.pi do
         sail = sail + 2*math.pi
+    end
+
+    if sail > math.pi/2 then
+        sail = math.pi/2
+    end
+    if sail < -math.pi/2 then
+        sail = -math.pi/2
     end
 
     rudder = rudder*0.9
@@ -401,6 +447,8 @@ function love.update(dt)
     ccp = lerp(cp, pos, 2*dt)
     camera:lookAt(ccp.x, ccp.y)
 
+    waves:setVolume(range(speed:len(),0,1000))
+    wood:setVolume(range(math.abs(v),0,1))
     targetzoom = zoom*(0.8-speed:len()/1000)
     z = lerp(camera.scale, targetzoom, dt)
     camera:zoomTo(z)
@@ -423,9 +471,7 @@ function love.keypressed(key)
         else
             love.window.setFullscreen(true)
         end
-    elseif key == "down" or key == "s" then
-        anchor = 1 - anchor
-    elseif key == "up" or key == "w" then
+    elseif key == "space" then
         anchor = 1 - anchor
     end
 end
@@ -438,8 +484,10 @@ function love.mousepressed(x, y, button, touch)
         line = lines[1]
         table.remove(lines, 1)
     end
-    x, y = camera:worldCoords(x, y)
-    ship.body:setPosition(x, y)
+    if button == 2 then
+        x, y = camera:worldCoords(x, y)
+        ship.body:setPosition(x, y)
+    end
 end
 
 function love.draw()
@@ -447,11 +495,11 @@ function love.draw()
 
     love.graphics.setColor(255,255,255)
     x, y = camera:worldCoords(0, 0)
-    xx = math.floor(x/images.ocean:getWidth())
-    yy = math.floor(y/images.ocean:getWidth())
+    xx = math.floor(x/(images.ocean:getWidth()*2))
+    yy = math.floor(y/(images.ocean:getWidth()*2))
     for x = xx-1,xx+6 do
         for y = yy-1,yy+6 do
-            love.graphics.draw(images.ocean, images.ocean:getWidth()*x, images.ocean:getHeight()*y)
+            love.graphics.draw(images.ocean, images.ocean:getWidth()*x*2, images.ocean:getHeight()*y*2, 0, 2, 2)
         end
     end
 	
@@ -506,21 +554,23 @@ function love.draw()
 
     for i,person in ipairs(people) do
         love.graphics.setColor(person.r, person.g, person.b)
-        if person.boarded then
+        if person.status == "boarded" then
             x, y = ship.body:getWorldPoints(person.x, person.y)
             love.graphics.draw(images.person, x, y, 0, 1, 1, images.person:getWidth()/2, images.person:getWidth()/2)
         else
-            love.graphics.draw(images.person, person.x, person.y, 0, 1, 1, images.person:getWidth()/2, images.person:getWidth()/2)
+            dy = -math.abs(20*math.sin(love.timer.getTime()*6))
+            love.graphics.draw(images.person, person.x, person.y+dy, 0, 1, 1, images.person:getWidth()/2, images.person:getWidth()/2)
         end
     end
 	
     x, y = ship.body:getPosition()
     love.graphics.setColor(255, 255, 255)
     --love.graphics.line(x, y, x+sailvector.x, y+sailvector.y)
-    love.graphics.draw(images.sail, x, y, abssail-math.pi/2, flip*(0.5+force:len()/4000), 1, 0, 0)
+    love.graphics.draw(images.sail, x, y, abssail-math.pi/2, flip*(0.5+range(force:len(), 0, 10000)), 1, 0, 0)
 
     --love.graphics.setColor(0, 0, 255)
-    love.graphics.draw(images.wind, x-wind.x+sailvector.x*2, y-wind.y+sailvector.y*2, abswind+math.pi/2, wind:len()/40, wind:len()/40, images.wind:getWidth()/2, images.wind:getHeight()/2)
+    sv = sailvector:normalized()*50
+    love.graphics.draw(images.wind, x-wind.x+sv.x*2, y-wind.y+sv.y*2, abswind+math.pi/2, wind:len()/40, wind:len()/40, images.wind:getWidth()/2, images.wind:getHeight()/2)
 
     for i,monster in ipairs(monsters) do
         x, y = monster.body:getPosition()
@@ -552,7 +602,7 @@ function love.draw()
     --    love.graphics.draw(images.island, p.x, p.y, 0, s*0.005, s*0.005, images.island:getWidth()/2, images.island:getHeight()/2)
     --end
     for i,person in ipairs(people) do
-        if not person.boarded and person.x > 0 then
+        if person.status == "lost" and person.x > 0 then
             v = vector(person.x, person.y) - vector(ship.body:getPosition())
             p = vector(ch/2+20, ch/2+20) + v:normalized()*ch/2
             d = v:len()
