@@ -216,6 +216,11 @@ function love.load()
     beach.shape = love.physics.newRectangleShape(20000000,1)
     beach.fixture = love.physics.newFixture(beach.body, beach.shape)
     beach.fixture:setFriction(0)
+    beach = {}
+    beach.body = love.physics.newBody(world, 22000, 0)
+    beach.shape = love.physics.newRectangleShape(1,20000000)
+    beach.fixture = love.physics.newFixture(beach.body, beach.shape)
+    beach.fixture:setFriction(0)
 
     islands = {}
     for l = 1,3 do
@@ -541,6 +546,9 @@ function love.draw()
 	
 	love.graphics.setColor(44, 165, 54)
     love.graphics.rectangle("fill", -5500, -10000000, 5000, 20000000)
+
+	love.graphics.setColor(0, 0, 0)
+    love.graphics.rectangle("fill", 22000, -10000000, 5000, 20000000)
 	
 	love.graphics.setColor(255,255,255)
 	x, y = camera:worldCoords(0, 0)
@@ -548,6 +556,7 @@ function love.draw()
     yy = math.floor(y/images.beach:getHeight())
 	for y = yy-1,yy+6 do
 		love.graphics.draw(images.beach, x, images.beach:getHeight()*y)
+		love.graphics.draw(images.edge, 22000, images.edge:getHeight()*y)
     end
 	
     love.graphics.setColor(255, 255, 255)
@@ -651,7 +660,7 @@ function love.draw()
             if d > 5000 then
                 s = 7
             else
-                s = 20-(20-7)/5000*d
+                s = 20-13*range(d, 0, 5000)
             end
             love.graphics.setColor(person.r, person.g, person.b)
             love.graphics.draw(images.person, p.x, p.y, 0, s*0.04, s*0.04, images.person:getWidth()/2, images.person:getHeight()/2)
