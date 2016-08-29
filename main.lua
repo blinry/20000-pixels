@@ -530,7 +530,7 @@ function love.draw()
         end
     end
 	
-	love.graphics.setColor(255, 248, 0)
+	love.graphics.setColor(44, 165, 54)
     love.graphics.rectangle("fill", -5500, -10000000, 5000, 20000000)
 	
 	love.graphics.setColor(255,255,255)
