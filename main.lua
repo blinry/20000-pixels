@@ -472,6 +472,7 @@ function love.update(dt)
 		if phase >= 3 then
 			if person.status == "boarded" and vector(x, y):dist(vector(kraken.body:getPosition())) < 600 then
 				love.audio.play(sounds.munch)
+				love.audio.play(sounds.wilhelm)
 				table.remove(people, i)
 				if offered == 0 then
 					say("Oh no, The Kraken got them! Please bring all others back home!", true)
