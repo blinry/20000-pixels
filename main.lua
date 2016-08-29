@@ -455,13 +455,16 @@ function love.update(dt)
             person.status = "boarded"
 			j = love.math.random(#thanks)
 			say(thanks[j], true, person.hue)
+            sounds.jump:setPitch(love.math.random(80, 120)/100)
             love.audio.play(sounds.jump)
             person.x = love.math.random(-25, 25)
             person.y = love.math.random(10, 130)
         end
 
         if person.status == "boarded" and anchor == 1 and x < 200 then
+            sounds.jump:setPitch(love.math.random(80, 120)/100)
             love.audio.play(sounds.jump)
+            sounds.yay:setPitch(love.math.random(90, 110)/100)
             love.audio.play(sounds.yay)
             person.status = "saved"
             person.x = love.math.random(-400, -50)
