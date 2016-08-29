@@ -286,9 +286,15 @@ function love.load()
             island.x = 1000+8000*(l-1)+love.math.random(0, 4000)
             island.y = love.math.random(-6000, 6000)
             island.body = love.physics.newBody(world, island.x, island.y)
-            island.shape = love.physics.newCircleShape(150)
+            island.shape = love.physics.newCircleShape(-100, 70, 100)
             island.fixture = love.physics.newFixture(island.body, island.shape)
             island.fixture:setFriction(0)
+            island.shape2 = love.physics.newCircleShape(100, 70, 100)
+            island.fixture2 = love.physics.newFixture(island.body, island.shape2)
+            island.fixture2:setFriction(0)
+            island.shape3 = love.physics.newRectangleShape(0, 70, 200, 200)
+            island.fixture3 = love.physics.newFixture(island.body, island.shape3)
+            island.fixture3:setFriction(0)
             island.layer = l
             table.insert(islands, island)
         end
@@ -307,6 +313,8 @@ function love.load()
         island.layer = 0
         table.insert(islands, island)
     end
+
+    table.sort(islands, function(a, b) return a.y < b.y end)
 
     people = {}
     saved = 0
@@ -455,13 +463,16 @@ function love.update(dt)
             person.status = "boarded"
 			j = love.math.random(#thanks)
 			say(thanks[j], true, person.hue)
+            sounds.jump:setPitch(love.math.random(80, 120)/100)
             love.audio.play(sounds.jump)
             person.x = love.math.random(-25, 25)
             person.y = love.math.random(10, 130)
         end
 
         if person.status == "boarded" and anchor == 1 and x < 200 then
+            sounds.jump:setPitch(love.math.random(80, 120)/100)
             love.audio.play(sounds.jump)
+            sounds.yay:setPitch(love.math.random(90, 110)/100)
             love.audio.play(sounds.yay)
             person.status = "saved"
             person.x = love.math.random(-400, -50)
@@ -472,6 +483,8 @@ function love.update(dt)
 		if phase >= 3 then
 			if person.status == "boarded" and vector(x, y):dist(vector(kraken.body:getPosition())) < 600 then
 				love.audio.play(sounds.munch)
+                sounds.wilhelm:setPitch(love.math.random(90, 110)/100)
+				love.audio.play(sounds.wilhelm)
 				table.remove(people, i)
 				if offered == 0 then
 					say("Oh no, The Kraken got them! Please bring all others back home!", true)
@@ -532,8 +545,8 @@ function love.update(dt)
 		
     ps:setPosition(ship.body:getWorldPoints(0, 150))
 
-    cdx = (cdx + wind.x*0.02) % (images.clouds:getWidth()*2)
-    cdy = (cdy + wind.y*0.02) % (images.clouds:getHeight()*2)
+    cdx = (cdx + wind.x*0.2) % (images.clouds:getWidth()*2)
+    cdy = (cdy + wind.y*0.2) % (images.clouds:getHeight()*2)
 
     cx, cy = camera:position()
     cp = vector(cx, cy)
@@ -697,6 +710,7 @@ function love.draw()
     love.graphics.setColor(255-evilness*255, 255-evilness*255, 255-evilness*255)
     --love.graphics.line(x, y, x+sailvector.x, y+sailvector.y)
     love.graphics.draw(images.sail, x, y, abssail-math.pi/2, flip*(0.5+range(force:len(), 0, 10000)), 1, 0, 0)
+    love.graphics.setColor(255, 255, 255)
     love.graphics.draw(images.mast, x, y, 0, 1, 1, images.mast:getWidth()/2, images.mast:getHeight()/2)
 
     --love.graphics.setColor(0, 0, 255)
@@ -728,8 +742,11 @@ function love.draw()
             love.graphics.draw(images.clouds, images.clouds:getWidth()*x*2+cdx, images.clouds:getHeight()*y*2+cdy, 0, 2, 2)
         end
     end
-    for x = xx-2,xx+3 do
-        for y = yy-2,yy+3 do
+    x, y = camera:worldCoords(0, 0)
+    xx = math.floor(x/(images.clouds:getWidth()*4))
+    yy = math.floor(y/(images.clouds:getWidth()*4))
+    for x = xx-1,xx+2 do
+        for y = yy-1,yy+2 do
             love.graphics.draw(images.clouds, images.clouds:getWidth()*x*4+2*cdx, images.clouds:getHeight()*y*4+2*cdy, 0, 4, 4)
         end
     end
@@ -777,10 +794,11 @@ function love.draw()
 		love.graphics.draw(images.kraken, p.x, p.y, 0, s * 0.003, s * 0.003, images.kraken:getWidth()/2, images.kraken:getHeight()/2)
 	end
 
-    --love.graphics.setColor(0, 0, 0)
-    --love.graphics.print(speed:len(), 200, 500)
-
     w, h, flags = love.window.getMode()
+
+    love.graphics.setColor(255, 255, 255)
+    love.graphics.printf(math.floor(speed:len()).." pixels/s", w-400, 20, 400-20, "right")
+
     if phase > 0 and line then
         if #lines > 0 then
             text = line.t.."   >>"
