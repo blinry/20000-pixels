@@ -164,11 +164,6 @@ function nextPhase()
         say("Bring those "..savePerPhase.." people back here safely!")
         say("Do not, I repeat, DO NOT feed them to The Kraken or anything.")
         say("Right?! Good luck out there!")
-    elseif phase == 3 then
-        say("Well done! You saved them all! ")
-        say("Also, maybe, you now have some intuition for the physics of sailing.")
-        say("Or do you? Let us know! Thanks for playing! :)")
-        say("- THE END -")
     end
 
     phase = phase + 1
@@ -311,7 +306,7 @@ function love.update(dt)
 
     speed = vector(ship.body:getLinearVelocity())
 
-    if love.keyboard.isDown("right")or love.keyboard.isDown("d")then
+    if love.keyboard.isDown("right") or love.keyboard.isDown("d") then
         if rudder > -math.pi/6 then
             rudder = rudder-dt*2
         end
@@ -411,16 +406,8 @@ function love.update(dt)
 				table.remove(people, i)
 				if offered == 0 then
 					say("Oh no, The Kraken got them! Please bring all others back home!", true)
-				end
-				if offered+1 < savePerPhase then
+                elseif offered+1 < savePerPhase then
 					say("What are you doing? Please stop! :'-(", true)
-				end
-				if offered+1 >= savePerPhase then
-					say("You... you monster. I hope you are happy.", true)
-					say("I guess at least you made The Kraken happy...")
-					say("Also, maybe, you now have some intuition for the physics of sailing.")
-					say("Or do you? Let us know! Thanks for playing! :)")
-					say("- THE END -")
 				end
 				offered = offered + 1
 			end
@@ -432,8 +419,19 @@ function love.update(dt)
     if phase == 2 and saved >= savePerPhase*2 then
         nextPhase()
     end
-    if phase == 3 and saved >= savePerPhase*3 then
-        nextPhase()
+    if phase == 3 and saved+offered >= savePerPhase*3 then
+        if offered == savePerPhase then
+            say("You... you monster. I hope you are happy.", true)
+            say("Even your sail turned completely black!")
+            say("I guess at least you made The Kraken happy...")
+        elseif saved == savePerPhase then
+            say("Well done! You saved them all! ", true)
+        else
+            say("At least you saved some of them! Well done!", true)
+        end
+        say("Also, maybe, you now have some intuition for the physics of sailing.")
+        say("Or do you? Let us know! Thanks for playing! :)")
+        say("- THE END -")
     end
 
     mouse = vector(camera:worldCoords(love.mouse.getPosition()))
@@ -514,7 +512,6 @@ function love.keypressed(key)
         if anchor == 1 then
             love.audio.play(sounds.splash)
         end
-
     end
 end
 
@@ -618,7 +615,8 @@ function love.draw()
     end
 	
     x, y = ship.body:getPosition()
-    love.graphics.setColor(255, 255, 255)
+    evilness = offered/savePerPhase
+    love.graphics.setColor(255-evilness*255, 255-evilness*255, 255-evilness*255)
     --love.graphics.line(x, y, x+sailvector.x, y+sailvector.y)
     love.graphics.draw(images.sail, x, y, abssail-math.pi/2, flip*(0.5+range(force:len(), 0, 10000)), 1, 0, 0)
 
