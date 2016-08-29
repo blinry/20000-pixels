@@ -308,6 +308,8 @@ function love.load()
         table.insert(islands, island)
     end
 
+    table.sort(islands, function(a, b) return a.y < b.y end)
+
     people = {}
     saved = 0
     offered = 0
@@ -475,6 +477,7 @@ function love.update(dt)
 		if phase >= 3 then
 			if person.status == "boarded" and vector(x, y):dist(vector(kraken.body:getPosition())) < 600 then
 				love.audio.play(sounds.munch)
+                sounds.wilhelm:setPitch(love.math.random(90, 110)/100)
 				love.audio.play(sounds.wilhelm)
 				table.remove(people, i)
 				if offered == 0 then
@@ -701,6 +704,7 @@ function love.draw()
     love.graphics.setColor(255-evilness*255, 255-evilness*255, 255-evilness*255)
     --love.graphics.line(x, y, x+sailvector.x, y+sailvector.y)
     love.graphics.draw(images.sail, x, y, abssail-math.pi/2, flip*(0.5+range(force:len(), 0, 10000)), 1, 0, 0)
+    love.graphics.setColor(255, 255, 255)
     love.graphics.draw(images.mast, x, y, 0, 1, 1, images.mast:getWidth()/2, images.mast:getHeight()/2)
 
     --love.graphics.setColor(0, 0, 255)
