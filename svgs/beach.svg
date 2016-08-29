@@ -121,106 +121,6 @@
     </linearGradient>
     <linearGradient
        gradientUnits="userSpaceOnUse"
-       y2="294.25253"
-       x2="171.39423"
-       y1="291.11221"
-       x1="161.99202"
-       id="linearGradient6383"
-       xlink:href="#linearGradient6377"
-       inkscape:collect="always"
-       gradientTransform="translate(-180.09205,-160.10514)" />
-    <linearGradient
-       gradientUnits="userSpaceOnUse"
-       y2="292.54266"
-       x2="177.45956"
-       y1="288.27563"
-       x1="164.73338"
-       id="linearGradient6383-3"
-       xlink:href="#linearGradient6377"
-       inkscape:collect="always"
-       gradientTransform="matrix(0.75718429,0.65320131,-0.65320131,0.75718429,49.899247,-219.65445)" />
-    <linearGradient
-       gradientUnits="userSpaceOnUse"
-       y2="299.29846"
-       x2="175.68828"
-       y1="291.11221"
-       x1="161.99202"
-       id="linearGradient6383-3-0"
-       xlink:href="#linearGradient6377"
-       inkscape:collect="always"
-       gradientTransform="matrix(-0.59818067,0.87482425,0.87332755,0.59903966,-132.85565,-219.82205)" />
-    <linearGradient
-       gradientUnits="userSpaceOnUse"
-       y2="290.13916"
-       x2="171.57109"
-       y1="287.52985"
-       x1="157.79495"
-       id="linearGradient6383-3-6"
-       xlink:href="#linearGradient6377"
-       inkscape:collect="always"
-       gradientTransform="matrix(-0.76086969,0.42245966,0.37443915,0.85844856,52.928447,-194.79827)" />
-    <linearGradient
-       gradientTransform="matrix(1,0,0,1.060241,-180.09205,-179.12372)"
-       gradientUnits="userSpaceOnUse"
-       y2="322.8476"
-       x2="193.82027"
-       y1="296.07855"
-       x1="191.53665"
-       id="linearGradient6469"
-       xlink:href="#linearGradient6463"
-       inkscape:collect="always" />
-    <linearGradient
-       gradientUnits="userSpaceOnUse"
-       y2="299.29846"
-       x2="175.68828"
-       y1="291.11221"
-       x1="161.99202"
-       id="linearGradient6383-3-0-1"
-       xlink:href="#linearGradient6377"
-       inkscape:collect="always"
-       gradientTransform="matrix(-0.59818067,0.87482425,0.87332755,0.59903966,-65.782058,-142.37835)" />
-    <linearGradient
-       gradientUnits="userSpaceOnUse"
-       y2="294.25253"
-       x2="171.39423"
-       y1="291.11221"
-       x1="161.99202"
-       id="linearGradient6383-1"
-       xlink:href="#linearGradient6377"
-       inkscape:collect="always"
-       gradientTransform="translate(-113.01846,-82.661438)" />
-    <linearGradient
-       gradientUnits="userSpaceOnUse"
-       y2="292.54266"
-       x2="177.45956"
-       y1="288.27563"
-       x1="164.73338"
-       id="linearGradient6383-3-07"
-       xlink:href="#linearGradient6377"
-       inkscape:collect="always"
-       gradientTransform="matrix(0.75718429,0.65320131,-0.65320131,0.75718429,116.97284,-142.21075)" />
-    <linearGradient
-       gradientUnits="userSpaceOnUse"
-       y2="290.13916"
-       x2="171.57109"
-       y1="287.52985"
-       x1="157.79495"
-       id="linearGradient6383-3-6-6"
-       xlink:href="#linearGradient6377"
-       inkscape:collect="always"
-       gradientTransform="matrix(-0.76086969,0.42245966,0.37443915,0.85844856,120.00204,-117.35457)" />
-    <linearGradient
-       gradientTransform="matrix(1,0,0,1.060241,-113.01846,-101.68002)"
-       gradientUnits="userSpaceOnUse"
-       y2="322.8476"
-       x2="193.82027"
-       y1="296.07855"
-       x1="191.53665"
-       id="linearGradient6469-2"
-       xlink:href="#linearGradient6463"
-       inkscape:collect="always" />
-    <linearGradient
-       gradientUnits="userSpaceOnUse"
        y2="299.29846"
        x2="175.68828"
        y1="291.11221"
@@ -228,7 +128,7 @@
        id="linearGradient6383-3-0-0"
        xlink:href="#linearGradient6377"
        inkscape:collect="always"
-       gradientTransform="matrix(-0.59818067,0.87482425,0.87332755,0.59903966,-90.025719,320.27152)" />
+       gradientTransform="matrix(-2.0168812,2.967587,2.9445918,2.0320679,-418.53823,-536.93889)" />
     <linearGradient
        gradientUnits="userSpaceOnUse"
        y2="294.25253"
@@ -238,7 +138,7 @@
        id="linearGradient6383-13"
        xlink:href="#linearGradient6377"
        inkscape:collect="always"
-       gradientTransform="translate(-137.26212,379.98843)" />
+       gradientTransform="matrix(3.3716924,0,0,3.3922094,-577.80483,-334.36663)" />
     <linearGradient
        gradientUnits="userSpaceOnUse"
        y2="292.54266"
@@ -248,7 +148,7 @@
        id="linearGradient6383-3-1"
        xlink:href="#linearGradient6377"
        inkscape:collect="always"
-       gradientTransform="matrix(0.75718429,0.65320131,-0.65320131,0.75718429,92.729176,320.43912)" />
+       gradientTransform="matrix(2.5529924,2.2157956,-2.2023938,2.5685277,197.65506,-536.37036)" />
     <linearGradient
        gradientUnits="userSpaceOnUse"
        y2="290.13916"
@@ -258,9 +158,9 @@
        id="linearGradient6383-3-6-9"
        xlink:href="#linearGradient6377"
        inkscape:collect="always"
-       gradientTransform="matrix(-0.76086969,0.42245966,0.37443915,0.85844856,95.758376,345.2953)" />
+       gradientTransform="matrix(-2.5654185,1.4330716,1.2624936,2.9120372,207.86859,-452.05299)" />
     <linearGradient
-       gradientTransform="matrix(1,0,0,1.060241,-137.26212,360.96985)"
+       gradientTransform="matrix(3.3716924,0,0,3.5965595,-577.80483,-398.88164)"
        gradientUnits="userSpaceOnUse"
        y2="322.8476"
        x2="193.82027"
@@ -279,7 +179,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.49497475"
      inkscape:cx="-430.57298"
-     inkscape:cy="553.5457"
+     inkscape:cy="314.90005"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -306,22 +206,22 @@
      id="layer1">
     <path
        style="fill:url(#linearGradient4144-5);fill-opacity:1;fill-rule:evenodd;stroke:url(#linearGradient4176);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 447.084,3.7912047 c 0,0 -29.7182,82.7244923 -22.85774,124.2853253 7.63832,46.27313 61.38803,76.51121 68.57143,122.85714 13.84638,89.33428 -59.27847,175.4513 -54.28571,265.71429 3.42662,61.9491 54.53966,115.15369 57.14286,177.14285 2.29723,54.70334 -29.43275,105.79405 -37.14286,160.00003 C 448.6601,923.0546 447.084,1063.3622 447.084,1063.3622 l -657.14345,0 -5.71429,-1059.5709953 z"
+       d="m 447.084,3.7912047 c 0,0 -22.09287,82.1690143 -22.85774,124.2853253 -0.83807,46.14693 17.25848,90.93131 20.08411,136.99928 5.1352,83.72231 -11.75471,167.90424 -5.79839,251.57215 5.31743,74.69345 37.24183,146.70768 36.9398,221.58956 -0.22665,56.19446 -24.32191,110.06627 -29.06163,166.06095 -4.47208,52.83281 0.69385,159.06373 0.69385,159.06373 l -657.14345,0 -5.71429,-1059.5709953 z"
        id="path4136-2"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="caaaaacccc"
        inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
-       inkscape:export-xdpi="84.851303"
-       inkscape:export-ydpi="84.851303" />
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <path
        style="fill:url(#linearGradient4144);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 213.31632,3.7912047 c 0,0 -15.47164,83.1523203 -2.17478,122.8567153 15.22646,45.4662 81.24307,76.51121 90.74984,122.85714 18.32478,89.33428 -78.45121,175.4513 -71.84362,265.71429 4.53491,61.9491 72.1797,115.15369 75.62487,177.14285 3.04023,54.70334 -35.41489,106.24198 -49.15617,160 -17.8619,69.87855 -43.20014,211 -43.20014,211 l -841.61079,0 0,-1059.5709953 z"
+       d="m 213.31632,3.7912047 c 0,0 -5.58058,82.0399063 -2.17478,122.8567153 5.17271,61.99232 30.76597,121.35237 34.1813,183.4663 3.76396,68.45431 -22.71145,136.95192 -15.27508,205.10513 7.98389,73.17114 63.12085,137.8836 63.50304,211.48804 0.30646,59.01978 -35.53442,112.67438 -49.15617,170.10152 -13.03448,54.95127 -31.07831,166.55329 -31.07831,166.55329 l -841.61079,0 0,-1059.5709953 z"
        id="path4136"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="caaaaacccc"
        inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
-       inkscape:export-xdpi="84.851303"
-       inkscape:export-ydpi="84.851303" />
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <flowRoot
        xml:space="preserve"
        id="flowRoot4401"
@@ -338,7 +238,10 @@
        d="m -1013.1129,4.1482986 893.5099,0 c 0,0 -1.54521,90.3580774 13.80669,155.3567614 38.101029,161.31658 87.118286,110.37686 75.3963,248.53436 -3.207752,37.80716 -61.432236,135.79723 -51.599865,191.05894 10.275137,57.75022 35.231144,155.18532 20.964864,205.06115 C -112.54669,984.24764 -119.603,1062.731 -119.603,1062.731 l -893.5099,7.1428 z"
        id="rect4169"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccssssccc" />
+       sodipodi:nodetypes="ccssssccc"
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <image
        y="179.99138"
        x="-165.966"
@@ -349,8 +252,8 @@
        width="43.02837"
        style="fill:#9a9a9a;fill-opacity:1;stroke:#000000;stroke-opacity:1"
        inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
-       inkscape:export-xdpi="84"
-       inkscape:export-ydpi="84" />
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <image
        y="245.65132"
        x="-269.00156"
@@ -361,8 +264,8 @@
        width="45.048676"
        style="fill:#9a9a9a;fill-opacity:1;stroke:#000000;stroke-opacity:1"
        inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
-       inkscape:export-xdpi="84"
-       inkscape:export-ydpi="84" />
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <image
        y="437.58032"
        x="-238.69698"
@@ -373,8 +276,8 @@
        width="51.109592"
        style="fill:#9a9a9a;fill-opacity:1;stroke:#000000;stroke-opacity:1"
        inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
-       inkscape:export-xdpi="84"
-       inkscape:export-ydpi="84" />
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <image
        y="965.08807"
        x="-553.86456"
@@ -385,8 +288,8 @@
        width="41.41626"
        style="fill:#9a9a9a;fill-opacity:1;stroke:#000000;stroke-opacity:1"
        inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
-       inkscape:export-xdpi="84"
-       inkscape:export-ydpi="84" />
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <image
        y="-929.73279"
        x="-782.159"
@@ -397,8 +300,8 @@
        width="41.008064"
        style="fill:#9a9a9a;fill-opacity:1;stroke:#000000;stroke-opacity:1"
        inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
-       inkscape:export-xdpi="84"
-       inkscape:export-ydpi="84"
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645"
        transform="scale(1,-1)" />
     <image
        y="925.48395"
@@ -410,8 +313,8 @@
        width="47.06897"
        style="fill:#9a9a9a;fill-opacity:1;stroke:#000000;stroke-opacity:1"
        inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
-       inkscape:export-xdpi="84"
-       inkscape:export-ydpi="84" />
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <image
        y="885.87982"
        x="-559.51727"
@@ -422,8 +325,8 @@
        width="47.068981"
        style="fill:#9a9a9a;fill-opacity:1;stroke:#000000;stroke-opacity:1"
        inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
-       inkscape:export-xdpi="84"
-       inkscape:export-ydpi="84" />
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <image
        y="835.37225"
        x="-306.78537"
@@ -434,8 +337,8 @@
        width="26.865929"
        style="fill:#9a9a9a;fill-opacity:1;stroke:#000000;stroke-opacity:1"
        inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
-       inkscape:export-xdpi="84"
-       inkscape:export-ydpi="84" />
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <image
        y="143.6259"
        x="-738.72247"
@@ -446,8 +349,8 @@
        width="51.109592"
        style="fill:#9a9a9a;fill-opacity:1;stroke:#000000;stroke-opacity:1"
        inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
-       inkscape:export-xdpi="84"
-       inkscape:export-ydpi="84" />
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <image
        y="832.04486"
        x="-306.3772"
@@ -458,8 +361,8 @@
        width="26.865929"
        style="fill:#9a9a9a;fill-opacity:1;stroke:#000000;stroke-opacity:1"
        inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
-       inkscape:export-xdpi="84"
-       inkscape:export-ydpi="84" />
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <image
        y="244.48129"
        x="-681.66663"
@@ -470,8 +373,8 @@
        width="26.865929"
        style="fill:#9a9a9a;fill-opacity:1;stroke:#000000;stroke-opacity:1"
        inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
-       inkscape:export-xdpi="84"
-       inkscape:export-ydpi="84" />
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <image
        y="215.85184"
        x="-603.36206"
@@ -482,8 +385,8 @@
        width="26.865929"
        style="fill:#9a9a9a;fill-opacity:1;stroke:#000000;stroke-opacity:1"
        inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
-       inkscape:export-xdpi="84"
-       inkscape:export-ydpi="84" />
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <image
        y="573.95087"
        x="-690.23517"
@@ -494,8 +397,8 @@
        width="47.06897"
        style="fill:#9a9a9a;fill-opacity:1;stroke:#000000;stroke-opacity:1"
        inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
-       inkscape:export-xdpi="84"
-       inkscape:export-ydpi="84" />
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <image
        y="735.07019"
        x="-918.52966"
@@ -506,8 +409,8 @@
        width="43.02837"
        style="fill:#9a9a9a;fill-opacity:1;stroke:#000000;stroke-opacity:1"
        inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
-       inkscape:export-xdpi="84"
-       inkscape:export-ydpi="84" />
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <image
        y="636.58032"
        x="-480.12344"
@@ -518,8 +421,8 @@
        width="51.109592"
        style="fill:#9a9a9a;fill-opacity:1;stroke:#000000;stroke-opacity:1"
        inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
-       inkscape:export-xdpi="84"
-       inkscape:export-ydpi="84" />
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <image
        y="384.04221"
        x="-489.21484"
@@ -530,8 +433,8 @@
        width="41.008064"
        style="fill:#9a9a9a;fill-opacity:1;stroke:#000000;stroke-opacity:1"
        inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
-       inkscape:export-xdpi="84"
-       inkscape:export-ydpi="84" />
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <image
        y="34.529427"
        x="-277.08279"
@@ -542,367 +445,106 @@
        width="41.008064"
        style="fill:#9a9a9a;fill-opacity:1;stroke:#000000;stroke-opacity:1"
        inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
-       inkscape:export-xdpi="84"
-       inkscape:export-ydpi="84" />
-    <ellipse
-       style="fill:#fff65d;fill-opacity:1;stroke:none;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="path4388"
-       cx="-5.0507073"
-       cy="90.696983"
-       rx="3.030458"
-       ry="4.0406103" />
-    <ellipse
-       style="fill:#fff65d;fill-opacity:1;stroke:none;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="path4388-8"
-       cx="66.67012"
-       cy="135.14369"
-       rx="3.030458"
-       ry="4.0406103" />
-    <ellipse
-       style="fill:#fff65d;fill-opacity:1;stroke:none;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="path4388-8-1"
-       cx="111.11678"
-       cy="183.631"
-       rx="3.030458"
-       ry="4.0406103" />
-    <ellipse
-       style="fill:#fff65d;fill-opacity:1;stroke:none;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="path4388-8-6"
-       cx="-12.121874"
-       cy="133.12338"
-       rx="3.030458"
-       ry="4.0406103" />
-    <ellipse
-       style="fill:#fff65d;fill-opacity:1;stroke:none;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="path4388-8-9"
-       cx="16.162428"
-       cy="133.12338"
-       rx="3.030458"
-       ry="4.0406103" />
-    <ellipse
-       style="fill:#fff65d;fill-opacity:1;stroke:none;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="path4388-8-7"
-       cx="28.284254"
-       cy="68.473625"
-       rx="3.030458"
-       ry="4.0406103" />
-    <ellipse
-       style="fill:#fff65d;fill-opacity:1;stroke:none;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="path4388-8-11"
-       cx="84.852859"
-       cy="102.81881"
-       rx="3.030458"
-       ry="4.0406103" />
-    <ellipse
-       style="fill:#fff65d;fill-opacity:1;stroke:none;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="path4388-8-4"
-       cx="30.304518"
-       cy="155.34673"
-       rx="3.030458"
-       ry="4.0406103" />
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <path
-       style="fill:#aa4400;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 19.574047,130.09983 -14.7081003,-2.14242 -13.2655,48.79984 c 0,0 11.7578,3.88526 21.5046003,3.44999 9.0385,-0.40364 16.4935,-5.92817 16.4935,-5.92817 z"
-       id="path5369"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccscc"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320.43033"
-       inkscape:export-ydpi="320.43033" />
-    <path
-       inkscape:export-ydpi="320.43033"
-       inkscape:export-xdpi="320.43033"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       sodipodi:nodetypes="cccscc"
-       inkscape:connector-curvature="0"
-       id="path6488"
-       d="m 19.574047,130.09983 -14.7081003,-2.14242 -13.2655,48.79984 c 0,0 11.7578,3.88526 21.5046003,3.44999 9.0385,-0.40364 16.4935,-5.92817 16.4935,-5.92817 z"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-    <path
-       style="fill:url(#linearGradient6469);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 1.4828467,139.53824 -6.0609,26.67168 31.3147003,-2.31848 -6.3134,-30.51147 z"
-       id="path6461"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320"
-       inkscape:export-ydpi="320" />
-    <path
-       style="fill:#338000;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 2.9900467,109.28184 c -18.7800997,-7.87524 -28.5702997,-1.95678 -45.3841997,20.91659 28.3643,-14.33151 36.2060997,-7.44143 36.2060997,-7.44143 -17.5971997,3.99868 -17.6703997,25.93436 -14.2766997,40.50072 8.2747,-21.56201 32.7305,-27.04189 32.7305,-27.04189 0,0 9.4799,-7.88679 39.2169,13.32657 0,0 4.9556,-24.41586 -25.1212,-32.10388 0,0 8.8362,-8.62806 27.1314,-3.36731 -11.2127,-13.39848 -31.3817,-28.656579 -50.5028003,-4.78937 z"
-       id="path5365"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccc"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320.43033"
-       inkscape:export-ydpi="320.43033" />
-    <ellipse
-       style="fill:#aa4400;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="path4712"
-       cx="-1728.6559"
-       cy="115.95485"
-       rx="16.162441"
-       ry="14.647212" />
-    <path
-       style="fill:url(#linearGradient6383-3-6);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 51.534647,149.37575 c 0,0 3.7097,-6.83828 -6.4288,-20.71963 -10.1386,-13.88134 -32.5888,-11.48513 -32.5888,-11.48513 l 5.7732,22.64121 c 0,0 1.0058,-6.25311 7.1443,-4.73238 6.1384,1.52072 26.1001,14.29593 26.1001,14.29593 z"
-       id="path6375-8-7"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="czcczc"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320"
-       inkscape:export-ydpi="320" />
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -4.4480533,161.4117 c 0,0 11.4185,2.98331 17.2135003,2.64281 4.5619,-0.26803 13.2136,-3.65296 13.2136,-3.65296"
-       id="path5371"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cac"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320.43033"
-       inkscape:export-ydpi="320.43033" />
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m -1.9752533,151.72489 c 0,0 9.8456,2.03637 14.8424003,1.80395 3.9335,-0.18295 11.3934,-2.49347 11.3934,-2.49347"
-       id="path5371-8"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cac"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320.43033"
-       inkscape:export-ydpi="320.43033" />
-    <path
-       style="fill:url(#linearGradient6383-3);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -41.430553,129.59594 c 0,0 8.7801,-11.9473 17.4863,-19.52449 8.7063,-7.57718 26.6219997,-0.75525 26.6219997,-0.75525 l -1.2898,19.77854 c 0,0 2.0125,-8.1915 -11.0752,-7.97045 -13.0876997,0.22105 -31.7432997,8.47165 -31.7432997,8.47165 z"
-       id="path6375-8"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="czcczc"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320"
-       inkscape:export-ydpi="320" />
-    <path
-       style="fill:url(#linearGradient6383);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -20.449153,162.25706 c 0,0 -2.9578,-12.78749 -0.1786,-24.46428 2.7792,-11.67679 14.4298997,-14.92603 14.4298997,-14.92603 l 17.1772003,12.78317 c 0,0 -10.98820027,3.6943 -16.7811003,8.31659 -5.7928997,4.62229 -14.6473997,18.29055 -14.6473997,18.29055 z"
-       id="path6375"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="czcczc"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320"
-       inkscape:export-ydpi="320" />
-    <path
-       style="fill:url(#linearGradient6383-3-0);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 52.545547,113.19766 c 0,0 -3.3539,-9.27858 -20.6272,-15.063809 -17.2732,-5.78523 -28.5244003,10.445989 -28.5244003,10.445989 l 7.7462003,15.92104 c 0,0 10.7161,-7.25131 18.2181,-9.55015 7.502,-2.29886 23.1873,-1.75307 23.1873,-1.75307 z"
-       id="path6375-8-2"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="czcczc"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320"
-       inkscape:export-ydpi="320" />
-    <path
-       inkscape:export-ydpi="320.43033"
-       inkscape:export-xdpi="320.43033"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       sodipodi:nodetypes="ccccccccc"
-       inkscape:connector-curvature="0"
-       id="path6385"
-       d="m 2.9900467,109.28184 c -18.7800997,-7.87524 -28.5702997,-1.95678 -45.3841997,20.91659 28.3643,-14.33151 36.2060997,-7.44143 36.2060997,-7.44143 -17.5971997,3.99868 -17.6703997,25.93436 -14.2766997,40.50072 8.2747,-21.56201 32.7305,-27.04189 32.7305,-27.04189 0,0 9.4799,-7.88679 39.2169,13.32657 0,0 4.9556,-24.41586 -25.1212,-32.10388 0,0 8.8362,-8.62806 27.1314,-3.36731 -11.2127,-13.39848 -31.3817,-28.656579 -50.5028003,-4.78937 z"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-    <path
-       style="fill:#aa4400;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 86.647637,207.54353 -14.7081,-2.14242 -13.2655,48.79984 c 0,0 11.7578,3.88526 21.5046,3.44999 9.0385,-0.40364 16.4935,-5.92817 16.4935,-5.92817 z"
-       id="path5369-2"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccscc"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320.43033"
-       inkscape:export-ydpi="320.43033" />
-    <path
-       inkscape:export-ydpi="320.43033"
-       inkscape:export-xdpi="320.43033"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       sodipodi:nodetypes="cccscc"
-       inkscape:connector-curvature="0"
-       id="path6488-6"
-       d="m 86.647637,207.54353 -14.7081,-2.14242 -13.2655,48.79984 c 0,0 11.7578,3.88526 21.5046,3.44999 9.0385,-0.40364 16.4935,-5.92817 16.4935,-5.92817 z"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-    <path
-       style="fill:url(#linearGradient6469-2);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 68.556437,216.98194 -6.0609,26.67168 31.3147,-2.31848 -6.3134,-30.51147 z"
-       id="path6461-3"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320"
-       inkscape:export-ydpi="320" />
-    <path
-       style="fill:#338000;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 70.063637,186.72554 c -18.7801,-7.87524 -28.5703,-1.95678 -45.3842,20.91659 28.3643,-14.33151 36.2061,-7.44143 36.2061,-7.44143 -17.5972,3.99868 -17.6704,25.93436 -14.2767,40.50072 8.2747,-21.56201 32.7305,-27.04189 32.7305,-27.04189 0,0 9.4799,-7.88679 39.216903,13.32657 0,0 4.9556,-24.41586 -25.121203,-32.10388 0,0 8.836203,-8.62806 27.131403,-3.36731 -11.2127,-13.39848 -31.381703,-28.65658 -50.502803,-4.78937 z"
-       id="path5365-2"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccc"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320.43033"
-       inkscape:export-ydpi="320.43033" />
-    <path
-       style="fill:url(#linearGradient6383-3-6-6);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 118.60824,226.81945 c 0,0 3.7097,-6.83828 -6.4288,-20.71963 -10.1386,-13.88134 -32.588803,-11.48513 -32.588803,-11.48513 l 5.7732,22.64121 c 0,0 1.0058,-6.25311 7.1443,-4.73238 6.1384,1.52072 26.100103,14.29593 26.100103,14.29593 z"
-       id="path6375-8-7-4"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="czcczc"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320"
-       inkscape:export-ydpi="320" />
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 62.625537,238.8554 c 0,0 11.4185,2.98331 17.2135,2.64281 4.5619,-0.26803 13.2136,-3.65296 13.2136,-3.65296"
-       id="path5371-6"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cac"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320.43033"
-       inkscape:export-ydpi="320.43033" />
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 65.098337,229.16859 c 0,0 9.8456,2.03637 14.8424,1.80395 3.9335,-0.18295 11.3934,-2.49347 11.3934,-2.49347"
-       id="path5371-8-6"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cac"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320.43033"
-       inkscape:export-ydpi="320.43033" />
-    <path
-       style="fill:url(#linearGradient6383-3-07);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 25.643037,207.03964 c 0,0 8.7801,-11.9473 17.4863,-19.52449 8.7063,-7.57718 26.622,-0.75525 26.622,-0.75525 l -1.2898,19.77854 c 0,0 2.0125,-8.1915 -11.0752,-7.97045 -13.0877,0.22105 -31.7433,8.47165 -31.7433,8.47165 z"
-       id="path6375-8-3"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="czcczc"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320"
-       inkscape:export-ydpi="320" />
-    <path
-       style="fill:url(#linearGradient6383-1);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 46.624437,239.70076 c 0,0 -2.9578,-12.78749 -0.1786,-24.46428 2.7792,-11.67679 14.4299,-14.92603 14.4299,-14.92603 l 17.1772,12.78317 c 0,0 -10.9882,3.6943 -16.7811,8.31659 -5.7929,4.62229 -14.6474,18.29055 -14.6474,18.29055 z"
-       id="path6375-3"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="czcczc"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320"
-       inkscape:export-ydpi="320" />
-    <path
-       style="fill:url(#linearGradient6383-3-0-1);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 119.61914,190.64136 c 0,0 -3.3539,-9.27858 -20.627203,-15.06381 -17.2732,-5.78523 -28.5244,10.44599 -28.5244,10.44599 l 7.7462,15.92104 c 0,0 10.7161,-7.25131 18.2181,-9.55015 7.502003,-2.29886 23.187303,-1.75307 23.187303,-1.75307 z"
-       id="path6375-8-2-7"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="czcczc"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320"
-       inkscape:export-ydpi="320" />
-    <path
-       inkscape:export-ydpi="320.43033"
-       inkscape:export-xdpi="320.43033"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       sodipodi:nodetypes="ccccccccc"
-       inkscape:connector-curvature="0"
-       id="path6385-1"
-       d="m 70.063637,186.72554 c -18.7801,-7.87524 -28.5703,-1.95678 -45.3842,20.91659 28.3643,-14.33151 36.2061,-7.44143 36.2061,-7.44143 -17.5972,3.99868 -17.6704,25.93436 -14.2767,40.50072 8.2747,-21.56201 32.7305,-27.04189 32.7305,-27.04189 0,0 9.4799,-7.88679 39.216903,13.32657 0,0 4.9556,-24.41586 -25.121203,-32.10388 0,0 8.836203,-8.62806 27.131403,-3.36731 -11.2127,-13.39848 -31.381703,-28.65658 -50.502803,-4.78937 z"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-    <path
-       style="fill:#aa4400;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 62.403976,670.1934 -14.7081,-2.14242 -13.2655,48.79984 c 0,0 11.7578,3.88526 21.5046,3.44999 9.0385,-0.40364 16.4935,-5.92817 16.4935,-5.92817 z"
+       style="fill:#aa4400;fill-rule:evenodd;stroke:#000000;stroke-width:3.38193536;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 95.407812,650.06939 45.816623,642.80186 1.089439,808.34113 c 0,0 39.643684,13.17962 72.506895,11.70308 30.475036,-1.36923 55.611006,-20.10959 55.611006,-20.10959 z"
        id="path5369-7"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccscc"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320.43033"
-       inkscape:export-ydpi="320.43033" />
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <path
-       inkscape:export-ydpi="320.43033"
-       inkscape:export-xdpi="320.43033"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
+       inkscape:export-ydpi="84.381645"
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
        sodipodi:nodetypes="cccscc"
        inkscape:connector-curvature="0"
        id="path6488-0"
-       d="m 62.403976,670.1934 -14.7081,-2.14242 -13.2655,48.79984 c 0,0 11.7578,3.88526 21.5046,3.44999 9.0385,-0.40364 16.4935,-5.92817 16.4935,-5.92817 z"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       d="M 95.407812,650.06939 45.816623,642.80186 1.089439,808.34113 c 0,0 39.643684,13.17962 72.506895,11.70308 30.475036,-1.36923 55.611006,-20.10959 55.611006,-20.10959 z"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.69096768;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <path
        style="fill:url(#linearGradient6469-7);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 44.312776,679.63181 -6.0609,26.67168 31.3147,-2.31848 -6.3134,-30.51147 z"
+       d="M 34.409851,682.08645 13.974362,772.56237 119.55789,764.6976 98.271053,661.19631 Z"
        id="path6461-9"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320"
-       inkscape:export-ydpi="320" />
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <path
-       style="fill:#338000;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 45.819976,649.37541 C 27.039876,641.50017 17.249676,647.41863 0.43577542,670.292 28.800076,655.96049 36.641876,662.85057 36.641876,662.85057 c -17.5972,3.99868 -17.6704,25.93436 -14.2767,40.50072 8.2747,-21.56201 32.7305,-27.04189 32.7305,-27.04189 0,0 9.4799,-7.88679 39.2169,13.32657 0,0 4.9556,-24.41586 -25.1212,-32.10388 0,0 8.8362,-8.62806 27.1314,-3.36731 -11.2127,-13.39848 -31.3817,-28.65658 -50.5028,-4.78937 z"
+       style="fill:#338000;fill-rule:evenodd;stroke:#000000;stroke-width:1.69096768;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 39.491666,579.45041 C -23.829053,552.73595 -56.838595,572.8126 -113.5299,650.40386 -17.8942,601.78837 8.5459362,625.16097 8.5459362,625.16097 -50.786408,638.72533 -51.033216,713.13575 -39.590703,762.54789 -11.690961,689.40504 70.766472,670.81614 70.766472,670.81614 c 0,0 31.963308,-26.75364 132.227318,45.20652 0,0 16.70876,-82.82371 -84.70096,-108.90308 0,0 29.79295,-29.26819 91.47874,-11.42263 C 171.96579,550.24651 103.96213,498.48784 39.491666,579.45041 Z"
        id="path5365-1"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccc"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320.43033"
-       inkscape:export-ydpi="320.43033" />
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <path
        style="fill:url(#linearGradient6383-3-6-9);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 94.364576,689.46932 c 0,0 3.7097,-6.83828 -6.4288,-20.71963 -10.1386,-13.88134 -32.5888,-11.48513 -32.5888,-11.48513 l 5.7732,22.64121 c 0,0 1.0058,-6.25311 7.1443,-4.73238 6.1384,1.52072 26.1001,14.29593 26.1001,14.29593 z"
+       d="m 203.16912,715.45735 c 0,0 12.50797,-23.19688 -21.67594,-70.28532 C 147.30895,598.08361 71.613779,606.21206 71.613779,606.21206 l 19.465454,76.80373 c 0,0 3.391248,-21.21187 24.088377,-16.05323 20.6968,5.1586 88.00151,48.49479 88.00151,48.49479 z"
        id="path6375-8-7-8"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="czcczc"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320"
-       inkscape:export-ydpi="320" />
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 38.381876,701.50527 c 0,0 11.4185,2.98331 17.2135,2.64281 4.5619,-0.26803 13.2136,-3.65296 13.2136,-3.65296"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3.38193536px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 14.412681,756.2858 c 0,0 38.499669,10.12002 58.038626,8.96497 15.381323,-0.90921 44.552203,-12.3916 44.552203,-12.3916"
        id="path5371-7"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cac"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320.43033"
-       inkscape:export-ydpi="320.43033" />
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 40.854676,691.81846 c 0,0 9.8456,2.03637 14.8424,1.80395 3.9335,-0.18295 11.3934,-2.49347 11.3934,-2.49347"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3.38193536;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 22.750202,723.42612 c 0,0 33.196334,6.9078 50.044007,6.11938 13.262551,-0.6206 38.415031,-8.45838 38.415031,-8.45838"
        id="path5371-8-4"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cac"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320.43033"
-       inkscape:export-ydpi="320.43033" />
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <path
        style="fill:url(#linearGradient6383-3-1);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 1.3993754,669.68951 c 0,0 8.7801006,-11.9473 17.4863006,-19.52449 8.7063,-7.57718 26.622,-0.75525 26.622,-0.75525 l -1.2898,19.77854 c 0,0 2.0125,-8.1915 -11.0752,-7.97045 -13.0877,0.22105 -31.7433006,8.47165 -31.7433006,8.47165 z"
+       d="m -110.28093,648.36009 c 0,0 29.603796,-40.52774 58.958424,-66.23116 29.354964,-25.70338 89.761192,-2.56196 89.761192,-2.56196 l -4.348809,67.09294 c 0,0 6.785532,-27.78728 -37.3421662,-27.03743 -44.1276978,0.74985 -107.0286408,28.73761 -107.0286408,28.73761 z"
        id="path6375-8-8"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="czcczc"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320"
-       inkscape:export-ydpi="320" />
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <path
        style="fill:url(#linearGradient6383-13);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 22.380776,702.35063 c 0,0 -2.9578,-12.78749 -0.1786,-24.46428 2.7792,-11.67679 14.4299,-14.92603 14.4299,-14.92603 l 17.1772,12.78317 c 0,0 -10.9882,3.6943 -16.7811,8.31659 -5.7929,4.62229 -14.6474,18.29055 -14.6474,18.29055 z"
+       d="m -39.538105,759.15345 c 0,0 -9.972792,-43.37784 -0.602184,-82.98796 9.370607,-39.61012 48.653183,-50.63222 48.653183,-50.63222 l 57.916234,43.36318 c 0,0 -37.04883,12.53185 -56.5807066,28.21162 -19.5318766,15.67977 -49.3865264,62.04538 -49.3865264,62.04538 z"
        id="path6375-1"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="czcczc"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320"
-       inkscape:export-ydpi="320" />
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <path
        style="fill:url(#linearGradient6383-3-0-0);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 95.375476,653.29123 c 0,0 -3.3539,-9.27858 -20.6272,-15.06381 -17.2732,-5.78523 -28.5244,10.44599 -28.5244,10.44599 l 7.7462,15.92104 c 0,0 10.7161,-7.25131 18.2181,-9.55015 7.502,-2.29886 23.1873,-1.75307 23.1873,-1.75307 z"
+       d="m 206.57757,592.73369 c 0,0 -11.30832,-31.47488 -69.54857,-51.0996 -58.239923,-19.62471 -96.175507,35.43498 -96.175507,35.43498 l 26.117802,54.00751 c 0,0 36.131395,-24.59797 61.425825,-32.39612 25.29444,-7.7982 78.18045,-5.94677 78.18045,-5.94677 z"
        id="path6375-8-2-5"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="czcczc"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
-       inkscape:export-xdpi="320"
-       inkscape:export-ydpi="320" />
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-ydpi="84.381645" />
     <path
-       inkscape:export-ydpi="320.43033"
-       inkscape:export-xdpi="320.43033"
-       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\island.png"
+       inkscape:export-ydpi="84.381645"
+       inkscape:export-xdpi="84.381645"
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\beach.png"
        sodipodi:nodetypes="ccccccccc"
        inkscape:connector-curvature="0"
        id="path6385-3"
-       d="M 45.819976,649.37541 C 27.039876,641.50017 17.249676,647.41863 0.43577542,670.292 28.800076,655.96049 36.641876,662.85057 36.641876,662.85057 c -17.5972,3.99868 -17.6704,25.93436 -14.2767,40.50072 8.2747,-21.56201 32.7305,-27.04189 32.7305,-27.04189 0,0 9.4799,-7.88679 39.2169,13.32657 0,0 4.9556,-24.41586 -25.1212,-32.10388 0,0 8.8362,-8.62806 27.1314,-3.36731 -11.2127,-13.39848 -31.3817,-28.65658 -50.5028,-4.78937 z"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       d="M 39.491666,579.45041 C -23.829053,552.73595 -56.838595,572.8126 -113.5299,650.40386 -17.8942,601.78837 8.5459362,625.16097 8.5459362,625.16097 -50.786408,638.72533 -51.033216,713.13575 -39.590703,762.54789 -11.690961,689.40504 70.766472,670.81614 70.766472,670.81614 c 0,0 31.963308,-26.75364 132.227318,45.20652 0,0 16.70876,-82.82371 -84.70096,-108.90308 0,0 29.79295,-29.26819 91.47874,-11.42263 C 171.96579,550.24651 103.96213,498.48784 39.491666,579.45041 Z"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3.38193536;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
 </svg>

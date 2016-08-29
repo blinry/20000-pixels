@@ -587,6 +587,8 @@ function love.keypressed(key)
         zoom = zoom*2
     elseif key == "n" and debug then
         nextPhase()
+	elseif key == "o" and debug then
+        offered = offered + 1
     elseif key == "f11" then
         fs, fstype = love.window.getFullscreen()
         if fs then
@@ -710,7 +712,7 @@ function love.draw()
             love.graphics.draw(images.person, person.x, person.y+dy, 0, 1, 1, images.person:getWidth()/2, images.person:getWidth()/2)
 			
 			if person.x < 0 then
-				love.graphics.draw(images.heart, person.x, person.y+dy-60, 0, 1, 1, images.heart:getWidth()/2, images.heart:getWidth()/2)
+				love.graphics.draw(images.heart, person.x, person.y+dy-60, 0, 0.06, 0.06, images.heart:getWidth()/2, images.heart:getWidth()/2)
 			else
 				love.graphics.printf("HELP!", person.x - 40, person.y+dy-80,100, "left")
 			end
@@ -737,6 +739,8 @@ function love.draw()
 			love.graphics.setColor(255, 255, 255)
 			if monster.type == "kraken" then
 				love.graphics.draw(images.kraken, x, y, 0, 1, 1, images.kraken:getWidth()/2, images.kraken:getWidth()/2)
+				love.graphics.setColor(255, 0, 0)
+				love.graphics.draw(images.heart, x, y - 1000, 0, 0.06 * offered, 0.06 * offered, images.heart:getWidth()/2, images.heart:getWidth()/2)
 			else
 				love.graphics.draw(monster.ps, 0, 0)
 				love.graphics.draw(images.seamonster, x, y, 0, 1, 1, images.seamonster:getWidth()/2, images.seamonster:getWidth()/2)
@@ -817,9 +821,13 @@ function love.draw()
         else
             text = line.t
         end
-        border = 20
-        love.graphics.setColor(0, 0, 0, 100)
-        love.graphics.rectangle("fill", 0, h-2*border-fontsize, w, 2*border+fontsize)
+		border = 20
+		
+		if line.t ~= "" then
+			love.graphics.setColor(0, 0, 0, 100)
+			love.graphics.rectangle("fill", 0, h-2*border-fontsize, w, 2*border+fontsize)
+		end
+		
         if line.hue then
             love.graphics.setColor(HSL(line.hue, 255, 200))
         else
