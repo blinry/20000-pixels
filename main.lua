@@ -657,6 +657,15 @@ function love.draw()
             love.graphics.draw(images.person, p.x, p.y, 0, s*0.04, s*0.04, images.person:getWidth()/2, images.person:getHeight()/2)
         end
     end
+	
+	if phase >= 3 then
+		v = vector(kraken.x, kraken.y) - vector(ship.body:getPosition())
+		p = vector(ch/2+20, ch/2+20) + v:normalized()*ch/2
+		d = v:len()
+		s = 15 - 7 * range(d, 0, 5000)
+		love.graphics.setColor(255, 255, 255)
+		love.graphics.draw(images.kraken, p.x, p.y, 0, s * 0.003, s * 0.003, images.kraken:getWidth()/2, images.kraken:getHeight()/2)
+	end
 
     --love.graphics.setColor(0, 0, 0)
     love.graphics.print(forceamount, 0, 600)
