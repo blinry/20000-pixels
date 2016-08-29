@@ -3,7 +3,7 @@ vector = require "hump.vector"
 Timer = require "hump.timer"
 Camera = require "hump.camera"
 
-savePerPhase = 5
+savePerPhase = 1
 fontsize = 35
 
 -- Converts HSL to RGB. (input and output range: 0 - 255)
@@ -164,6 +164,19 @@ function nextPhase()
         say("Bring those "..savePerPhase.." people back here safely!")
         say("Do not, I repeat, DO NOT feed them to The Kraken or anything.")
         say("Right?! Good luck out there!")
+    elseif phase == 3 then
+        if offered == savePerPhase then
+            say("You... you monster. I hope you are happy.", true)
+            say("Even your sail turned completely black!")
+            say("I guess at least you made The Kraken happy...")
+        elseif saved == savePerPhase then
+            say("Well done! You saved them all! ", true)
+        else
+            say("At least you saved some of them! Well done!", true)
+        end
+        say("Also, maybe, you now have some intuition for the physics of sailing.")
+        say("Or do you? Let us know! Thanks for playing! :)")
+        say("- THE END -")
     end
 
     phase = phase + 1
@@ -402,7 +415,7 @@ function love.update(dt)
 
 		if phase >= 3 then
 			if person.status == "boarded" and vector(x, y):dist(vector(kraken.body:getPosition())) < 600 then
-				--love.audio.play(sounds.jump)
+				love.audio.play(sounds.munch)
 				table.remove(people, i)
 				if offered == 0 then
 					say("Oh no, The Kraken got them! Please bring all others back home!", true)
@@ -420,18 +433,7 @@ function love.update(dt)
         nextPhase()
     end
     if phase == 3 and saved+offered >= savePerPhase*3 then
-        if offered == savePerPhase then
-            say("You... you monster. I hope you are happy.", true)
-            say("Even your sail turned completely black!")
-            say("I guess at least you made The Kraken happy...")
-        elseif saved == savePerPhase then
-            say("Well done! You saved them all! ", true)
-        else
-            say("At least you saved some of them! Well done!", true)
-        end
-        say("Also, maybe, you now have some intuition for the physics of sailing.")
-        say("Or do you? Let us know! Thanks for playing! :)")
-        say("- THE END -")
+        nextPhase()
     end
 
     mouse = vector(camera:worldCoords(love.mouse.getPosition()))
@@ -519,11 +521,13 @@ function love.mousepressed(x, y, button, touch)
     if phase == 0 then
         nextPhase()
     end
-    if #lines > 0 then
-        line = lines[1]
-        table.remove(lines, 1)
-    else
-        line = null
+    if button == 1 then
+        if #lines > 0 then
+            line = lines[1]
+            table.remove(lines, 1)
+        else
+            line = null
+        end
     end
     if button == 2 then
         x, y = camera:worldCoords(x, y)
@@ -622,6 +626,7 @@ function love.draw()
 
     --love.graphics.setColor(0, 0, 255)
     sv = sailvector:normalized()*50
+    love.graphics.setColor(255, 255, 255)
     love.graphics.draw(images.wind, x-wind.x+sv.x*2, y-wind.y+sv.y*2, abswind+math.pi/2, wind:len()/40, wind:len()/40, images.wind:getWidth()/2, images.wind:getHeight()/2)
 
 	if phase >= 3 then
@@ -671,7 +676,8 @@ function love.draw()
     end
 	
 	if phase >= 3 then
-		v = vector(kraken.x, kraken.y) - vector(ship.body:getPosition())
+        x, y = kraken.body:getPosition()
+		v = vector(x, y) - vector(ship.body:getPosition())
 		p = vector(ch/2+20, ch/2+20) + v:normalized()*ch/2
 		d = v:len()
 		s = 15 - 7 * range(d, 0, 5000)
