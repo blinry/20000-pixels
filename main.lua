@@ -3,7 +3,7 @@ vector = require "hump.vector"
 Timer = require "hump.timer"
 Camera = require "hump.camera"
 
-debug = false
+debug = true
 savePerPhase = 5
 fontsize = 35
 
@@ -532,8 +532,8 @@ function love.update(dt)
 		
     ps:setPosition(ship.body:getWorldPoints(0, 150))
 
-    cdx = (cdx + wind.x*0.1) % (images.clouds:getWidth()*2)
-    cdy = (cdy + wind.y*0.1) % (images.clouds:getHeight()*2)
+    cdx = (cdx + wind.x*0.02) % (images.clouds:getWidth()*2)
+    cdy = (cdy + wind.y*0.02) % (images.clouds:getHeight()*2)
 
     cx, cy = camera:position()
     cp = vector(cx, cy)
@@ -697,6 +697,7 @@ function love.draw()
     love.graphics.setColor(255-evilness*255, 255-evilness*255, 255-evilness*255)
     --love.graphics.line(x, y, x+sailvector.x, y+sailvector.y)
     love.graphics.draw(images.sail, x, y, abssail-math.pi/2, flip*(0.5+range(force:len(), 0, 10000)), 1, 0, 0)
+    love.graphics.draw(images.mast, x, y, 0, 1, 1, images.mast:getWidth()/2, images.mast:getHeight()/2)
 
     --love.graphics.setColor(0, 0, 255)
     sv = sailvector:normalized()*50
@@ -722,9 +723,14 @@ function love.draw()
     x, y = camera:worldCoords(0, 0)
     xx = math.floor(x/(images.clouds:getWidth()*2))
     yy = math.floor(y/(images.clouds:getWidth()*2))
-    for x = xx-1,xx+6 do
-        for y = yy-1,yy+6 do
+    for x = xx-1,xx+3 do
+        for y = yy-1,yy+3 do
             love.graphics.draw(images.clouds, images.clouds:getWidth()*x*2+cdx, images.clouds:getHeight()*y*2+cdy, 0, 2, 2)
+        end
+    end
+    for x = xx-2,xx+3 do
+        for y = yy-2,yy+3 do
+            love.graphics.draw(images.clouds, images.clouds:getWidth()*x*4+2*cdx, images.clouds:getHeight()*y*4+2*cdy, 0, 4, 4)
         end
     end
 	
