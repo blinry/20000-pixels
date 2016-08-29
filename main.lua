@@ -3,7 +3,7 @@ vector = require "hump.vector"
 Timer = require "hump.timer"
 Camera = require "hump.camera"
 
-debug = true
+debug = false
 savePerPhase = 5
 fontsize = 35
 
@@ -80,28 +80,24 @@ function makePeople(layer)
         person = {}
         person.x = islands[j].x + math.random(-100, 100)
         person.y = islands[j].y + math.random(0, 100)
-        person.r, person.g, person.b = HSL(math.random(255), 255, 100)
+        person.hue = math.random(255)
         person.status = "lost"
         person.dt = math.random(0, 10000)/1000
         table.insert(people, person)
     end
 end
 
-function say(text, now, r, g, b)
+function say(text, now, hue)
     if now then
         lines = {}
     end
     if now then
         line.t = text
-		line.r = r or 255
-		line.g = g or 255
-		line.b = b or 255
+		line.hue = hue
     else
 		nextline = {}
 	    nextline.t = text
-		nextline.r = r or 255
-		nextline.g = g or 255
-		nextline.b = b or 255
+		nextline.hue = hue
         table.insert(lines, nextline)
     end
 end
@@ -175,6 +171,15 @@ function nextPhase()
         say("Do not, I repeat, DO NOT feed them to The Kraken or anything.")
         say("Right?! Good luck out there!")
     elseif phase == 3 then
+        makePeople(1)
+        makePeople(1)
+        makePeople(1)
+        makePeople(2)
+        makePeople(2)
+        makePeople(2)
+        makePeople(3)
+        makePeople(3)
+        makePeople(3)
         if offered == savePerPhase then
             say("You... you monster. I hope you are happy.", true)
             say("Even your sail turned completely black!")
@@ -237,9 +242,7 @@ function love.load()
 	anchor = 1
     line = {}
 	line.t = ""
-	line.r = 255
-	line.g = 255
-	line.b = 255
+	line.hue = nil
     lines = {}
     zoom = 1
 
@@ -317,7 +320,9 @@ function love.load()
 	table.insert(thanks, thankyou)
 	thankyou = "I thought the sea monsters would get me."
 	table.insert(thanks, thankyou)
-	thankyou = "Did you ever sail east? There is the end of the world."
+	thankyou = "Did you ever sail to the far east?"
+	table.insert(thanks, thankyou)
+	thankyou = "The Kraken destroyed my boat, so I stranded here..."
 	table.insert(thanks, thankyou)
 
     soundtrack = love.audio.play(music.digya)
@@ -435,7 +440,7 @@ function love.update(dt)
         if vector(person.x, person.y):dist(vector(x, y)) < 400 and anchor == 1 and person.x > 0 then
             person.status = "boarded"
 			j = love.math.random(#thanks)
-			say(thanks[j], true, person.r, person.g, person.b)
+			say(thanks[j], true, person.hue)
             love.audio.play(sounds.jump)
             person.x = love.math.random(-25, 25)
             person.y = love.math.random(10, 130)
@@ -541,7 +546,7 @@ function love.keypressed(key)
         zoom = zoom/2
     elseif key == "+" and debug then
         zoom = zoom*2
-    elseif key == "n" and beug then
+    elseif key == "n" and debug then
         nextPhase()
     elseif key == "f11" then
         fs, fstype = love.window.getFullscreen()
@@ -569,7 +574,7 @@ function love.mousepressed(x, y, button, touch)
             line = lines[1]
             table.remove(lines, 1)
         else
-            line = null
+            line = {t=""}
         end
     end
     if button == 2 and debug then
@@ -657,7 +662,7 @@ function love.draw()
     --end
 
     for i,person in ipairs(people) do
-        love.graphics.setColor(person.r, person.g, person.b)
+        love.graphics.setColor(HSL(person.hue, 255, 100))
         if person.status == "boarded" then
             x, y = ship.body:getWorldPoints(person.x, person.y)
             love.graphics.draw(images.person, x, y, 0, 1, 1, images.person:getWidth()/2, images.person:getWidth()/2)
@@ -736,7 +741,7 @@ function love.draw()
             else
                 s = 20-13*range(d, 0, 5000)
             end
-            love.graphics.setColor(person.r, person.g, person.b)
+            love.graphics.setColor(HSL(person.hue, 255, 100))
             love.graphics.draw(images.person, p.x, p.y, 0, s*0.04, s*0.04, images.person:getWidth()/2, images.person:getHeight()/2)
         end
     end
@@ -764,7 +769,11 @@ function love.draw()
         border = 20
         love.graphics.setColor(0, 0, 0, 100)
         love.graphics.rectangle("fill", 0, h-2*border-fontsize, w, 2*border+fontsize)
-        love.graphics.setColor(line.r, line.g, line.b)
+        if line.hue then
+            love.graphics.setColor(HSL(line.hue, 255, 200))
+        else
+            love.graphics.setColor(255, 255, 255)
+        end
         --love.graphics.print(line, border, h-border-fontsize)
         love.graphics.printf(text, border, h-border-fontsize, w-2*border, "center")
     end
