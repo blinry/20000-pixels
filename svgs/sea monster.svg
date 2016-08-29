@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg4409"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="sea monster.svg">
+  <defs
+     id="defs4411">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient5001">
+      <stop
+         style="stop-color:#0000e9;stop-opacity:1;"
+         offset="0"
+         id="stop5003" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="1"
+         id="stop5005" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4961">
+      <stop
+         style="stop-color:#b20013;stop-opacity:1"
+         offset="0"
+         id="stop4963" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0"
+         offset="1"
+         id="stop4965" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4961"
+       id="linearGradient4967"
+       x1="223.70361"
+       y1="215.35454"
+       x2="213.30952"
+       y2="229.28311"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       gradientTransform="matrix(0.72617046,-0.6875147,0.6875147,0.72617046,-126.13897,206.76125)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient4961"
+       id="linearGradient4967-4"
+       x1="223.70361"
+       y1="215.35454"
+       x2="213.30952"
+       y2="229.28311"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5001"
+       id="linearGradient5009"
+       x1="133.55693"
+       y1="440.79428"
+       x2="190.03105"
+       y2="440.79428"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(7.5,-3.9285714)" />
+    <linearGradient
+       gradientTransform="matrix(-0.96544545,0.26060523,-0.26060523,-0.96544545,516.68989,837.52199)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient5001"
+       id="linearGradient5009-0"
+       x1="138.29539"
+       y1="456.13052"
+       x2="190.03105"
+       y2="440.79428"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       gradientTransform="matrix(0.9997247,0.02346329,-0.02346329,0.9997247,185.83297,-0.5487243)"
+       inkscape:collect="always"
+       xlink:href="#linearGradient5001"
+       id="linearGradient5009-0-3"
+       x1="138.29539"
+       y1="456.13052"
+       x2="190.03105"
+       y2="440.79428"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="278.31717"
+     inkscape:cy="727.26752"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4414">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:url(#linearGradient5009-0-3);stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.29260451"
+       d="m 392.22554,439.2894 c 0,0 -37.4446,-21.50225 -63.12076,-8.86755 -25.67615,12.63467 -12.14512,24.82254 -12.14512,24.82254"
+       id="path4999-1-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czc"
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\seamonster.png"
+       inkscape:export-xdpi="125.97915"
+       inkscape:export-ydpi="125.97915" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:url(#linearGradient5009);stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.29260451"
+       d="m 195,433.43362 c 0,0 -11.84812,-6.6789 -30.0624,-1.73842 -18.21429,4.94048 -21.36617,12.09557 -21.36617,12.09557"
+       id="path4999"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czc"
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\seamonster.png"
+       inkscape:export-xdpi="125.97915"
+       inkscape:export-ydpi="125.97915" />
+    <path
+       style="fill:url(#linearGradient4967-4);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 171.9724,230.73117 c 0,0 -15.79751,-14.57507 -12.46441,-24.59355 10.88339,-32.71278 6.37423,-48.33115 6.37423,-48.33115 0,0 6.09984,18.52452 20.19746,37.43662 14.09762,18.9121 4.28957,27.90688 4.28957,27.90688"
+       id="path4959-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csczc"
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\seamonster.png"
+       inkscape:export-xdpi="125.97915"
+       inkscape:export-ydpi="125.97915" />
+    <path
+       style="fill:#3c9f79;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 92.142857,277.3622 c 0,0 36.819793,-4.77739 49.285713,-26.42857 12.46592,-21.65118 13.51636,-53.29968 52.14286,-51.42857 50.34958,2.43899 45,52.85714 45,52.85714 l 3.57143,194.28571 c 0,0 -15.23809,10.71429 -35.71429,10.71429 -20.4762,0 -37.85714,-10.71428 -37.85714,-10.71428 0,0 7.13018,-151.83678 -2.14286,-164.28572 0,0 -1.6877,21.6716 -37.87817,17.26684 C 92.359933,295.22429 92.142857,277.3622 92.142857,277.3622 Z"
+       id="path4957"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czscczcczc"
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\seamonster.png"
+       inkscape:export-xdpi="125.97915"
+       inkscape:export-ydpi="125.97915" />
+    <path
+       style="fill:url(#linearGradient4967);fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 200,222.3622 c 0,0 -1.45111,-21.445 7.85714,-26.42857 30.39371,-16.27257 37.85715,-30.71428 37.85715,-30.71428 0,0 -8.30636,17.64569 -11.07143,41.07142 -2.76507,23.42573 -16.07143,23.21429 -16.07143,23.21429"
+       id="path4959"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csczc"
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\seamonster.png"
+       inkscape:export-xdpi="125.97915"
+       inkscape:export-ydpi="125.97915" />
+    <path
+       style="fill:#ffffc0;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       d="m 174.95193,251.72473 c 0,0 -6.38758,-13.18866 2.97706,-16.88616 9.36466,-3.69751 13.43848,8.99372 13.43848,8.99372 l -22.69825,11.30938"
+       id="path4993"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czcc"
+       inkscape:transform-center-x="-0.52211894"
+       inkscape:transform-center-y="2.5244654"
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\seamonster.png"
+       inkscape:export-xdpi="125.97915"
+       inkscape:export-ydpi="125.97915" />
+    <ellipse
+       style="fill:#000000;fill-opacity:1;stroke:#eef4a7;stroke-width:7.32617998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0"
+       id="path4995"
+       cx="178.75"
+       cy="244.86223"
+       rx="4.3726239"
+       ry="4.9083385"
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\seamonster.png"
+       inkscape:export-xdpi="125.97915"
+       inkscape:export-ydpi="125.97915" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path4997"
+       sodipodi:type="arc"
+       sodipodi:cx="115.53571"
+       sodipodi:cy="283.43362"
+       sodipodi:rx="5.1785712"
+       sodipodi:ry="5.7142859"
+       sodipodi:start="2.5481807"
+       sodipodi:end="0"
+       d="m 111.24248,286.62901 a 5.1785712,5.7142859 0 0 1 0.17564,-6.66082 5.1785712,5.7142859 0 0 1 5.77506,-1.94826 5.1785712,5.7142859 0 0 1 3.5211,5.41369"
+       sodipodi:open="true"
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\seamonster.png"
+       inkscape:export-xdpi="125.97915"
+       inkscape:export-ydpi="125.97915" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:url(#linearGradient5009-0);stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.29260451"
+       d="m 194.18999,474.13612 c 0,0 42.00094,10.01826 63.04808,-9.37035 21.04714,-19.38861 4.61856,-27.24576 4.61856,-27.24576"
+       id="path4999-1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czc"
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\seamonster.png"
+       inkscape:export-xdpi="125.97915"
+       inkscape:export-ydpi="125.97915" />
+    <path
+       style="fill:#3c9f79;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 325.35714,445.57649 c 0,0 -4.486,-43.52874 6.42858,-60 10.91457,-16.47127 34.95526,-8.75329 42.49999,-22.85714 7.54473,-14.10385 -0.48587,-24.29503 -4.64285,-42.5 -4.15698,-18.20497 11.45324,-30.52661 29.64285,-30.71429 18.18961,-0.18768 46.78572,44.64286 46.78572,44.64286 0,0 -37.82548,-33.10498 -46.78571,-18.21429 -8.96024,14.89069 17.85698,44.40643 11.42857,57.5 -6.42841,13.09357 -26.34447,16.96267 -35.00001,32.5 -8.65554,15.53734 3.57144,40.71429 3.57144,40.71429 0,0 -12.46495,6.41035 -27.16733,6.23177 -14.70239,-0.17857 -26.76125,-7.3032 -26.76125,-7.3032 z"
+       id="path5037"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czzzzczzzczc"
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\seamonster.png"
+       inkscape:export-xdpi="125.97915"
+       inkscape:export-ydpi="125.97915" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 169.95074,246.80145 c 0,0 -2.95952,-12.20592 4.77328,-15.36331 8.14828,-3.32704 14.41961,2.73641 14.41961,2.73641"
+       id="path5063"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csc"
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\seamonster.png"
+       inkscape:export-xdpi="125.97915"
+       inkscape:export-ydpi="125.97915" />
+    <ellipse
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path5065"
+       cx="177.5"
+       cy="243.43362"
+       rx="2.1428571"
+       ry="1.7857143"
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\seamonster.png"
+       inkscape:export-xdpi="125.97915"
+       inkscape:export-ydpi="125.97915" />
+  </g>
+</svg>
