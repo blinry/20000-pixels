@@ -3,7 +3,7 @@ vector = require "hump.vector"
 Timer = require "hump.timer"
 Camera = require "hump.camera"
 
-debug = true
+debug = false
 savePerPhase = 5
 fontsize = 35
 
@@ -501,7 +501,7 @@ function love.update(dt)
 				love.audio.play(sounds.wilhelm)
 				table.remove(people, i)
 				if offered == 0 then
-					say("Oh no, The Kraken got them! Please bring all others back home!", true)
+					say("Oh no, The Kraken got them! You did not do that on purpose, did you?", true)
 				end
 				offered = offered + 1
 			end
