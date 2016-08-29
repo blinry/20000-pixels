@@ -3,7 +3,7 @@ vector = require "hump.vector"
 Timer = require "hump.timer"
 Camera = require "hump.camera"
 
-debug = false
+debug = true
 savePerPhase = 5
 fontsize = 35
 
@@ -286,7 +286,7 @@ function love.load()
         end
     end
 
-    for x = 0,17000,400 do
+    for x = 0,21600,400 do
         island = {}
         island.x = x
         island.y = -6200
