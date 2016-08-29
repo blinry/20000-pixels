@@ -127,6 +127,29 @@ function nextPhase()
         say("Please save all "..savePerPhase.." persons!")
     elseif phase == 2 then
         makePeople(3)
+		monsters = {}
+		for i = 1,10 do
+			monster = {}
+			monster.x = love.math.random(13000, 17000)
+			monster.y = love.math.random(-6000, 6000)
+			monster.body = love.physics.newBody(world, monster.x, monster.y, "dynamic")
+			monster.shape = love.physics.newCircleShape(150)
+			monster.fixture = love.physics.newFixture(monster.body, monster.shape)
+			monster.fixture:setFriction(0)
+			monster.body:setMass(10)
+			monster.type = "seamonster"
+			table.insert(monsters, monster)
+		end
+		kraken = {}
+		kraken.x = love.math.random(13000, 17000)
+		kraken.y = love.math.random(-6000, 6000)
+		kraken.body = love.physics.newBody(world, kraken.x, kraken.y, "dynamic")
+		kraken.shape = love.physics.newCircleShape(300)
+		kraken.fixture = love.physics.newFixture(kraken.body, kraken.shape)
+		kraken.fixture:setFriction(0)
+		kraken.body:setMass(10)
+		kraken.type = "kraken"
+		table.insert(monsters, kraken)
         say("Awesome! I'm glad you got all of them back home safely!", true)
         say("Well, um...")
         say("There still are people out there.")
@@ -255,30 +278,6 @@ function love.load()
     saved = 0
     offered = 0
 
-    monsters = {}
-    for i = 1,10 do
-        monster = {}
-        monster.x = love.math.random(13000, 17000)
-        monster.y = love.math.random(-6000, 6000)
-        monster.body = love.physics.newBody(world, monster.x, monster.y, "dynamic")
-        monster.shape = love.physics.newCircleShape(150)
-        monster.fixture = love.physics.newFixture(monster.body, monster.shape)
-        monster.fixture:setFriction(0)
-        monster.body:setMass(10)
-        monster.type = "seamonster"
-        table.insert(monsters, monster)
-    end
-    kraken = {}
-    kraken.x = love.math.random(13000, 17000)
-    kraken.y = love.math.random(-6000, 6000)
-    kraken.body = love.physics.newBody(world, kraken.x, kraken.y, "dynamic")
-    kraken.shape = love.physics.newCircleShape(300)
-    kraken.fixture = love.physics.newFixture(kraken.body, kraken.shape)
-    kraken.fixture:setFriction(0)
-    kraken.body:setMass(10)
-    kraken.type = "kraken"
-    table.insert(monsters, kraken)
-
     soundtrack = love.audio.play(music.digya)
     soundtrack:setVolume(0.3)
     waves = love.audio.play(sounds.waves)
@@ -406,24 +405,26 @@ function love.update(dt)
             saved = saved + 1
         end
 
-        if person.status == "boarded" and vector(x, y):dist(vector(kraken.body:getPosition())) < 600 then
-            --love.audio.play(sounds.jump)
-            table.remove(people, i)
-            if offered == 0 then
-                say("Oh no, The Kraken got them! Please bring all others back home!", true)
-            end
-            if offered+1 < savePerPhase then
-                say("What are you doing? Please stop! :'-(", true)
-            end
-            if offered+1 >= savePerPhase then
-                say("You... you monster. I hope you are happy.", true)
-                say("I guess at least you made The Kraken happy...")
-                say("Also, maybe, you now have some intuition for the physics of sailing.")
-                say("Or do you? Let us know! Thanks for playing! :)")
-                say("- THE END -")
-            end
-            offered = offered + 1
-        end
+		if phase >= 3 then
+			if person.status == "boarded" and vector(x, y):dist(vector(kraken.body:getPosition())) < 600 then
+				--love.audio.play(sounds.jump)
+				table.remove(people, i)
+				if offered == 0 then
+					say("Oh no, The Kraken got them! Please bring all others back home!", true)
+				end
+				if offered+1 < savePerPhase then
+					say("What are you doing? Please stop! :'-(", true)
+				end
+				if offered+1 >= savePerPhase then
+					say("You... you monster. I hope you are happy.", true)
+					say("I guess at least you made The Kraken happy...")
+					say("Also, maybe, you now have some intuition for the physics of sailing.")
+					say("Or do you? Let us know! Thanks for playing! :)")
+					say("- THE END -")
+				end
+				offered = offered + 1
+			end
+		end
     end
     if phase == 1 and saved >= savePerPhase then
         nextPhase()
@@ -463,14 +464,16 @@ function love.update(dt)
     --table.insert(trail, pos:clone())
     --trail = table.slice(trail, #trail-100, #trail)
 
-    for i,monster in ipairs(monsters) do
-        -- damping
-        x, y = monster.body:getLinearVelocity()
-        monster.body:applyForce(-2*x, -2*y)
+	if phase >= 3 then
+		for i,monster in ipairs(monsters) do
+			-- damping
+			x, y = monster.body:getLinearVelocity()
+			monster.body:applyForce(-2*x, -2*y)
 
-        monster.body:applyForce(love.math.random(-10000, 10000), love.math.random(-10000, 10000))
-    end
-
+			monster.body:applyForce(love.math.random(-10000, 10000), love.math.random(-10000, 10000))
+		end
+	end
+		
     ps:setPosition(ship.body:getWorldPoints(0, 150))
 
     cx, cy = camera:position()
@@ -623,17 +626,19 @@ function love.draw()
     sv = sailvector:normalized()*50
     love.graphics.draw(images.wind, x-wind.x+sv.x*2, y-wind.y+sv.y*2, abswind+math.pi/2, wind:len()/40, wind:len()/40, images.wind:getWidth()/2, images.wind:getHeight()/2)
 
-    for i,monster in ipairs(monsters) do
-        x, y = monster.body:getPosition()
-        love.graphics.setColor(255, 255, 255)
-        if monster.type == "kraken" then
-            love.graphics.draw(images.kraken, x, y, 0, 1, 1, images.kraken:getWidth()/2, images.kraken:getWidth()/2)
-        else
-            love.graphics.draw(images.seamonster, x, y, 0, 1, 1, images.seamonster:getWidth()/2, images.seamonster:getWidth()/2)
-        end
-        --love.graphics.rectangle("fill", x, y, 1000, 1000)
-    end
-
+	if phase >= 3 then
+		for i,monster in ipairs(monsters) do
+			x, y = monster.body:getPosition()
+			love.graphics.setColor(255, 255, 255)
+			if monster.type == "kraken" then
+				love.graphics.draw(images.kraken, x, y, 0, 1, 1, images.kraken:getWidth()/2, images.kraken:getWidth()/2)
+			else
+				love.graphics.draw(images.seamonster, x, y, 0, 1, 1, images.seamonster:getWidth()/2, images.seamonster:getWidth()/2)
+			end
+			--love.graphics.rectangle("fill", x, y, 1000, 1000)
+		end
+	end
+	
     camera:detach()
 
     love.graphics.setColor(255, 255, 255)
