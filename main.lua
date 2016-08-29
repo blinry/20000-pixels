@@ -136,6 +136,7 @@ function nextPhase()
 			monster.shape = love.physics.newCircleShape(150)
 			monster.fixture = love.physics.newFixture(monster.body, monster.shape)
 			monster.fixture:setFriction(0)
+			monster.fixture:setUserData("seamonster")
 			monster.body:setMass(10)
 			monster.type = "seamonster"
 			table.insert(monsters, monster)
@@ -207,6 +208,7 @@ function love.load()
 
     love.physics.setMeter(100)
     world = love.physics.newWorld(0, 0, true)
+    world:setCallbacks(beginContact)
 
     ship = {}
     ship.body = love.physics.newBody(world, 0, 0, "dynamic")
@@ -501,6 +503,8 @@ function love.keypressed(key)
         zoom = zoom/2
     elseif key == "+" then
         zoom = zoom*2
+    elseif key == "n" then
+        nextPhase()
     elseif key == "f11" then
         fs, fstype = love.window.getFullscreen()
         if fs then
@@ -532,6 +536,18 @@ function love.mousepressed(x, y, button, touch)
     if button == 2 then
         x, y = camera:worldCoords(x, y)
         ship.body:setPosition(x, y)
+    end
+end
+
+function beginContact(a, b, coll)
+    if (a == ship.fixture2 or b == ship.fixture2) then
+        sounds.crash:setPitch(love.math.random(50,150)/100)
+        sounds.crash:setVolume(range(speed:len(), 100, 500))
+        love.audio.play(sounds.crash)
+        if (a:getUserData() == "seamonster" or b:getUserData() == "seamonster") then
+            sounds.howl:setPitch(love.math.random(50,150)/100)
+            love.audio.play(sounds.howl)
+        end
     end
 end
 
@@ -686,7 +702,7 @@ function love.draw()
 	end
 
     --love.graphics.setColor(0, 0, 0)
-    love.graphics.print(forceamount, 0, 600)
+    love.graphics.print(speed:len(), 200, 500)
 
     w, h, flags = love.window.getMode()
     if phase > 0 and line then

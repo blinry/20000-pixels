@@ -7,4 +7,5 @@ Assets used:
 - sounds/splash.mp3: https://www.freesound.org/people/soundscalpel.com/sounds/110393/
 - sounds/sail.mp3: https://www.freesound.org/people/felix.blume/sounds/154794/
 - sounds/jump.mp3: https://www.freesound.org/people/fins/sounds/146726/
+- sounds/crash.mp3: https://www.freesound.org/people/InspectorJ/sounds/352119/
 - music/digya.mp3: http://incompetech.com/wordpress/2012/07/digya/
