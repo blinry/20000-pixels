@@ -45,8 +45,8 @@
      pagecolor="#ffffff"
      id="base"
      inkscape:zoom="0.9425"
-     inkscape:cx="337.46098"
-     inkscape:cy="584.09531"
+     inkscape:cx="92.368142"
+     inkscape:cy="596.32596"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:current-layer="windrose"
@@ -87,7 +87,7 @@
        fx="403.18301"
        fy="401.00949"
        r="406.80505"
-       gradientTransform="matrix(1.7434586,0.02589566,-0.01201805,0.80913106,-294.93046,66.099539)"
+       gradientTransform="matrix(1.0710778,0.01651523,-0.00738318,0.51603192,-182.50182,-163.59238)"
        gradientUnits="userSpaceOnUse" />
     <radialGradient
        inkscape:collect="always"
@@ -109,7 +109,7 @@
        fx="404.77454"
        fy="401.061"
        r="27.494694"
-       gradientTransform="matrix(0.99760199,-0.06921183,0.03858955,0.55622017,-14.50611,205.99797)"
+       gradientTransform="matrix(0.61286761,-0.04414058,0.02370714,0.35473531,-10.225695,-74.370669)"
        gradientUnits="userSpaceOnUse" />
     <linearGradient
        inkscape:collect="always"
@@ -119,9 +119,10 @@
        y1="238.10332"
        x2="363.11069"
        y2="137.30756"
-       gradientUnits="userSpaceOnUse" />
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.61434081,0,0,0.63776061,-1.3139998,-205.74806)" />
     <linearGradient
-       gradientTransform="matrix(1,0,0,-1,-0.16093515,806.80359)"
+       gradientTransform="matrix(0.61434081,0,0,-0.63776061,-1.4128688,308.79949)"
        inkscape:collect="always"
        xlink:href="#linearGradient8323"
        id="linearGradient8297-5"
@@ -142,521 +143,809 @@
        fy="400"
        r="233.6875" />
   </defs>
+  <ellipse
+     style="fill:url(#radialGradient8267);fill-opacity:1;stroke:#9d9d1d;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.94117647"
+     id="path7206-0"
+     cx="246.37778"
+     cy="49.999996"
+     rx="248.80673"
+     ry="248.55544"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <ellipse
+     style="fill:#f5c889;fill-opacity:1;stroke:#00000f;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.94117647"
+     id="path7206"
+     cx="245.07414"
+     cy="47.326183"
+     rx="224.79651"
+     ry="224.56947"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="kreis"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116"
+     d="m 428.72457,49.356184 a 184.30224,191.32818 0 0 1 -368.604489,0 184.30224,191.32818 0 1 1 368.604489,0 z"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie045"
+     style="fill:none;stroke:#000000;stroke-width:1.25188231"
+     d="m 374.66258,-85.849065 17.20154,-17.857295"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie090"
+     style="fill:none;stroke:#000000;stroke-width:1.25188231"
+     d="m 453.2982,49.356184 -24.57363,0"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie135"
+     style="fill:none;stroke:#000000;stroke-width:1.25188231"
+     d="m 374.66258,184.56143 17.20154,17.8573"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie180"
+     style="fill:none;stroke:#000000;stroke-width:1.25188231"
+     d="m 244.42232,266.19479 0,-25.51042"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie225"
+     style="fill:none;stroke:#000000;stroke-width:1.25188231"
+     d="m 114.18207,184.56143 -17.20154,17.8573"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie270"
+     style="fill:none;stroke:#000000;stroke-width:1.25188231"
+     d="m 35.546449,49.356184 24.573632,0"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie315"
+     style="fill:none;stroke:#000000;stroke-width:1.25188231"
+     d="M 114.18207,-85.849065 96.98053,-103.70636"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie360"
+     style="fill:none;stroke:#000000;stroke-width:1.25188231"
+     d="m 244.42232,-167.48242 0,25.51042"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie005"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 260.39519,-141.33424 1.22868,-12.75521"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie010"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 276.36805,-138.7832 2.45736,-12.75521"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie015"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 292.34091,-135.59439 3.0717,-12.11745"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie020"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 307.69943,-130.49231 3.68604,-12.11745"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie025"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 322.44361,-124.1147 4.91472,-11.47969"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie030"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 336.57345,-116.46157 6.1434,-10.84193"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie035"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 350.08894,-107.53293 7.37209,-10.20417"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie040"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 362.9901,-97.328756 7.98643,-9.566414"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie050"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 385.72071,-73.731614 9.21511,-8.290888"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie055"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 395.55016,-60.338641 9.82946,-7.653127"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie060"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 404.15093,-46.307908 10.4438,-6.377606"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie065"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 411.52302,-31.639413 11.05814,-5.102085"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie070"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 417.66643,-16.333159 11.67248,-3.826563"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie075"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="M 422.58116,-0.38914358 434.25363,-3.5779466"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie080"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="M 425.65286,16.192632 437.93968,13.64159"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie085"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 428.11023,32.774408 12.28681,-1.275521"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie095"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 428.11023,65.93796 12.28681,1.275521"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie100"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 425.65286,82.519736 12.28682,2.551042"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie105"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 422.58116,99.101512 11.67247,3.188798"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie110"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 417.66643,115.04553 11.67248,3.82656"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie115"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 411.52302,130.35178 11.05814,5.10209"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie120"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 404.15093,145.02028 10.4438,6.3776"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie125"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 395.55016,159.05101 9.82946,7.65313"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie130"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 385.72071,172.44398 9.21511,8.29089"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie140"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 362.9901,196.04112 7.98643,9.56641"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie145"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 350.08894,206.24529 7.37209,10.20417"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie150"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 336.57345,215.17394 6.1434,10.84193"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie155"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 322.44361,222.82707 4.91472,11.47969"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie160"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 307.69943,229.20468 3.68604,12.11745"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie165"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 292.34091,234.30676 3.0717,12.11745"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie170"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 276.36805,237.49556 2.45736,12.75522"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie175"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 260.39519,240.04661 1.22868,12.75521"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie185"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 228.44946,240.04661 -1.22868,12.75521"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie190"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 212.4766,237.49556 -2.45736,12.75522"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie195"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 196.50374,234.30676 -3.0717,12.11745"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie200"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 181.14522,229.20468 -3.68604,12.11745"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie205"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 166.40104,222.82707 -4.91473,11.47969"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie210"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 152.2712,215.17394 -6.14341,10.84193"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie215"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 138.7557,206.24529 -7.37208,10.20417"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie220"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 125.85455,196.04112 -7.98643,9.56641"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie230"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 103.12394,172.44398 -9.215114,8.29089"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie235"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 93.294485,159.05101 -9.829453,7.65313"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie240"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 84.693714,145.02028 -10.443794,6.3776"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie245"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 77.321624,130.35178 -11.058135,5.10209"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie250"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="M 71.178216,115.04553 59.50574,118.87209"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie255"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="M 66.263489,99.101512 54.591014,102.29031"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie260"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="M 63.191785,82.519736 50.904969,85.070778"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie265"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="M 60.734422,65.93796 48.447606,67.213481"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie275"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="M 60.734422,32.774408 48.447606,31.498887"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie280"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="M 63.191785,16.192632 50.904969,13.64159"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie285"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="M 66.263489,-0.38914358 54.591014,-3.5779466"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie290"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="M 71.178216,-16.333159 59.50574,-20.159722"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie295"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="M 77.321624,-31.639413 66.263489,-36.741498"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie300"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="M 84.693714,-46.307908 74.24992,-52.685514"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie305"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 93.294485,-60.338641 -9.829453,-7.653127"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie310"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 103.12394,-73.731614 -9.215114,-8.290888"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie320"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 125.85455,-97.328756 -7.98643,-9.566414"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie325"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 138.7557,-107.53293 -7.37208,-10.20417"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie330"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 152.2712,-116.46157 -6.14341,-10.84193"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie335"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 166.40104,-124.1147 -4.91473,-11.47969"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie340"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 181.14522,-130.49231 -3.68604,-12.11745"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie345"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 196.50374,-135.59439 -3.0717,-12.11745"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie350"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 212.4766,-138.7832 -2.45736,-12.75521"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     id="linie355"
+     style="fill:none;stroke:#000000;stroke-width:0.62594116;stroke-opacity:1"
+     d="m 228.44946,-141.33424 -1.22868,-12.75521"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     inkscape:connector-curvature="0"
+     id="pfeil-rechtsoben-oben"
+     style="fill:#000000;stroke:#000000;stroke-width:0.62594116"
+     d="m 244.42232,49.356184 0,-41.4544397 95.22283,-57.3984553 -95.22283,98.852895 z"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     inkscape:connector-curvature="0"
+     id="pfeil-rechtsoben-rechts"
+     style="fill:#fab37e;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:0.62594116px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 244.42232,49.356184 39.93216,0 55.29067,-98.852895 -95.22283,98.852895 z"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     inkscape:connector-curvature="0"
+     id="pfeil-rechtsunten-rechts"
+     style="fill:#000000;stroke:#000000;stroke-width:0.62594116"
+     d="m 244.42232,49.356184 39.93216,0 55.29067,98.852896 -95.22283,-98.852896 z"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     inkscape:connector-curvature="0"
+     id="pfeil-rechtsunten-unten"
+     style="fill:#fab37e;fill-opacity:0;stroke:#000000;stroke-width:0.62594116"
+     d="m 244.42232,49.356184 0,41.45444 95.22283,57.398456 -95.22283,-98.852896 z"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     inkscape:connector-curvature="0"
+     id="pfeil-linksunten-unten"
+     style="fill:#000000;stroke:#000000;stroke-width:0.62594116"
+     d="m 244.42232,49.356184 0,41.45444 -95.22282,57.398456 95.22282,-98.852896 z"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     inkscape:connector-curvature="0"
+     id="pfeil-linksunten-links"
+     style="fill:#fab37e;fill-opacity:0;stroke:#000000;stroke-width:0.62594116"
+     d="m 244.42232,49.356184 -39.93215,0 -55.29067,98.852896 95.22282,-98.852896 z"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     inkscape:connector-curvature="0"
+     id="pfeil-linksoben-links"
+     style="fill:#000000;stroke:#000000;stroke-width:0.62594116"
+     d="m 244.42232,49.356184 -39.93215,0 -55.29067,-98.852895 95.22282,98.852895 z"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     inkscape:connector-curvature="0"
+     id="pfeil-linksoben-oben"
+     style="fill:#fab37e;fill-opacity:0;stroke:#000000;stroke-width:0.62594116"
+     d="m 244.42232,49.356184 0,-41.4544397 -95.22282,-57.3984553 95.22282,98.852895 z"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     inkscape:connector-curvature="0"
+     id="pfeil-oben-links"
+     style="fill:#000000;stroke:#000000;stroke-width:0.62594116"
+     d="m 244.42232,-141.972 -27.64533,162.628957 27.64533,28.699227 0,-191.328184 z"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     inkscape:connector-curvature="0"
+     id="pfeil-oben-rechts"
+     style="fill:#fab37e;fill-opacity:0;stroke:#000000;stroke-width:0.62594116"
+     d="m 244.42232,-141.972 27.64534,162.628957 -27.64534,28.699227 0,-191.328184 z"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     inkscape:connector-curvature="0"
+     id="pfeil-rechts-oben"
+     style="fill:#000000;stroke:#000000;stroke-width:0.62594116"
+     d="m 428.72457,49.356184 -156.65691,-28.699227 -27.64534,28.699227 184.30225,0 z"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     inkscape:connector-curvature="0"
+     id="pfeil-rechts-unten"
+     style="fill:#fab37e;fill-opacity:0;stroke:#000000;stroke-width:0.62594116"
+     d="m 428.72457,49.356184 -156.65691,28.699227 -27.64534,-28.699227 184.30225,0 z"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     inkscape:connector-curvature="0"
+     id="pfeil-unten-rechts"
+     style="fill:#000000;stroke:#000000;stroke-width:0.62594116"
+     d="m 244.42232,240.68437 27.64534,-162.628959 -27.64534,-28.699227 0,191.328186 z"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     inkscape:connector-curvature="0"
+     id="pfeil-unten-links"
+     style="fill:#fab37e;fill-opacity:0;stroke:#000000;stroke-width:0.62594116"
+     d="m 244.42232,240.68437 -27.64533,-162.628959 27.64533,-28.699227 0,191.328186 z"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     inkscape:connector-curvature="0"
+     id="pfeil-links-unten"
+     style="fill:#000000;stroke:#000000;stroke-width:0.62594116"
+     d="m 60.120081,49.356184 156.656909,28.699227 27.64533,-28.699227 -184.302239,0 z"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     inkscape:connector-curvature="0"
+     id="pfeil-links-oben"
+     style="fill:#fab37e;fill-opacity:0;stroke:#000000;stroke-width:0.62594116"
+     d="m 60.120081,49.356184 156.656909,-28.699227 27.64533,28.699227 -184.302239,0 z"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
   <g
-     id="g8429"
-     transform="matrix(0.61434081,0,0,0.63776061,-1.3139998,-205.74806)">
-    <ellipse
-       ry="389.73157"
-       rx="404.99789"
-       cy="401.00949"
-       cx="403.18301"
-       id="path7206-0"
-       style="fill:url(#radialGradient8267);fill-opacity:1;stroke:#dbdb07;stroke-width:3.61429167;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.94117647" />
-    <ellipse
-       ry="352.12189"
-       rx="365.91498"
-       cy="396.81699"
-       cx="401.061"
-       id="path7206"
-       style="fill:#f5c889;fill-opacity:1;stroke:#00000f;stroke-width:3.26550722;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.94117647" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 700,400 a 300,300 0 0 1 -600,0 300,300 0 1 1 600,0 z"
-       style="fill:none;stroke:#000000"
-       id="kreis" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 612,188 28,-28"
-       style="fill:none;stroke:#000000;stroke-width:2"
-       id="linie045" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 740,400 -40,0"
-       style="fill:none;stroke:#000000;stroke-width:2"
-       id="linie090" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 612,612 28,28"
-       style="fill:none;stroke:#000000;stroke-width:2"
-       id="linie135" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 400,740 0,-40"
-       style="fill:none;stroke:#000000;stroke-width:2"
-       id="linie180" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 188,612 -28,28"
-       style="fill:none;stroke:#000000;stroke-width:2"
-       id="linie225" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 60,400 40,0"
-       style="fill:none;stroke:#000000;stroke-width:2"
-       id="linie270" />
-    <path
-       inkscape:connector-curvature="0"
-       d="M 188,188 160,160"
-       style="fill:none;stroke:#000000;stroke-width:2"
-       id="linie315" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 400,60 0,40"
-       style="fill:none;stroke:#000000;stroke-width:2"
-       id="linie360" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 426,101 2,-20"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie005" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 452,105 4,-20"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie010" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 478,110 5,-19"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie015" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 503,118 6,-19"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie020" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 527,128 8,-18"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie025" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 550,140 10,-17"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie030" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 572,154 12,-16"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie035" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 593,170 13,-15"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie040" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 630,207 15,-13"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie050" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 646,228 16,-12"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie055" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 660,250 17,-10"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie060" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 672,273 18,-8"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie065" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 682,297 19,-6"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie070" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 690,322 19,-5"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie075" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 695,348 20,-4"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie080" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 699,374 20,-2"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie085" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 699,426 20,2"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie095" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 695,452 20,4"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie100" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 690,478 19,5"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie105" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 682,503 19,6"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie110" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 672,527 18,8"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie115" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 660,550 17,10"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie120" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 646,572 16,12"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie125" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 630,593 15,13"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie130" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 593,630 13,15"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie140" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 572,646 12,16"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie145" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 550,660 10,17"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie150" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 527,672 8,18"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie155" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 503,682 6,19"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie160" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 478,690 5,19"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie165" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 452,695 4,20"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie170" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 426,699 2,20"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie175" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 374,699 -2,20"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie185" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 348,695 -4,20"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie190" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 322,690 -5,19"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie195" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 297,682 -6,19"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie200" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 273,672 -8,18"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie205" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 250,660 -10,17"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie210" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 228,646 -12,16"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie215" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 207,630 -13,15"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie220" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 170,593 -15,13"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie230" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 154,572 -16,12"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie235" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 140,550 -17,10"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie240" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 128,527 -18,8"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie245" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 118,503 -19,6"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie250" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 110,478 -19,5"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie255" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 105,452 -20,4"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie260" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 101,426 -20,2"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie265" />
-    <path
-       inkscape:connector-curvature="0"
-       d="M 101,374 81,372"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie275" />
-    <path
-       inkscape:connector-curvature="0"
-       d="M 105,348 85,344"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie280" />
-    <path
-       inkscape:connector-curvature="0"
-       d="M 110,322 91,317"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie285" />
-    <path
-       inkscape:connector-curvature="0"
-       d="M 118,297 99,291"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie290" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 128,273 -18,-8"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie295" />
-    <path
-       inkscape:connector-curvature="0"
-       d="M 140,250 123,240"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie300" />
-    <path
-       inkscape:connector-curvature="0"
-       d="M 154,228 138,216"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie305" />
-    <path
-       inkscape:connector-curvature="0"
-       d="M 170,207 155,194"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie310" />
-    <path
-       inkscape:connector-curvature="0"
-       d="M 207,170 194,155"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie320" />
-    <path
-       inkscape:connector-curvature="0"
-       d="M 228,154 216,138"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie325" />
-    <path
-       inkscape:connector-curvature="0"
-       d="M 250,140 240,123"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie330" />
-    <path
-       inkscape:connector-curvature="0"
-       d="m 273,128 -8,-18"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie335" />
-    <path
-       inkscape:connector-curvature="0"
-       d="M 297,118 291,99"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie340" />
-    <path
-       inkscape:connector-curvature="0"
-       d="M 322,110 317,91"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie345" />
-    <path
-       inkscape:connector-curvature="0"
-       d="M 348,105 344,85"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie350" />
-    <path
-       inkscape:connector-curvature="0"
-       d="M 374,101 372,81"
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-opacity:1"
-       id="linie355" />
-    <path
-       d="m 400,400 0,-65 155,-90 -155,155 z"
-       style="fill:#000000;stroke:#000000;stroke-width:1"
-       id="pfeil-rechtsoben-oben"
-       inkscape:connector-curvature="0" />
-    <path
-       d="m 400,400 65,0 90,-155 -155,155 z"
-       style="fill:#fab37e;fill-opacity:0;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       id="pfeil-rechtsoben-rechts"
-       inkscape:connector-curvature="0" />
-    <path
-       d="m 400,400 65,0 90,155 -155,-155 z"
-       style="fill:#000000;stroke:#000000;stroke-width:1"
-       id="pfeil-rechtsunten-rechts"
-       inkscape:connector-curvature="0" />
-    <path
-       d="m 400,400 0,65 155,90 -155,-155 z"
-       style="fill:#fab37e;fill-opacity:0;stroke:#000000;stroke-width:1"
-       id="pfeil-rechtsunten-unten"
-       inkscape:connector-curvature="0" />
-    <path
-       d="m 400,400 0,65 -155,90 155,-155 z"
-       style="fill:#000000;stroke:#000000;stroke-width:1"
-       id="pfeil-linksunten-unten"
-       inkscape:connector-curvature="0" />
-    <path
-       d="m 400,400 -65,0 -90,155 155,-155 z"
-       style="fill:#fab37e;fill-opacity:0;stroke:#000000;stroke-width:1"
-       id="pfeil-linksunten-links"
-       inkscape:connector-curvature="0" />
-    <path
-       d="m 400,400 -65,0 -90,-155 155,155 z"
-       style="fill:#000000;stroke:#000000;stroke-width:1"
-       id="pfeil-linksoben-links"
-       inkscape:connector-curvature="0" />
-    <path
-       d="m 400,400 0,-65 -155,-90 155,155 z"
-       style="fill:#fab37e;fill-opacity:0;stroke:#000000;stroke-width:1"
-       id="pfeil-linksoben-oben"
-       inkscape:connector-curvature="0" />
-    <path
-       d="m 400,100 -45,255 45,45 0,-300 z"
-       style="fill:#000000;stroke:#000000;stroke-width:1"
-       id="pfeil-oben-links"
-       inkscape:connector-curvature="0" />
-    <path
-       d="m 400,100 45,255 -45,45 0,-300 z"
-       style="fill:#fab37e;fill-opacity:0;stroke:#000000;stroke-width:1"
-       id="pfeil-oben-rechts"
-       inkscape:connector-curvature="0" />
-    <path
-       d="m 700,400 -255,-45 -45,45 300,0 z"
-       style="fill:#000000;stroke:#000000;stroke-width:1"
-       id="pfeil-rechts-oben"
-       inkscape:connector-curvature="0" />
-    <path
-       d="m 700,400 -255,45 -45,-45 300,0 z"
-       style="fill:#fab37e;fill-opacity:0;stroke:#000000;stroke-width:1"
-       id="pfeil-rechts-unten"
-       inkscape:connector-curvature="0" />
-    <path
-       d="m 400,700 45,-255 -45,-45 0,300 z"
-       style="fill:#000000;stroke:#000000;stroke-width:1"
-       id="pfeil-unten-rechts"
-       inkscape:connector-curvature="0" />
-    <path
-       d="m 400,700 -45,-255 45,-45 0,300 z"
-       style="fill:#fab37e;fill-opacity:0;stroke:#000000;stroke-width:1"
-       id="pfeil-unten-links"
-       inkscape:connector-curvature="0" />
-    <path
-       d="m 100,400 255,45 45,-45 -300,0 z"
-       style="fill:#000000;stroke:#000000;stroke-width:1"
-       id="pfeil-links-unten"
-       inkscape:connector-curvature="0" />
-    <path
-       d="m 100,400 255,-45 45,45 -300,0 z"
-       style="fill:#fab37e;fill-opacity:0;stroke:#000000;stroke-width:1"
-       id="pfeil-links-oben"
-       inkscape:connector-curvature="0" />
-    <g
-       style="fill:url(#radialGradient8275);fill-opacity:1"
-       id="rotekreisebene">
-      <path
-         id="kreisinnen"
-         style="fill:url(#radialGradient8535);fill-opacity:1;stroke:none;stroke-opacity:1"
-         d="m 424.78125,166.3125 5.125,30.875 c 33.24974,4.86578 63.90149,17.72876 89.96875,36.5625 l 25.21875,-18.5625 c -33.85398,-26.6192 -75.18503,-44.14017 -120.3125,-48.875 z m -52.875,0.375 C 326.92279,172.05589 285.8137,190.13949 252.3125,217.25 l 25.46875,18.21875 c 25.81448,-19.21284 56.2745,-32.5081 89.40625,-37.84375 l 4.71875,-30.9375 z m 210.84375,85.625 -18.21875,25.46875 c 19.21284,25.81448 32.5081,56.2745 37.84375,89.40625 l 30.9375,4.71875 C 627.94411,326.92279 609.86051,285.8137 582.75,252.3125 Z m -367.5625,2.59375 c -26.6192,33.85398 -44.14017,75.18503 -48.875,120.3125 l 30.875,-5.125 c 4.86578,-33.24974 17.72876,-63.90149 36.5625,-89.96875 l -18.5625,-25.21875 z m 418.5,169.875 -30.875,5.125 c -4.86578,33.24974 -17.72876,63.90149 -36.5625,89.96875 l 18.5625,25.21875 c 26.6192,-33.85398 44.14017,-75.18503 48.875,-120.3125 z m -467,3.3125 c 5.36839,44.98346 23.45199,86.09255 50.5625,119.59375 l 18.21875,-25.46875 C 216.25591,496.40427 202.96065,465.94425 197.625,432.8125 l -30.9375,-4.71875 z m 355.53125,136.4375 c -25.81448,19.21284 -56.2745,32.5081 -89.40625,37.84375 l -4.71875,30.9375 C 473.07721,627.94411 514.1863,609.86051 547.6875,582.75 L 522.21875,564.53125 Z M 280.125,566.25 254.90625,584.8125 c 33.85398,26.6192 75.18503,44.14017 120.3125,48.875 l -5.125,-30.875 C 336.84401,597.94672 306.19226,585.08374 280.125,566.25 Z"
-         inkscape:connector-curvature="0" />
-    </g>
-    <path
-       sodipodi:nodetypes="ccscsccc"
-       inkscape:connector-curvature="0"
-       id="path7550"
-       d="m 389.38992,386.2069 -5.30504,-163.39523 c 0,0 -16.24019,-8.29967 -22.28117,-19.09814 C 353.30867,188.52834 400,90.185676 400,90.185676 c 0,0 50.25342,100.702604 45.62334,111.405834 -5.2708,12.18438 -26.5252,22.28117 -26.5252,22.28117 l -1.061,163.39522 z"
-       style="fill:url(#linearGradient8297);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-    <path
-       sodipodi:nodetypes="ccscsccc"
-       inkscape:connector-curvature="0"
-       id="path7550-5"
-       d="m 389.22898,420.59668 -5.30504,163.39523 c 0,0 -16.24019,8.29967 -22.28117,19.09814 -8.49504,15.18519 38.19629,113.52786 38.19629,113.52786 0,0 50.25342,-100.70261 45.62334,-111.40584 -5.2708,-12.18438 -26.5252,-22.28117 -26.5252,-22.28117 l -1.061,-163.39522 z"
-       style="fill:url(#linearGradient8297-5);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-    <ellipse
-       ry="24.008635"
-       rx="25.600145"
-       cy="401.061"
-       cx="404.77454"
-       id="path7353"
-       style="fill:url(#radialGradient8289);fill-opacity:1;stroke:#00000f;stroke-width:3.78909802;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.94117647" />
-    <flowRoot
-       transform="translate(814.85411,-125.19894)"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#f5ec1a;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       id="flowRoot7663"
-       xml:space="preserve"><flowRegion
-         id="flowRegion7665"><rect
-           style="fill:#f5ec1a;fill-opacity:1"
-           y="269.49603"
-           x="-461.53845"
-           height="77.453583"
-           width="96.551727"
-           id="rect7667" /></flowRegion><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:60px;font-family:FrankRuehl;-inkscape-font-specification:FrankRuehl;fill:#f5ec1a;fill-opacity:1"
-         id="flowPara7669">N</flowPara></flowRoot>    <flowRoot
-       transform="translate(813.97564,318.68084)"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#f5ec1a;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       id="flowRoot7663-8"
-       xml:space="preserve"><flowRegion
-         id="flowRegion7665-1"><rect
-           style="fill:#f5ec1a;fill-opacity:1"
-           y="269.49603"
-           x="-461.53845"
-           height="77.453583"
-           width="96.551727"
-           id="rect7667-3" /></flowRegion><flowPara
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:60px;font-family:FrankRuehl;-inkscape-font-specification:FrankRuehl;fill:#f5ec1a;fill-opacity:1"
-         id="flowPara7669-1">S</flowPara></flowRoot>  </g>
-</svg>
+     id="rotekreisebene"
+     style="fill:url(#radialGradient8275);fill-opacity:1"
+     transform="matrix(0.61434081,0,0,0.63776061,-1.3139998,-205.74806)"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90">
+    <path
+       inkscape:connector-curvature="0"
+       d="m 424.78125,166.3125 5.125,30.875 c 33.24974,4.86578 63.90149,17.72876 89.96875,36.5625 l 25.21875,-18.5625 c -33.85398,-26.6192 -75.18503,-44.14017 -120.3125,-48.875 z m -52.875,0.375 C 326.92279,172.05589 285.8137,190.13949 252.3125,217.25 l 25.46875,18.21875 c 25.81448,-19.21284 56.2745,-32.5081 89.40625,-37.84375 l 4.71875,-30.9375 z m 210.84375,85.625 -18.21875,25.46875 c 19.21284,25.81448 32.5081,56.2745 37.84375,89.40625 l 30.9375,4.71875 C 627.94411,326.92279 609.86051,285.8137 582.75,252.3125 Z m -367.5625,2.59375 c -26.6192,33.85398 -44.14017,75.18503 -48.875,120.3125 l 30.875,-5.125 c 4.86578,-33.24974 17.72876,-63.90149 36.5625,-89.96875 l -18.5625,-25.21875 z m 418.5,169.875 -30.875,5.125 c -4.86578,33.24974 -17.72876,63.90149 -36.5625,89.96875 l 18.5625,25.21875 c 26.6192,-33.85398 44.14017,-75.18503 48.875,-120.3125 z m -467,3.3125 c 5.36839,44.98346 23.45199,86.09255 50.5625,119.59375 l 18.21875,-25.46875 C 216.25591,496.40427 202.96065,465.94425 197.625,432.8125 l -30.9375,-4.71875 z m 355.53125,136.4375 c -25.81448,19.21284 -56.2745,32.5081 -89.40625,37.84375 l -4.71875,30.9375 C 473.07721,627.94411 514.1863,609.86051 547.6875,582.75 L 522.21875,564.53125 Z M 280.125,566.25 254.90625,584.8125 c 33.85398,26.6192 75.18503,44.14017 120.3125,48.875 l -5.125,-30.875 C 336.84401,597.94672 306.19226,585.08374 280.125,566.25 Z"
+       style="fill:url(#radialGradient8535);fill-opacity:1;stroke:none;stroke-opacity:1"
+       id="kreisinnen" />
+  </g>
+  <path
+     style="fill:url(#linearGradient8297);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.25188231;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 237.90412,40.559488 -3.2591,-104.207041 c 0,0 -9.97701,-5.293203 -13.68824,-12.180042 -5.21885,-9.684516 23.46554,-72.403595 23.46554,-72.403595 0,0 30.87273,64.224156 28.02828,71.050254 -3.23806,7.770718 -16.29551,14.210053 -16.29551,14.210053 l -0.65181,104.207035 z"
+     id="path7550"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccscsccc"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     style="fill:url(#linearGradient8297-5);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.25188231;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 237.80525,62.491935 -3.25911,104.207045 c 0,0 -9.97701,5.2932 -13.68823,12.18004 -5.21885,9.68451 23.46554,72.4036 23.46554,72.4036 0,0 30.87273,-64.22416 28.02828,-71.05026 -3.23807,-7.77072 -16.29551,-14.21005 -16.29551,-14.21005 L 255.4044,61.815271 Z"
+     id="path7550-5"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccscsccc"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <ellipse
+     style="fill:url(#radialGradient8289);fill-opacity:1;stroke:#00000f;stroke-width:2.3717525;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.94117647"
+     id="path7353"
+     cx="247.35551"
+     cy="50.032852"
+     rx="15.727214"
+     ry="15.311762"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <flowRoot
+     xml:space="preserve"
+     id="flowRoot7663"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#f5ec1a;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     transform="matrix(0.61434081,0,0,0.63776061,499.28413,-285.59501)"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90"><flowRegion
+       id="flowRegion7665"><rect
+         id="rect7667"
+         width="96.551727"
+         height="77.453583"
+         x="-461.53845"
+         y="269.49603"
+         style="fill:#f5ec1a;fill-opacity:1" /></flowRegion><flowPara
+       id="flowPara7669"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:60px;font-family:FrankRuehl;-inkscape-font-specification:FrankRuehl;fill:#f5ec1a;fill-opacity:1">N</flowPara></flowRoot>  <flowRoot
+     xml:space="preserve"
+     id="flowRoot7663-8"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#f5ec1a;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     transform="matrix(0.61434081,0,0,0.63776061,498.74445,-2.5059731)"
+     inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\compass.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90"><flowRegion
+       id="flowRegion7665-1"><rect
+         id="rect7667-3"
+         width="96.551727"
+         height="77.453583"
+         x="-461.53845"
+         y="269.49603"
+         style="fill:#f5ec1a;fill-opacity:1" /></flowRegion><flowPara
+       id="flowPara7669-1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:60px;font-family:FrankRuehl;-inkscape-font-specification:FrankRuehl;fill:#f5ec1a;fill-opacity:1">S</flowPara></flowRoot></svg>
