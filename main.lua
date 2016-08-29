@@ -105,18 +105,25 @@ end
 function nextPhase()
     if phase == 0 then
         makePeople(1)
-        say("Hello! Ready for a 30-second sailing course? (Click to continue)")
+        say("Hey there! We need your help! (Click to continue)")
+        say("Some of our people went missing a few days ago.")
+        say("It will be a very easy and safe to find them. Trust me!")
+        say("Unfortunately, there won't be a monetary reward.")
+        say("That's, because it will also be *very* fun!")
+
+        say("You will need this sailboat to save them.")
+        say("Ready for a 30-second sailing course?")
         say("Right now, you're anchored, so you can try out the controls safely.")
         say("You can turn the sail with your mouse.")
         say("See that little puff next to your sail? That's the wind direction.")
         say("Currently, we have steady south wind.")
         say("As a general rule, keep the sail at the side away from the wind.")
         say("You cannot sail directly towards the wind, but you can zig-zag.")
-        say("I'm sure you'll figure out the rest yourself!")
+        say("I'm sure you'll quickly figure it out!")
         say("You can steer with A/D or left/right.")
-        say("The faster you are the faster you turn.")
-        say("And finally, you can drop or hoist the anchor with space.")
-        say("On the islands to the east, people are waiting to be rescued!")
+        say("The faster you are, the faster you turn.")
+        say("And finally, you can drop or hoist your anchor with space.")
+        say("We think our people might be stranded on nearby islands...")
         say("Do you see their positions in your compass?")
         say("Anchor next to an island to take them on board.")
         say("Then bring all "..savePerPhase.." of them back here. Good luck!")
@@ -147,6 +154,7 @@ function nextPhase()
         say("What's worse, the wind seems to have picked up.")
         say("So be aware of turbulences and chaning wind directions!")
         say("Also, there are sea monsters out there!")
+        say("I did mention that earlier, right?")
         say("They are not really dangerous, but they don't like to be rammed!")
         say("Please save all "..savePerPhase.." persons!")
     elseif phase == 2 then
@@ -165,7 +173,7 @@ function nextPhase()
         say("Well, um...")
         say("There still are people out there.")
         say("Since quite a while, actually.")
-        say("But noone has ever dared to rescue them.")
+        say("But no one has ever dared to rescue them.")
         say("Because of...")
         say("The Kraken!")
         say("*shudder*")
@@ -239,7 +247,7 @@ function love.load()
     ship.body:setMass(10)
     ship.fixture:setFriction(0)
     ship.fixture2:setFriction(0)
-    ship.body:setPosition(500, 0)
+    ship.body:setPosition(150, 0)
 
     sail = 0
     rudder = 0
@@ -319,27 +327,34 @@ function love.load()
     people = {}
     saved = 0
     offered = 0
+    quote = 0
 	
 	thanks = {}
-	thankyou = "Thanks for picking me up!"
-	table.insert(thanks, thankyou)
-	thankyou = "Thanks!"
-	table.insert(thanks, thankyou)
-	thankyou = "I actually liked that island..."
-	table.insert(thanks, thankyou)
-	thankyou = "I am so hungry... Please hurry."
-	table.insert(thanks, thankyou)
-	thankyou = "I have been waiting here for ages."
-	table.insert(thanks, thankyou)
-	thankyou = "I thought the sea monsters would get me."
-	table.insert(thanks, thankyou)
-	thankyou = "Did you ever sail to the far east?"
-	table.insert(thanks, thankyou)
-	thankyou = "The Kraken destroyed my boat, so I stranded here..."
-	table.insert(thanks, thankyou)
+	table.insert(thanks, "Thanks for picking me up!")
+	table.insert(thanks, "I am so hungry... Please hurry.")
+	table.insert(thanks, "Thanks! <3")
+	table.insert(thanks, "I'm looking forward to seeing my family again!")
+	table.insert(thanks, "I actually liked that little island...")
+
+	table.insert(thanks, "Hey, nice boat!")
+	table.insert(thanks, "I'm a mighty pirate! Arrr!")
+	table.insert(thanks, "I thought the sea monsters would get me.")
+	table.insert(thanks, "YAAAA-HAAA-HAAAAAAAA!")
+	table.insert(thanks, "I tried talking to the ocean, but it just... waved.")
+
+	table.insert(thanks, "I have been waiting here for ages.")
+	table.insert(thanks, "The Kraken destroyed my boat, so I stranded here...")
+	table.insert(thanks, "Hey, did you ever sail to the far east?")
+	table.insert(thanks, "What took you so long?")
+	table.insert(thanks, "I had almost given up all hope!")
+
+	table.insert(thanks, "This doesn't look like Penny's boat!")
+	table.insert(thanks, "Call me Ishmael.")
+
+    music.digya:setVolume(0.3)
+    sounds.yay:setVolume(0.2)
 
     soundtrack = love.audio.play(music.digya)
-    soundtrack:setVolume(0.3)
     waves = love.audio.play(sounds.waves)
     waves:setLooping(true)
     wood = love.audio.play(sounds.wood)
@@ -461,8 +476,8 @@ function love.update(dt)
     for i,person in ipairs(people) do
         if vector(person.x, person.y):dist(vector(x, y)) < 400 and anchor == 1 and person.x > 0 then
             person.status = "boarded"
-			j = love.math.random(#thanks)
-			say(thanks[j], true, person.hue)
+			say(thanks[1+quote], true, person.hue)
+            quote = (quote + 1) % #thanks
             sounds.jump:setPitch(love.math.random(80, 120)/100)
             love.audio.play(sounds.jump)
             person.x = love.math.random(-25, 25)
@@ -483,13 +498,10 @@ function love.update(dt)
 		if phase >= 3 then
 			if person.status == "boarded" and vector(x, y):dist(vector(kraken.body:getPosition())) < 600 then
 				love.audio.play(sounds.munch)
-                sounds.wilhelm:setPitch(love.math.random(90, 110)/100)
 				love.audio.play(sounds.wilhelm)
 				table.remove(people, i)
 				if offered == 0 then
 					say("Oh no, The Kraken got them! Please bring all others back home!", true)
-                elseif offered+1 < savePerPhase then
-					say("What are you doing? Please stop! :'-(", true)
 				end
 				offered = offered + 1
 			end
@@ -545,8 +557,8 @@ function love.update(dt)
 		
     ps:setPosition(ship.body:getWorldPoints(0, 150))
 
-    cdx = (cdx + wind.x*0.2) % (images.clouds:getWidth()*2)
-    cdy = (cdy + wind.y*0.2) % (images.clouds:getHeight()*2)
+    cdx = (cdx + wind.x*0.05) % (images.clouds:getWidth()*2)
+    cdy = (cdy + wind.y*0.05) % (images.clouds:getHeight()*2)
 
     cx, cy = camera:position()
     cp = vector(cx, cy)
