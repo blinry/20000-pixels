@@ -513,8 +513,8 @@ function love.update(dt)
 		
     ps:setPosition(ship.body:getWorldPoints(0, 150))
 
-    cdx = cdx + wind.x*0.1
-    cdy = cdy + wind.y*0.1
+    cdx = (cdx + wind.x*0.1) % (images.clouds:getWidth()*2)
+    cdy = (cdy + wind.y*0.1) % (images.clouds:getHeight()*2)
 
     cx, cy = camera:position()
     cp = vector(cx, cy)
