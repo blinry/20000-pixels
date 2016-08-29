@@ -134,6 +134,11 @@ function nextPhase()
 			monster.fixture:setUserData("seamonster")
 			monster.body:setMass(10)
 			monster.type = "seamonster"
+			monster.ps = love.graphics.newParticleSystem(images.wake, 100)
+			monster.ps:setParticleLifetime(3, 5) -- Particles live at least 2s and at most 5s.
+			monster.ps:setEmissionRate(10)
+			monster.ps:setSizes(6, 15)
+			monster.ps:setColors(255, 255, 255, 255, 255, 255, 255, 0) -- Fade to transparency.
 			table.insert(monsters, monster)
 		end
         say("Well done! Thank you for rescuing those poor souls! (Click to continue)", true)
@@ -355,6 +360,15 @@ function love.update(dt)
     Timer.update(dt)
     ps:update(dt)
     world:update(dt)
+	
+	if phase >= 2 then
+		for i,monster in ipairs(monsters) do
+			if monster.type == "seamonster" then
+				monster.ps:update(dt)
+				monster.ps:setPosition(monster.body:getWorldPoints(50, 100))
+			end
+		end
+	end
 
     speed = vector(ship.body:getLinearVelocity())
 
@@ -697,6 +711,7 @@ function love.draw()
 			if monster.type == "kraken" then
 				love.graphics.draw(images.kraken, x, y, 0, 1, 1, images.kraken:getWidth()/2, images.kraken:getWidth()/2)
 			else
+				love.graphics.draw(monster.ps, 0, 0)
 				love.graphics.draw(images.seamonster, x, y, 0, 1, 1, images.seamonster:getWidth()/2, images.seamonster:getWidth()/2)
 			end
 			--love.graphics.rectangle("fill", x, y, 1000, 1000)
