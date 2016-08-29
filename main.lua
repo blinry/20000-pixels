@@ -3,7 +3,8 @@ vector = require "hump.vector"
 Timer = require "hump.timer"
 Camera = require "hump.camera"
 
-savePerPhase = 1
+debug = false
+savePerPhase = 5
 fontsize = 35
 
 -- Converts HSL to RGB. (input and output range: 0 - 255)
@@ -234,6 +235,9 @@ function love.load()
 
     phase = 0
 
+    cdx = 0
+    cdy = 0
+
     beach = {}
     beach.body = love.physics.newBody(world, 0, 0)
     beach.shape = love.physics.newRectangleShape(1,20000000)
@@ -409,6 +413,7 @@ function love.update(dt)
 
         if person.status == "boarded" and anchor == 1 and x < 200 then
             love.audio.play(sounds.jump)
+            love.audio.play(sounds.yay)
             person.status = "saved"
             person.x = love.math.random(-400, -50)
             person.y = y + love.math.random(-100, 100)
@@ -478,6 +483,9 @@ function love.update(dt)
 		
     ps:setPosition(ship.body:getWorldPoints(0, 150))
 
+    cdx = cdx + wind.x*0.1
+    cdy = cdy + wind.y*0.1
+
     cx, cy = camera:position()
     cp = vector(cx, cy)
     x, y = ship.body:getPosition()
@@ -499,11 +507,11 @@ function love.keypressed(key)
         love.window.setFullscreen(false)
         love.timer.sleep(0.1)
         love.event.quit()
-    elseif key == "-" then
+    elseif key == "-" and debug then
         zoom = zoom/2
-    elseif key == "+" then
+    elseif key == "+" and debug then
         zoom = zoom*2
-    elseif key == "n" then
+    elseif key == "n" and beug then
         nextPhase()
     elseif key == "f11" then
         fs, fstype = love.window.getFullscreen()
@@ -533,7 +541,7 @@ function love.mousepressed(x, y, button, touch)
             line = null
         end
     end
-    if button == 2 then
+    if button == 2 and debug then
         x, y = camera:worldCoords(x, y)
         ship.body:setPosition(x, y)
     end
@@ -563,7 +571,7 @@ function love.draw()
             love.graphics.draw(images.ocean, images.ocean:getWidth()*x*4, images.ocean:getHeight()*y*4, 0, 4, 4)
         end
     end
-	
+
 	love.graphics.setColor(44, 165, 54)
     love.graphics.rectangle("fill", -5500, -10000000, 5000, 20000000)
 
@@ -658,6 +666,16 @@ function love.draw()
 			--love.graphics.rectangle("fill", x, y, 1000, 1000)
 		end
 	end
+
+    love.graphics.setColor(255, 255, 255)
+    x, y = camera:worldCoords(0, 0)
+    xx = math.floor(x/(images.clouds:getWidth()*2))
+    yy = math.floor(y/(images.clouds:getWidth()*2))
+    for x = xx-1,xx+6 do
+        for y = yy-1,yy+6 do
+            love.graphics.draw(images.clouds, images.clouds:getWidth()*x*2+cdx, images.clouds:getHeight()*y*2+cdy, 0, 2, 2)
+        end
+    end
 	
     camera:detach()
 
@@ -703,7 +721,7 @@ function love.draw()
 	end
 
     --love.graphics.setColor(0, 0, 0)
-    love.graphics.print(speed:len(), 200, 500)
+    --love.graphics.print(speed:len(), 200, 500)
 
     w, h, flags = love.window.getMode()
     if phase > 0 and line then
