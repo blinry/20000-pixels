@@ -87,14 +87,22 @@ function makePeople(layer)
     end
 end
 
-function say(text, now)
+function say(text, now, r, g, b)
     if now then
         lines = {}
     end
     if now then
-        line = text
+        line.t = text
+		line.r = r or 255
+		line.g = g or 255
+		line.b = b or 255
     else
-        table.insert(lines, text)
+		nextline = {}
+	    nextline.t = text
+		nextline.r = r or 255
+		nextline.g = g or 255
+		nextline.b = b or 255
+        table.insert(lines, nextline)
     end
 end
 
@@ -227,7 +235,11 @@ function love.load()
     rudder = 0
     flip = 1
 	anchor = 1
-    line = "Loading..."
+    line = {}
+	line.t = ""
+	line.r = 255
+	line.g = 255
+	line.b = 255
     lines = {}
     zoom = 1
 
@@ -291,6 +303,22 @@ function love.load()
     people = {}
     saved = 0
     offered = 0
+	
+	thanks = {}
+	thankyou = "Thanks for picking me up!"
+	table.insert(thanks, thankyou)
+	thankyou = "Thanks!"
+	table.insert(thanks, thankyou)
+	thankyou = "I actually liked that island..."
+	table.insert(thanks, thankyou)
+	thankyou = "I am so hungry... Please hurry."
+	table.insert(thanks, thankyou)
+	thankyou = "I have been waiting here for ages."
+	table.insert(thanks, thankyou)
+	thankyou = "I thought the sea monsters would get me."
+	table.insert(thanks, thankyou)
+	thankyou = "Did you ever sail east? There is the end of the world."
+	table.insert(thanks, thankyou)
 
     soundtrack = love.audio.play(music.digya)
     soundtrack:setVolume(0.3)
@@ -406,9 +434,11 @@ function love.update(dt)
     for i,person in ipairs(people) do
         if vector(person.x, person.y):dist(vector(x, y)) < 400 and anchor == 1 and person.x > 0 then
             person.status = "boarded"
+			j = love.math.random(#thanks)
+			say(thanks[j], true, person.r, person.g, person.b)
             love.audio.play(sounds.jump)
-            person.x = love.math.random(-20, 20)
-            person.y = love.math.random(-20, 20)
+            person.x = love.math.random(-25, 25)
+            person.y = love.math.random(10, 130)
         end
 
         if person.status == "boarded" and anchor == 1 and x < 200 then
@@ -530,10 +560,11 @@ function love.keypressed(key)
 end
 
 function love.mousepressed(x, y, button, touch)
-    if phase == 0 then
-        nextPhase()
-    end
     if button == 1 then
+		if phase == 0 then
+			nextPhase()
+		end
+		
         if #lines > 0 then
             line = lines[1]
             table.remove(lines, 1)
@@ -726,14 +757,14 @@ function love.draw()
     w, h, flags = love.window.getMode()
     if phase > 0 and line then
         if #lines > 0 then
-            text = line.."   >>"
+            text = line.t.."   >>"
         else
-            text = line
+            text = line.t
         end
         border = 20
         love.graphics.setColor(0, 0, 0, 100)
         love.graphics.rectangle("fill", 0, h-2*border-fontsize, w, 2*border+fontsize)
-        love.graphics.setColor(255, 255, 255)
+        love.graphics.setColor(line.r, line.g, line.b)
         --love.graphics.print(line, border, h-border-fontsize)
         love.graphics.printf(text, border, h-border-fontsize, w-2*border, "center")
     end
