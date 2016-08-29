@@ -126,6 +126,7 @@ function nextPhase()
 			monster.shape = love.physics.newCircleShape(150)
 			monster.fixture = love.physics.newFixture(monster.body, monster.shape)
 			monster.fixture:setFriction(0)
+			monster.fixture:setUserData("seamonster")
 			monster.body:setMass(10)
 			monster.type = "seamonster"
 			table.insert(monsters, monster)
@@ -165,7 +166,15 @@ function nextPhase()
         say("Do not, I repeat, DO NOT feed them to The Kraken or anything.")
         say("Right?! Good luck out there!")
     elseif phase == 3 then
-        say("Well done! You saved them all! ")
+        if offered == savePerPhase then
+            say("You... you monster. I hope you are happy.", true)
+            say("Even your sail turned completely black!")
+            say("I guess at least you made The Kraken happy...")
+        elseif saved == savePerPhase then
+            say("Well done! You saved them all! ", true)
+        else
+            say("At least you saved some of them! Well done!", true)
+        end
         say("Also, maybe, you now have some intuition for the physics of sailing.")
         say("Or do you? Let us know! Thanks for playing! :)")
         say("- THE END -")
@@ -199,6 +208,7 @@ function love.load()
 
     love.physics.setMeter(100)
     world = love.physics.newWorld(0, 0, true)
+    world:setCallbacks(beginContact)
 
     ship = {}
     ship.body = love.physics.newBody(world, 0, 0, "dynamic")
@@ -311,7 +321,7 @@ function love.update(dt)
 
     speed = vector(ship.body:getLinearVelocity())
 
-    if love.keyboard.isDown("right")or love.keyboard.isDown("d")then
+    if love.keyboard.isDown("right") or love.keyboard.isDown("d") then
         if rudder > -math.pi/6 then
             rudder = rudder-dt*2
         end
@@ -407,20 +417,12 @@ function love.update(dt)
 
 		if phase >= 3 then
 			if person.status == "boarded" and vector(x, y):dist(vector(kraken.body:getPosition())) < 600 then
-				--love.audio.play(sounds.jump)
+				love.audio.play(sounds.munch)
 				table.remove(people, i)
 				if offered == 0 then
 					say("Oh no, The Kraken got them! Please bring all others back home!", true)
-				end
-				if offered+1 < savePerPhase then
+                elseif offered+1 < savePerPhase then
 					say("What are you doing? Please stop! :'-(", true)
-				end
-				if offered+1 >= savePerPhase then
-					say("You... you monster. I hope you are happy.", true)
-					say("I guess at least you made The Kraken happy...")
-					say("Also, maybe, you now have some intuition for the physics of sailing.")
-					say("Or do you? Let us know! Thanks for playing! :)")
-					say("- THE END -")
 				end
 				offered = offered + 1
 			end
@@ -432,7 +434,7 @@ function love.update(dt)
     if phase == 2 and saved >= savePerPhase*2 then
         nextPhase()
     end
-    if phase == 3 and saved >= savePerPhase*3 then
+    if phase == 3 and saved+offered >= savePerPhase*3 then
         nextPhase()
     end
 
@@ -501,6 +503,8 @@ function love.keypressed(key)
         zoom = zoom/2
     elseif key == "+" then
         zoom = zoom*2
+    elseif key == "n" then
+        nextPhase()
     elseif key == "f11" then
         fs, fstype = love.window.getFullscreen()
         if fs then
@@ -514,7 +518,6 @@ function love.keypressed(key)
         if anchor == 1 then
             love.audio.play(sounds.splash)
         end
-
     end
 end
 
@@ -522,15 +525,29 @@ function love.mousepressed(x, y, button, touch)
     if phase == 0 then
         nextPhase()
     end
-    if #lines > 0 then
-        line = lines[1]
-        table.remove(lines, 1)
-    else
-        line = null
+    if button == 1 then
+        if #lines > 0 then
+            line = lines[1]
+            table.remove(lines, 1)
+        else
+            line = null
+        end
     end
     if button == 2 then
         x, y = camera:worldCoords(x, y)
         ship.body:setPosition(x, y)
+    end
+end
+
+function beginContact(a, b, coll)
+    if (a == ship.fixture2 or b == ship.fixture2) then
+        sounds.crash:setPitch(love.math.random(50,150)/100)
+        sounds.crash:setVolume(range(speed:len(), 100, 500))
+        love.audio.play(sounds.crash)
+        if (a:getUserData() == "seamonster" or b:getUserData() == "seamonster") then
+            sounds.howl:setPitch(love.math.random(50,150)/100)
+            love.audio.play(sounds.howl)
+        end
     end
 end
 
@@ -618,12 +635,15 @@ function love.draw()
     end
 	
     x, y = ship.body:getPosition()
-    love.graphics.setColor(255, 255, 255)
+    evilness = offered/savePerPhase
+    love.graphics.setColor(255-evilness*255, 255-evilness*255, 255-evilness*255)
     --love.graphics.line(x, y, x+sailvector.x, y+sailvector.y)
     love.graphics.draw(images.sail, x, y, abssail-math.pi/2, flip*(0.5+range(force:len(), 0, 10000)), 1, 0, 0)
 
     --love.graphics.setColor(0, 0, 255)
     sv = sailvector:normalized()*50
+
+    love.graphics.setColor(255, 255, 255)
     love.graphics.draw(images.wind, x-wind.x+sv.x*2, y-wind.y+sv.y*2, abswind+math.pi/2, (wind:len()/40) * 0.18, wind:len()/40 * 0.18, images.wind:getWidth()/2, images.wind:getHeight()/2)
 
 	if phase >= 2 then
@@ -673,7 +693,8 @@ function love.draw()
     end
 	
 	if phase >= 3 then
-		v = vector(kraken.x, kraken.y) - vector(ship.body:getPosition())
+        x, y = kraken.body:getPosition()
+		v = vector(x, y) - vector(ship.body:getPosition())
 		p = vector(ch/2+20, ch/2+20) + v:normalized()*ch/2
 		d = v:len()
 		s = 15 - 7 * range(d, 0, 5000)
@@ -682,7 +703,7 @@ function love.draw()
 	end
 
     --love.graphics.setColor(0, 0, 0)
-    love.graphics.print(forceamount, 0, 600)
+    love.graphics.print(speed:len(), 200, 500)
 
     w, h, flags = love.window.getMode()
     if phase > 0 and line then
