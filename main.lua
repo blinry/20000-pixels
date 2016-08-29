@@ -81,6 +81,7 @@ function makePeople(layer)
         person.y = islands[j].y + math.random(0, 100)
         person.r, person.g, person.b = HSL(math.random(255), 255, 100)
         person.status = "lost"
+        person.dt = math.random(0, 10000)/1000
         table.insert(people, person)
     end
 end
@@ -144,6 +145,7 @@ function nextPhase()
         say("Well done! You saved them all! ")
         say("Also, maybe, you now have some intuition for the physics of sailing.")
         say("Or do you? Let us know! Thanks for playing! :)")
+        say("- THE END -")
     end
 
     phase = phase + 1
@@ -273,11 +275,13 @@ function love.load()
     table.insert(monsters, kraken)
 
     soundtrack = love.audio.play(music.digya)
-    soundtrack:setVolume(0.5)
+    soundtrack:setVolume(0.3)
     waves = love.audio.play(sounds.waves)
     waves:setLooping(true)
     wood = love.audio.play(sounds.wood)
     wood:setLooping(true)
+    flag = love.audio.play(sounds.flag)
+    flag:setLooping(true)
 
     camera = Camera(300, 300)
     camera.smoother = Camera.smooth.damped(3)
@@ -384,11 +388,13 @@ function love.update(dt)
     for i,person in ipairs(people) do
         if vector(person.x, person.y):dist(vector(x, y)) < 400 and anchor == 1 and person.x > 0 then
             person.status = "boarded"
+            love.audio.play(sounds.jump)
             person.x = love.math.random(-20, 20)
             person.y = love.math.random(-20, 20)
         end
 
         if person.status == "boarded" and anchor == 1 and x < 200 then
+            love.audio.play(sounds.jump)
             person.status = "saved"
             person.x = love.math.random(-400, -50)
             person.y = y + love.math.random(-100, 100)
@@ -396,18 +402,20 @@ function love.update(dt)
         end
 
         if person.status == "boarded" and vector(x, y):dist(vector(kraken.body:getPosition())) < 600 then
+            --love.audio.play(sounds.jump)
             table.remove(people, i)
             if offered == 0 then
-                say("Oh no, what are you doing?", true)
+                say("Oh no, The Kraken got them! Please bring all others back home!", true)
             end
             if offered+1 < savePerPhase then
-                say("Please stop! :'-(", true)
+                say("What are you doing? Please stop! :'-(", true)
             end
             if offered+1 >= savePerPhase then
                 say("You... you monster. I hope you are happy.", true)
                 say("I guess at least you made The Kraken happy...")
                 say("Also, maybe, you now have some intuition for the physics of sailing.")
                 say("Or do you? Let us know! Thanks for playing! :)")
+                say("- THE END -")
             end
             offered = offered + 1
         end
@@ -470,6 +478,7 @@ function love.update(dt)
 
     waves:setVolume(range(speed:len(),0,1000))
     wood:setVolume(range(math.abs(v),0,1))
+    flag:setVolume(range(forceamount,0,10000))
     targetzoom = 0.8*zoom/(1+range(speed:len(), 0, 1000))
     z = lerp(camera.scale, targetzoom, dt)
     camera:zoomTo(z)
@@ -522,11 +531,11 @@ function love.draw()
 
     love.graphics.setColor(255,255,255)
     x, y = camera:worldCoords(0, 0)
-    xx = math.floor(x/(images.ocean:getWidth()*2))
-    yy = math.floor(y/(images.ocean:getWidth()*2))
+    xx = math.floor(x/(images.ocean:getWidth()*4))
+    yy = math.floor(y/(images.ocean:getWidth()*4))
     for x = xx-1,xx+6 do
         for y = yy-1,yy+6 do
-            love.graphics.draw(images.ocean, images.ocean:getWidth()*x*2, images.ocean:getHeight()*y*2, 0, 2, 2)
+            love.graphics.draw(images.ocean, images.ocean:getWidth()*x*4, images.ocean:getHeight()*y*4, 0, 4, 4)
         end
     end
 	
@@ -585,7 +594,7 @@ function love.draw()
             x, y = ship.body:getWorldPoints(person.x, person.y)
             love.graphics.draw(images.person, x, y, 0, 1, 1, images.person:getWidth()/2, images.person:getWidth()/2)
         else
-            dy = -math.abs(20*math.sin(love.timer.getTime()*6))
+            dy = -math.abs(20*math.sin(person.dt + love.timer.getTime()*6))
             love.graphics.draw(images.person, person.x, person.y+dy, 0, 1, 1, images.person:getWidth()/2, images.person:getWidth()/2)
 			
 			if person.x < 0 then
@@ -650,11 +659,15 @@ function love.draw()
     end
 
     --love.graphics.setColor(0, 0, 0)
-    --love.graphics.print("People saved: "..saved, 0, 600)
+    love.graphics.print(forceamount, 0, 600)
 
     w, h, flags = love.window.getMode()
     if phase > 0 and line then
-        text = line.."   >>"
+        if #lines > 0 then
+            text = line.."   >>"
+        else
+            text = line
+        end
         border = 20
         love.graphics.setColor(0, 0, 0, 100)
         love.graphics.rectangle("fill", 0, h-2*border-fontsize, w, 2*border+fontsize)
