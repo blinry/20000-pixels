@@ -697,6 +697,7 @@ function love.draw()
     love.graphics.setColor(255-evilness*255, 255-evilness*255, 255-evilness*255)
     --love.graphics.line(x, y, x+sailvector.x, y+sailvector.y)
     love.graphics.draw(images.sail, x, y, abssail-math.pi/2, flip*(0.5+range(force:len(), 0, 10000)), 1, 0, 0)
+    love.graphics.draw(images.mast, x, y, 0, 1, 1, images.mast:getWidth()/2, images.mast:getHeight()/2)
 
     --love.graphics.setColor(0, 0, 255)
     sv = sailvector:normalized()*50
