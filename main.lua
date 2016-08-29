@@ -624,7 +624,7 @@ function love.draw()
 
     --love.graphics.setColor(0, 0, 255)
     sv = sailvector:normalized()*50
-    love.graphics.draw(images.wind, x-wind.x+sv.x*2, y-wind.y+sv.y*2, abswind+math.pi/2, wind:len()/40, wind:len()/40, images.wind:getWidth()/2, images.wind:getHeight()/2)
+    love.graphics.draw(images.wind, x-wind.x+sv.x*2, y-wind.y+sv.y*2, abswind+math.pi/2, (wind:len()/40) * 0.18, wind:len()/40 * 0.18, images.wind:getWidth()/2, images.wind:getHeight()/2)
 
 	if phase >= 2 then
 		for i,monster in ipairs(monsters) do
