@@ -47,7 +47,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -56,12 +56,13 @@
      inkscape:groupmode="layer"
      id="layer1">
     <path
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.77647059"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 455.71429,496.64792 c 30.75952,92.73723 -115.71428,141.42857 -115.71428,141.42857 0,0 -141.5022,-48.7649 -115,-142.14286 26.5022,-93.37795 117.85714,-9.28571 117.85714,-9.28571 0,0 82.09762,-82.73723 112.85714,10 z"
        id="path4136"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="zcccz"
-       inkscape:export-xdpi="15"
-       inkscape:export-ydpi="15" />
+       inkscape:export-xdpi="369.97699"
+       inkscape:export-ydpi="369.97699"
+       inkscape:export-filename="C:\Users\SmeV\Documents\ld36\images\heart.png" />
   </g>
 </svg>
