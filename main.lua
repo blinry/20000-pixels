@@ -117,17 +117,7 @@ function nextPhase()
         say("Then bring all "..savePerPhase.." of them back here. Good luck!")
     elseif phase == 1 then
         makePeople(2)
-        say("Well done! Thank you for rescuing those poor souls! (Click to continue)", true)
-        say("But I have some bad news, I'm afraid.")
-        say("More people went missing on an island group further to the east!")
-        say("What's worse, the wind seems to have picked up.")
-        say("So be aware of turbulences and chaning wind directions!")
-        say("Also, there are sea monsters out there!")
-        say("They are not really dangerous, but they don't like to be rammed!")
-        say("Please save all "..savePerPhase.." persons!")
-    elseif phase == 2 then
-        makePeople(3)
-		monsters = {}
+				monsters = {}
 		for i = 1,10 do
 			monster = {}
 			monster.x = love.math.random(13000, 17000)
@@ -141,6 +131,16 @@ function nextPhase()
 			monster.type = "seamonster"
 			table.insert(monsters, monster)
 		end
+        say("Well done! Thank you for rescuing those poor souls! (Click to continue)", true)
+        say("But I have some bad news, I'm afraid.")
+        say("More people went missing on an island group further to the east!")
+        say("What's worse, the wind seems to have picked up.")
+        say("So be aware of turbulences and chaning wind directions!")
+        say("Also, there are sea monsters out there!")
+        say("They are not really dangerous, but they don't like to be rammed!")
+        say("Please save all "..savePerPhase.." persons!")
+    elseif phase == 2 then
+        makePeople(3)
 		kraken = {}
 		kraken.x = love.math.random(13000, 17000)
 		kraken.y = love.math.random(-6000, 6000)
@@ -466,7 +466,7 @@ function love.update(dt)
     --table.insert(trail, pos:clone())
     --trail = table.slice(trail, #trail-100, #trail)
 
-	if phase >= 3 then
+	if phase >=2 then
 		for i,monster in ipairs(monsters) do
 			-- damping
 			x, y = monster.body:getLinearVelocity()
@@ -642,10 +642,11 @@ function love.draw()
 
     --love.graphics.setColor(0, 0, 255)
     sv = sailvector:normalized()*50
-    love.graphics.setColor(255, 255, 255)
-    love.graphics.draw(images.wind, x-wind.x+sv.x*2, y-wind.y+sv.y*2, abswind+math.pi/2, wind:len()/40, wind:len()/40, images.wind:getWidth()/2, images.wind:getHeight()/2)
 
-	if phase >= 3 then
+    love.graphics.setColor(255, 255, 255)
+    love.graphics.draw(images.wind, x-wind.x+sv.x*2, y-wind.y+sv.y*2, abswind+math.pi/2, (wind:len()/40) * 0.18, wind:len()/40 * 0.18, images.wind:getWidth()/2, images.wind:getHeight()/2)
+
+	if phase >= 2 then
 		for i,monster in ipairs(monsters) do
 			x, y = monster.body:getPosition()
 			love.graphics.setColor(255, 255, 255)
